@@ -31,10 +31,39 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Add fade-in class to elements
-document.querySelectorAll('.about-text, .about-visual, .service-card, .contact-item, .quote, .section-label, .section-title').forEach(el => {
+document.querySelectorAll('.about-text, .about-visual, .service-card, .contact-wechat, .social-link-card, .quote, .section-label, .section-title').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
+
+// Copy WeChat ID
+function copyWechat() {
+    const wechatId = 'maisonmirafleur';
+    navigator.clipboard.writeText(wechatId).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '已复制 ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '复制微信号';
+            btn.classList.remove('copied');
+        }, 2000);
+    }).catch(() => {
+        // Fallback for older browsers
+        const input = document.createElement('input');
+        input.value = wechatId;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '已复制 ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '复制微信号';
+            btn.classList.remove('copied');
+        }, 2000);
+    });
+}
 
 // Nav background on scroll
 const nav = document.querySelector('.nav');
