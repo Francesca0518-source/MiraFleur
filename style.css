@@ -226,64 +226,94 @@ img {
     padding: 2rem;
 }
 
-.hero-subtitle {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-}
-
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 400;
-    letter-spacing: 0.2em;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
     color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
     text-shadow: 0 2px 40px rgba(0,0,0,0.1);
-}
-
-.hero-cn {
-    font-family: 'Noto Serif SC', serif;
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 400;
-    letter-spacing: 0.3em;
-    margin-bottom: 2rem;
+    font-style: italic;
 }
 
 .hero-desc {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
-    letter-spacing: 0.08em;
-    margin-bottom: 3rem;
-    max-width: 400px;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 540px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .hero-btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    border: 1px solid rgba(255,255,255,0.6);
-    color: var(--white);
     font-size: 0.8rem;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 400;
     transition: all 0.4s;
-    background: transparent;
+    font-family: var(--font-sans);
 }
 
-.hero-btn:hover {
+.hero-btn-primary {
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid var(--white);
+}
+
+.hero-btn-primary:hover {
+    background: transparent;
+    color: var(--white);
+}
+
+.hero-btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.hero-btn-ghost:hover {
     background: var(--white);
     color: var(--text);
     border-color: var(--white);
+}
+
+.hero-micro {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* ===== Intro Strip ===== */
+.intro-strip {
+    padding: 5rem 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--text-light);
+    font-weight: 300;
 }
 
 /* ===== Section Common ===== */
@@ -306,6 +336,35 @@ img {
     color: var(--text);
     letter-spacing: 0.05em;
     line-height: 1.3;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 300;
+    max-width: 560px;
+    margin: -2.5rem auto 4rem;
+    line-height: 1.8;
+}
+
+.section-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-link {
+    font-size: 0.88rem;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    font-weight: 400;
+    transition: color 0.3s;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 4px;
+}
+
+.cta-link:hover {
+    color: var(--accent-dark);
 }
 
 /* ===== About ===== */
@@ -775,7 +834,12 @@ img {
     }
 
     .hero-title {
-        letter-spacing: 0.12em;
+        letter-spacing: 0.04em;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        align-items: center;
     }
 
     .services-grid {
