@@ -31,7 +31,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Add fade-in class to elements
-document.querySelectorAll('.about-text, .about-visual, .service-card, .contact-wechat, .social-link-card, .quote, .section-label, .section-title').forEach(el => {
+document.querySelectorAll('.about-text, .about-visual, .service-card, .portfolio-item, .contact-wechat, .social-link-card, .quote, .section-label, .section-title').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
