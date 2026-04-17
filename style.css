@@ -6,17 +6,18 @@
 }
 
 :root {
-    --bg: #f5f0eb;
-    --bg-warm: #ede6df;
-    --text: #2c2c2c;
-    --text-light: #6b6259;
-    --accent: #c4917b;
-    --accent-dark: #a87462;
-    --accent-light: #e8d5cc;
-    --gold: #c8a96e;
+    --bg: #FDFBF7;
+    --bg-warm: #F5F1EA;
+    --text: #1a1a1a;
+    --text-light: #5c5c5c;
+    --accent: #C4917B;
+    --accent-dark: #A87462;
+    --accent-light: #E8D5CC;
+    --sage: #8B9A7B;
+    --sage-light: #D4DBC9;
     --white: #fff;
-    --font-serif: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
-    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+    --font-serif: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
+    --font-sans: 'Jost', 'Noto Sans SC', -apple-system, sans-serif;
 }
 
 html {
@@ -56,7 +57,7 @@ img {
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(245, 240, 235, 0.92);
+    background: rgba(253, 251, 247, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -186,7 +187,7 @@ img {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: #8b5e5e;
+    background-color: #1a1a1a;
     overflow: hidden;
 }
 
@@ -195,12 +196,12 @@ img {
 .hero[style*="none"] {
     background: linear-gradient(
         160deg,
-        #8b5e5e 0%,
-        #a07272 20%,
-        #c4917b 40%,
-        #d4b5a0 60%,
-        #e6d5c5 80%,
-        #f5f0eb 100%
+        #1a1a1a 0%,
+        #2d2d2d 20%,
+        #4a4a4a 40%,
+        #8B9A7B 60%,
+        #C4917B 80%,
+        #F5F1EA 100%
     );
 }
 
@@ -209,8 +210,8 @@ img {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 30% 50%, rgba(196, 145, 123, 0.3) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 30%, rgba(200, 169, 110, 0.15) 0%, transparent 50%);
+        radial-gradient(ellipse at 30% 50%, rgba(139, 154, 123, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 30%, rgba(196, 145, 123, 0.15) 0%, transparent 50%);
 }
 
 .hero-overlay {
@@ -509,7 +510,7 @@ img {
 /* ===== Quote ===== */
 .quote-section {
     padding: 7rem 0;
-    background: linear-gradient(135deg, #8b5e5e, #a07272, #c4917b);
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #3a3a3a);
     text-align: center;
 }
 
@@ -756,7 +757,7 @@ img {
         top: 72px;
         left: 0;
         right: 0;
-        background: rgba(245, 240, 235, 0.98);
+        background: rgba(253, 251, 247, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 2rem;

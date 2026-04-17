@@ -108,8 +108,8 @@ function copyWechat() {
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 80) {
-        nav.style.background = 'rgba(245, 240, 235, 0.98)';
+        nav.style.background = 'rgba(253, 251, 247, 0.98)';
     } else {
-        nav.style.background = 'rgba(245, 240, 235, 0.92)';
+        nav.style.background = 'rgba(253, 251, 247, 0.92)';
     }
 });
