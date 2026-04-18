@@ -69,10 +69,15 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.about-text, .about-visual, .service-card, .portfolio-item, .contact-wechat, .social-link-card, .quote, .section-label, .section-title').forEach(el => {
+document.querySelectorAll('.about-text, .about-visual, .service-card, .portfolio-item, .occasion-card, .process-step, .testimonial-card, .contact-wechat, .social-link-card, .section-label, .section-title, .section-subtitle, .closing-title, .closing-sub, .closing-btn, .intro-text').forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
 });
+
+// ===== Hide floating Text Us on /inquire =====
+if (window.location.pathname.includes('/inquire')) {
+    document.body.classList.add('no-floating');
+}
 
 // ===== Copy WeChat ID =====
 function copyWechat() {
