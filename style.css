@@ -2246,14 +2246,38 @@ body.page-sympathy .page-hero h1 {
 
 /* ===== Marquee Band — Italian flower names ===== */
 .marquee-band {
-    background: var(--bg-warm);
+    position: relative;
+    background-color: var(--bg-warm);
+    background-image: url('images/classical/villa-livia-detail.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
     border-top: 1px solid rgba(0,0,0,0.06);
     border-bottom: 1px solid rgba(0,0,0,0.06);
     overflow: hidden;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+    isolation: isolate;
+}
+
+.marquee-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(253, 251, 247, 0.94) 0%,
+        rgba(253, 251, 247, 0.78) 50%,
+        rgba(253, 251, 247, 0.94) 100%
+    );
+    backdrop-filter: blur(2px) saturate(0.85);
+    -webkit-backdrop-filter: blur(2px) saturate(0.85);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .marquee-track {
+    position: relative;
+    z-index: 1;
     display: flex;
     gap: 2.5rem;
     align-items: center;
