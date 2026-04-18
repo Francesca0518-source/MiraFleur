@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Bespoke Floral Design Orange County | Mira Fleur</title>
+    <meta name="description" content="Selected custom floral work by Mira Fleur — weddings, proposals, celebrations, sympathy, and everyday luxury across Orange County and Greater Los Angeles.">
+    <meta property="og:title" content="Portfolio | Mira Fleur">
+    <meta property="og:description" content="Every piece was designed for a specific person, occasion, or space. None of them have been repeated.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://francesca0518-source.github.io/MiraFleur/portfolio/">
+    <meta name="theme-color" content="#FDFBF7">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo">MIRA FLEUR</a>
+            <div class="nav-links">
+                <a href="../portfolio/" data-en="Portfolio" data-cn="作品集">Portfolio</a>
+                <a href="../occasions/" data-en="Occasions" data-cn="场合">Occasions</a>
+                <a href="../services/" data-en="Services" data-cn="服务">Services</a>
+                <a href="../about/" data-en="About" data-cn="关于">About</a>
+                <a href="../inquire/" data-en="Inquire" data-cn="咨询">Inquire</a>
+            </div>
+            <div class="nav-right">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+                    <span class="lang-option lang-en">EN</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-option lang-cn">中文</span>
+                </button>
+                <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-en="Portfolio" data-cn="作品集">Portfolio</h1>
+            <p data-en="Every piece below was designed for a specific person, occasion, or space. None of them have been repeated." data-cn="下方每一件作品，都为特定的人、场合或空间而设计。没有一件被重复过。">Every piece below was designed for a specific person, occasion, or space. None of them have been repeated.</p>
+        </div>
+    </section>
+
+    <section class="portfolio-page">
+        <div class="container">
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-chip active" data-filter="all" data-en="All" data-cn="全部">All</button>
+                <button class="filter-chip" data-filter="weddings" data-en="Weddings" data-cn="婚礼">Weddings</button>
+                <button class="filter-chip" data-filter="proposals" data-en="Proposals" data-cn="求婚">Proposals</button>
+                <button class="filter-chip" data-filter="celebrations" data-en="Celebrations" data-cn="庆祝">Celebrations</button>
+                <button class="filter-chip" data-filter="new-beginnings" data-en="New Beginnings" data-cn="新的开始">New Beginnings</button>
+                <button class="filter-chip" data-filter="corporate" data-en="Corporate" data-cn="企业">Corporate</button>
+                <button class="filter-chip" data-filter="sympathy" data-en="Sympathy" data-cn="哀思">Sympathy</button>
+                <button class="filter-chip" data-filter="everyday" data-en="Everyday" data-cn="日常">Everyday</button>
+            </div>
+
+            <div class="masonry-grid" id="masonryGrid">
+                <!-- 18 placeholder slots seeded across categories -->
+                <div class="masonry-item" data-category="weddings" data-title="Bridal Bouquet · Blush & Bone" data-meta="Wedding · Newport Beach" data-note="A hand-tied bouquet of garden roses, ranunculus, and dusty miller, designed to match a silk-crepe gown.">
+                    <img src="../images/portfolio/weddings/bridal-1.webp" alt="Blush and bone bridal bouquet" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Bridal Bouquet</div><div class="cap-meta">Wedding · Newport Beach</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="weddings" data-title="Ceremony Arch · Ivory & Sage" data-meta="Wedding · Laguna Beach" data-note="A full ceremony arch for an outdoor ceremony overlooking the Pacific.">
+                    <img src="../images/portfolio/weddings/arch-1.webp" alt="Ivory and sage ceremony arch" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Ceremony Arch</div><div class="cap-meta">Wedding · Laguna Beach</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="proposals" data-title="Proposal Dinner · Newport Coast" data-meta="Proposal · At-home" data-note="A centerpiece and entryway installation for a quiet, at-home proposal.">
+                    <img src="../images/portfolio/proposals/proposal-1.webp" alt="Proposal dinner florals in Newport Coast" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Proposal Dinner</div><div class="cap-meta">Proposal · Newport Coast</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="celebrations" data-title="Birthday Arrangement · Peach & Amber" data-meta="Celebration · Irvine" data-note="A vase arrangement in warm tones for a 60th birthday dinner.">
+                    <img src="../images/portfolio/celebrations/birthday-1.webp" alt="Peach and amber birthday arrangement" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Birthday Arrangement</div><div class="cap-meta">Celebration · Irvine</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="celebrations" data-title="Anniversary Bouquet · Red & Burgundy" data-meta="Celebration · Pasadena" data-note="Traditional reds anchored by garden roses, delivered for a 25th wedding anniversary.">
+                    <img src="../images/portfolio/celebrations/anniversary-1.webp" alt="Red and burgundy anniversary bouquet" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Anniversary Bouquet</div><div class="cap-meta">Celebration · Pasadena</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="new-beginnings" data-title="Newborn Arrival · Soft Pink" data-meta="New Beginnings · Irvine" data-note="A pastel newborn basket delivered for a baby girl's one-month celebration.">
+                    <img src="../images/portfolio/new-beginnings/newborn-1.webp" alt="Soft pink newborn arrangement" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Newborn Arrival</div><div class="cap-meta">New Beginnings · Irvine</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="new-beginnings" data-title="Housewarming Entryway · Cream" data-meta="New Beginnings · Newport Coast" data-note="A cream-and-sage entryway installation for a new home.">
+                    <img src="../images/portfolio/new-beginnings/housewarming-1.webp" alt="Cream housewarming entryway florals" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Housewarming Entryway</div><div class="cap-meta">New Beginnings · Newport Coast</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="corporate" data-title="Brand Opening · Ivory & Ink" data-meta="Corporate · Downtown LA" data-note="A restrained reception installation for a luxury brand opening.">
+                    <img src="../images/portfolio/corporate/opening-1.webp" alt="Ivory and ink brand opening florals" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Brand Opening</div><div class="cap-meta">Corporate · Downtown LA</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="corporate" data-title="Executive Gifting · Neutral Palette" data-meta="Corporate · Beverly Hills" data-note="Quarterly executive gifting program for a private client firm.">
+                    <img src="../images/portfolio/corporate/gifting-1.webp" alt="Neutral executive gifting arrangement" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Executive Gifting</div><div class="cap-meta">Corporate · Beverly Hills</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="sympathy" data-title="Sympathy Wreath · White & Green" data-meta="Sympathy · Tustin" data-note="A standing wreath for a memorial service, in whites and deep greens.">
+                    <img src="../images/portfolio/sympathy/wreath-1.webp" alt="White and green sympathy wreath" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Sympathy Wreath</div><div class="cap-meta">Sympathy · Tustin</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="sympathy" data-title="Memorial Home Bouquet" data-meta="Sympathy · Corona del Mar" data-note="A soft, hand-tied home arrangement delivered for a family memorial gathering.">
+                    <img src="../images/portfolio/sympathy/home-1.webp" alt="Memorial home bouquet" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Memorial Home Bouquet</div><div class="cap-meta">Sympathy · Corona del Mar</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="everyday" data-title="Weekly Dining Table · Sage & Straw" data-meta="Everyday · Newport Coast" data-note="A weekly subscription arrangement for a private residence's dining table.">
+                    <img src="../images/portfolio/everyday/subscription-1.webp" alt="Sage and straw dining table arrangement" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Weekly Dining Table</div><div class="cap-meta">Everyday · Newport Coast</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="everyday" data-title="Entryway Vessel · Autumn Tones" data-meta="Everyday · Irvine" data-note="Seasonal entryway arrangement in harvest tones.">
+                    <img src="../images/portfolio/everyday/entryway-1.webp" alt="Autumn entryway vessel arrangement" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Entryway Vessel</div><div class="cap-meta">Everyday · Irvine</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="weddings" data-title="Reception Tablescape · Taper Candles" data-meta="Wedding · Pacific Palisades" data-note="Long banquet-style tablescape with tapers, cream roses, and trailing greenery.">
+                    <img src="../images/portfolio/weddings/tablescape-1.webp" alt="Reception tablescape with taper candles" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Reception Tablescape</div><div class="cap-meta">Wedding · Pacific Palisades</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="celebrations" data-title="Dinner Party Centerpiece" data-meta="Celebration · Santa Monica" data-note="A low, lush centerpiece for a milestone dinner party.">
+                    <img src="../images/portfolio/celebrations/dinner-1.webp" alt="Low lush dinner party centerpiece" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Dinner Party Centerpiece</div><div class="cap-meta">Celebration · Santa Monica</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="proposals" data-title="Rooftop Proposal · Candlelit" data-meta="Proposal · Newport Beach" data-note="Rose-petal path and a single statement piece for a rooftop proposal.">
+                    <img src="../images/portfolio/proposals/rooftop-1.webp" alt="Candlelit rooftop proposal florals" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Rooftop Proposal</div><div class="cap-meta">Proposal · Newport Beach</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="corporate" data-title="Press Event Installation" data-meta="Corporate · West Hollywood" data-note="A pillar installation for a brand press event.">
+                    <img src="../images/portfolio/corporate/press-1.webp" alt="Press event pillar floral installation" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">Press Event Installation</div><div class="cap-meta">Corporate · West Hollywood</div></div></div>
+                </div>
+                <div class="masonry-item" data-category="new-beginnings" data-title="One-Hundred-Day Celebration" data-meta="New Beginnings · Irvine" data-note="A pastel installation for a baby's 百日 celebration, designed to honor Chinese tradition.">
+                    <img src="../images/portfolio/new-beginnings/hundred-days-1.webp" alt="One hundred day celebration florals" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+                    <div class="masonry-caption"><div class="masonry-caption-inner"><div class="cap-title">One-Hundred-Day Celebration</div><div class="cap-meta">New Beginnings · Irvine</div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <div class="lightbox-inner">
+            <img id="lightboxImg" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="lightbox-placeholder" style="display:none;">&#10047;</div>
+            <div class="lightbox-info">
+                <div class="lb-title" id="lbTitle"></div>
+                <div class="lb-meta" id="lbMeta"></div>
+                <div class="lb-note" id="lbNote"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">MIRA FLEUR</div>
+                    <p class="footer-tagline" data-en="Bespoke floral design. Made to order, Newport Coast." data-cn="定制花艺。源自 Newport Coast，件件只为你而作。">Bespoke floral design. Made to order, Newport Coast.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/maisonmirafleur" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Explore" data-cn="探索">Explore</h5>
+                    <ul>
+                        <li><a href="../portfolio/" data-en="Portfolio" data-cn="作品集">Portfolio</a></li>
+                        <li><a href="../occasions/" data-en="Occasions" data-cn="场合">Occasions</a></li>
+                        <li><a href="../services/" data-en="Services" data-cn="服务">Services</a></li>
+                        <li><a href="../about/" data-en="About" data-cn="关于">About</a></li>
+                        <li><a href="../process/" data-en="Process" data-cn="流程">Process</a></li>
+                        <li><a href="../faq/" data-en="FAQ" data-cn="常见问题">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Visit" data-cn="工作室">Visit</h5>
+                    <p data-en="By appointment only" data-cn="仅接受预约">By appointment only</p>
+                    <p>Newport Coast, California</p>
+                    <p data-en="Service area: Orange County + Greater Los Angeles" data-cn="服务范围：橙县 + 大洛杉矶地区">Service area: Orange County + Greater Los Angeles</p>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Contact" data-cn="联系">Contact</h5>
+                    <p><a href="../inquire/" data-en="Inquire" data-cn="咨询">Inquire</a></p>
+                    <p>Email: <a href="mailto:hello@mirafleur.com">hello@mirafleur.com</a></p>
+                    <p>Text: <a href="sms:9498994022">949-899-4022</a></p>
+                    <p class="footer-response" data-en="Response time: same business day" data-cn="响应时间：当个工作日内">Response time: same business day</p>
+                </div>
+            </div>
+            <div class="footer-keywords">Orange County florist · Newport Beach flower delivery · Irvine custom florals · luxury floral design Los Angeles · bespoke wedding flowers OC · sympathy flowers Orange County</div>
+            <div class="footer-legal">&copy; 2026 Mira Fleur. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <div class="text-us-float">
+        <a href="sms:9498994022?body=Hi%20Mira%20Fleur%2C%20I'd%20like%20to%20inquire%20about" class="text-us-btn" aria-label="Text us at 949-899-4022">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="text-us-label" data-en="Text Us" data-cn="发短信">Text Us</span>
+        </a>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        // Filter chips
+        document.querySelectorAll('#filterBar .filter-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('#filterBar .filter-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                const f = chip.dataset.filter;
+                document.querySelectorAll('.masonry-item').forEach(item => {
+                    item.classList.toggle('hidden', !(f === 'all' || item.dataset.category === f));
+                });
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightboxImg');
+        const lbPh = lbImg.nextElementSibling;
+        const lbTitle = document.getElementById('lbTitle');
+        const lbMeta = document.getElementById('lbMeta');
+        const lbNote = document.getElementById('lbNote');
+
+        document.querySelectorAll('.masonry-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const src = img ? img.getAttribute('src') : '';
+                lbImg.style.display = '';
+                lbPh.style.display = 'none';
+                lbImg.src = src;
+                lbImg.alt = img ? img.alt : '';
+                lbTitle.textContent = item.dataset.title || '';
+                lbMeta.textContent = item.dataset.meta || '';
+                lbNote.textContent = item.dataset.note || '';
+                lightbox.classList.add('open');
+            });
+        });
+
+        function closeLightbox() { lightbox.classList.remove('open'); lbImg.src=''; }
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>

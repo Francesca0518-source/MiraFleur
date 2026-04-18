@@ -1535,3 +1535,212 @@ body.no-floating .text-us-float {
         gap: 1rem;
     }
 }
+
+/* ===== Portfolio Page ===== */
+.portfolio-page {
+    padding: 4rem 0 6rem;
+    background: var(--white);
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+    padding: 0 1rem;
+}
+
+.filter-chip {
+    padding: 0.55rem 1.2rem;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.15);
+    color: var(--text-light);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: all 0.3s;
+    border-radius: 999px;
+}
+
+.filter-chip:hover {
+    border-color: var(--accent);
+    color: var(--text);
+}
+
+.filter-chip.active {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--bg);
+}
+
+.masonry-grid {
+    column-count: 3;
+    column-gap: 1.2rem;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.2rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background: linear-gradient(145deg, var(--sage-light), var(--bg-warm));
+    transition: opacity 0.4s;
+}
+
+.masonry-item.hidden {
+    display: none;
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.04);
+}
+
+.masonry-item.no-image {
+    aspect-ratio: 4 / 5;
+}
+
+.masonry-item.no-image::after {
+    content: '\2728';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--sage);
+    opacity: 0.4;
+}
+
+.masonry-caption {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 50%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.masonry-item:hover .masonry-caption {
+    opacity: 1;
+}
+
+.masonry-caption-inner {
+    color: var(--bg);
+}
+
+.masonry-caption .cap-title {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    margin-bottom: 0.3rem;
+}
+
+.masonry-caption .cap-meta {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: rgba(253,251,247,0.8);
+    text-transform: uppercase;
+}
+
+@media (max-width: 968px) {
+    .masonry-grid { column-count: 2; }
+}
+
+@media (max-width: 640px) {
+    .masonry-grid { column-count: 1; }
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(26,26,26,0.95);
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-inner {
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+    text-align: center;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 75vh;
+    display: block;
+    margin: 0 auto 1.5rem;
+}
+
+.lightbox-placeholder {
+    width: min(90vw, 520px);
+    aspect-ratio: 4/5;
+    background: linear-gradient(145deg, var(--sage-light), var(--bg-warm));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sage);
+    font-size: 3rem;
+    margin: 0 auto 1.5rem;
+}
+
+.lightbox-info {
+    color: var(--bg);
+    font-family: var(--font-serif);
+}
+
+.lightbox-info .lb-title {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+}
+
+.lightbox-info .lb-meta {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(253,251,247,0.6);
+    margin-bottom: 0.8rem;
+}
+
+.lightbox-info .lb-note {
+    font-size: 0.95rem;
+    color: rgba(253,251,247,0.8);
+    font-style: italic;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: none;
+    border: none;
+    color: var(--bg);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    font-family: var(--font-serif);
+    font-weight: 300;
+}
