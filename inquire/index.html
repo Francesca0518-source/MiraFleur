@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquire — Text, Email, or Share Your Details | Mira Fleur</title>
+    <meta name="description" content="Text, email, or submit an inquiry form. Same-business-day response for all Orange County and Greater Los Angeles floral inquiries.">
+    <meta property="og:title" content="Inquire | Mira Fleur">
+    <meta property="og:description" content="Text is the fastest way to reach us. Or share the details below.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://francesca0518-source.github.io/MiraFleur/inquire/">
+    <meta name="theme-color" content="#FDFBF7">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo">MIRA FLEUR</a>
+            <div class="nav-links">
+                <a href="../portfolio/" data-en="Portfolio" data-cn="作品集">Portfolio</a>
+                <a href="../occasions/" data-en="Occasions" data-cn="场合">Occasions</a>
+                <a href="../services/" data-en="Services" data-cn="服务">Services</a>
+                <a href="../about/" data-en="About" data-cn="关于">About</a>
+                <a href="../inquire/" data-en="Inquire" data-cn="咨询">Inquire</a>
+            </div>
+            <div class="nav-right">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
+                    <span class="lang-option lang-en">EN</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-option lang-cn">中文</span>
+                </button>
+                <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-en="Let's Begin" data-cn="让我们开始">Let's Begin</h1>
+            <p data-en="Text is the fastest way to reach us. Or share the details below — we'll respond within the same business day." data-cn="短信是联系我们最快的方式。或在下方提交详情——我们将在当个工作日内回复。">Text is the fastest way to reach us. Or share the details below — we'll respond within the same business day.</p>
+        </div>
+    </section>
+
+    <section class="contact-choice">
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card primary">
+                    <h3 data-en="Text Us" data-cn="发短信">Text Us</h3>
+                    <div class="phone">949-899-4022</div>
+                    <p data-en="Typical reply within minutes during business hours." data-cn="营业时间内通常数分钟内回复。">Typical reply within minutes during business hours.</p>
+                    <a href="sms:9498994022?body=Hi%20Mira%20Fleur%2C%20I'd%20like%20to%20inquire%20about" class="contact-btn" data-en="Open Messages →" data-cn="打开短信 →">Open Messages →</a>
+                </div>
+                <div class="contact-card">
+                    <h3 data-en="Email Us" data-cn="发邮件">Email Us</h3>
+                    <div class="email-addr">hello@mirafleur.com</div>
+                    <p data-en="For detailed briefs or attachments." data-cn="适合详细需求或附件。">For detailed briefs or attachments.</p>
+                    <a href="mailto:hello@mirafleur.com?subject=Mira%20Fleur%20Inquiry" class="contact-btn" data-en="Open Email →" data-cn="打开邮件 →">Open Email →</a>
+                </div>
+                <div class="contact-card">
+                    <h3 data-en="Share Details" data-cn="填写表单">Share Details</h3>
+                    <p data-en="A short form — helpful for weddings, events, and commissions where you'd like to share a full brief in one place." data-cn="一张简短的表单——适合婚礼、活动或你希望一次性完整说明的委托。">A short form — helpful for weddings, events, and commissions where you'd like to share a full brief in one place.</p>
+                    <a href="#inquireForm" class="contact-btn" data-en="Open Form ↓" data-cn="打开表单 ↓">Open Form ↓</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="inquire-form-section" id="inquireForm">
+        <div class="container">
+            <h2 class="section-title" data-en="Share Your Details" data-cn="分享你的需求">Share Your Details</h2>
+            <p class="section-subtitle" data-en="The more you tell us, the more precisely we can design." data-cn="你分享得越多，我们就能设计得越精准。">The more you tell us, the more precisely we can design.</p>
+
+            <form action="https://formspree.io/f/xnjldozr" method="POST" class="inquire-form">
+                <input type="hidden" name="_subject" value="🌿 New Mira Fleur Inquiry">
+                <input type="hidden" name="_next" value="https://francesca0518-source.github.io/MiraFleur/inquire/thank-you/">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" data-en="Name *" data-cn="姓名 *">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-en="Phone — we'll text you back *" data-cn="电话 —— 我们会发短信回复 *">Phone — we'll text you back *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <p class="hint" data-en="We respond primarily by SMS." data-cn="我们主要通过短信回复。">We respond primarily by SMS.</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="occasion" data-en="Occasion *" data-cn="场合 *">Occasion *</label>
+                        <select id="occasion" name="occasion" required>
+                            <option value="">—</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Proposal">Proposal</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="New Baby">New Baby</option>
+                            <option value="Housewarming">Housewarming</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Sympathy">Sympathy</option>
+                            <option value="Subscription">Subscription</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" data-en="Date needed *" data-cn="需要日期 *">Date needed *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="details" data-en="Tell us more *" data-cn="告诉我们更多 *">Tell us more *</label>
+                    <textarea id="details" name="details" rows="5" required placeholder="Who is it for? What's the feeling? Any colors, flowers, or traditions we should know about?"></textarea>
+                </div>
+
+                <button type="button" class="form-toggle-more" id="toggleMore" data-en="+ Add more details" data-cn="+ 添加更多信息">+ Add more details</button>
+
+                <div class="form-optional" id="optionalFields">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" data-en="Email" data-cn="邮箱">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="city" data-en="Delivery city" data-cn="送达城市">Delivery city</label>
+                            <input type="text" id="city" name="city">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget" data-en="Estimated budget" data-cn="预算范围">Estimated budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">—</option>
+                                <option value="Under $250">Under $250</option>
+                                <option value="$250-$500">$250–$500</option>
+                                <option value="$500-$1,000">$500–$1,000</option>
+                                <option value="$1,000-$2,500">$1,000–$2,500</option>
+                                <option value="$2,500+">$2,500+</option>
+                                <option value="Prefer to discuss">Prefer to discuss</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="source" data-en="How did you hear about us?" data-cn="你是如何了解我们的？">How did you hear about us?</label>
+                            <select id="source" name="source">
+                                <option value="">—</option>
+                                <option value="Google">Google</option>
+                                <option value="Yelp">Yelp</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Xiaohongshu">Xiaohongshu</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="form-submit" data-en="Send Inquiry" data-cn="提交咨询">Send Inquiry</button>
+
+                <p class="form-disclaimer" data-en="By submitting, you agree to be contacted by Mira Fleur regarding your inquiry. We never share your details." data-cn="提交即代表你同意 Mira Fleur 就此次咨询与你联系。我们绝不会分享你的信息。">By submitting, you agree to be contacted by Mira Fleur regarding your inquiry. We never share your details.</p>
+            </form>
+
+            <div class="hours">
+                <h4 data-en="Response hours" data-cn="响应时间">Response hours</h4>
+                <p data-en="Monday–Saturday, 9:00 AM – 7:00 PM PT" data-cn="周一至周六，上午 9:00 – 晚上 7:00（太平洋时间）">Monday–Saturday, 9:00 AM – 7:00 PM PT</p>
+                <p data-en="Sunday: messages received are returned Monday morning, or same-day for time-sensitive events." data-cn="周日：当日收到的咨询将于周一上午回复；时间紧迫的活动除外。">Sunday: messages received are returned Monday morning, or same-day for time-sensitive events.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">MIRA FLEUR</div>
+                    <p class="footer-tagline" data-en="Bespoke floral design. Made to order, Newport Coast." data-cn="定制花艺。源自 Newport Coast，件件只为你而作。">Bespoke floral design. Made to order, Newport Coast.</p>
+                    <div class="footer-social"><a href="https://www.instagram.com/maisonmirafleur" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Explore" data-cn="探索">Explore</h5>
+                    <ul>
+                        <li><a href="../portfolio/" data-en="Portfolio" data-cn="作品集">Portfolio</a></li>
+                        <li><a href="../occasions/" data-en="Occasions" data-cn="场合">Occasions</a></li>
+                        <li><a href="../services/" data-en="Services" data-cn="服务">Services</a></li>
+                        <li><a href="../about/" data-en="About" data-cn="关于">About</a></li>
+                        <li><a href="../process/" data-en="Process" data-cn="流程">Process</a></li>
+                        <li><a href="../faq/" data-en="FAQ" data-cn="常见问题">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Visit" data-cn="工作室">Visit</h5>
+                    <p data-en="By appointment only" data-cn="仅接受预约">By appointment only</p>
+                    <p>Newport Coast, California</p>
+                    <p data-en="Service area: Orange County + Greater Los Angeles" data-cn="服务范围：橙县 + 大洛杉矶地区">Service area: Orange County + Greater Los Angeles</p>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Contact" data-cn="联系">Contact</h5>
+                    <p><a href="../inquire/" data-en="Inquire" data-cn="咨询">Inquire</a></p>
+                    <p>Email: <a href="mailto:hello@mirafleur.com">hello@mirafleur.com</a></p>
+                    <p>Text: <a href="sms:9498994022">949-899-4022</a></p>
+                    <p class="footer-response" data-en="Response time: same business day" data-cn="响应时间：当个工作日内">Response time: same business day</p>
+                </div>
+            </div>
+            <div class="footer-keywords">Orange County florist · Newport Beach flower delivery · Irvine custom florals · luxury floral design Los Angeles · bespoke wedding flowers OC · sympathy flowers Orange County</div>
+            <div class="footer-legal">&copy; 2026 Mira Fleur. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Toggle optional form fields
+        document.getElementById('toggleMore').addEventListener('click', function() {
+            const opt = document.getElementById('optionalFields');
+            opt.classList.toggle('open');
+            this.textContent = opt.classList.contains('open')
+                ? (currentLang === 'cn' ? '− 收起更多信息' : '− Hide extra details')
+                : (currentLang === 'cn' ? '+ 添加更多信息' : '+ Add more details');
+        });
+    </script>
+</body>
+</html>
