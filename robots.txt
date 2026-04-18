@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /inquire/thank-you/
+
+Sitemap: https://francesca0518-source.github.io/MiraFleur/sitemap.xml
