@@ -1,5 +1,7 @@
 .DS_Store
 *.zip
+*.bak
 node_modules/
 花卉素材/
+黑色背景板空间花艺/
 images/botanical/_old_backup/

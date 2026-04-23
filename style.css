@@ -6,16 +6,47 @@
 }
 
 :root {
-    --bg: #FDFBF7;
-    --bg-warm: #F5F1EA;
-    --text: #1a1a1a;
-    --text-light: #5c5c5c;
-    --accent: #C4917B;
-    --accent-dark: #A87462;
-    --accent-light: #E8D5CC;
-    --sage: #8B9A7B;
-    --sage-light: #D4DBC9;
-    --white: #fff;
+    /* ============================================================
+       Mira 花礼 色彩系统 v1.0  (see brand/colors.md)
+       锚点:La Grande Boucherie Belle Époque
+       墨蓝 / 金箔 / 月白
+       ============================================================ */
+
+    /* Foundation */
+    --color-molan:      #1A2B3D;   /* 墨蓝 — Belle Époque 锚点 · 本轮仅定义,未主动使用 */
+    --color-molan-deep: #0F1B28;   /* footer / 深色区块 */
+    --color-molan-soft: #2D4057;   /* 次级文字 */
+    --color-jinbo:      #B8924A;   /* 金箔 — 主琥珀金 */
+    --color-jinbo-warm: #C9A25C;   /* hover / 高光 */
+    --color-jinbo-deep: #8F6F35;   /* 边框 / 强调 */
+    --color-yuebai:     #F5F1E8;   /* 月白 — 主米白,Mira 的"白",拒绝 #fff */
+    --color-yuebai-warm:#EDE6D3;   /* 卡片背景 */
+    --color-yuebai-cool:#FAF7F0;   /* 最浅,大块留白 */
+
+    /* Flora (每色对应真实花材质感 — 本轮仅定义) */
+    --color-yanmei:     #A8727A;   /* 烟玫 */
+    --color-shuangshi:  #C87547;   /* 霜柿 */
+    --color-qingmei:    #9BA87C;   /* 青梅 */
+    --color-ouhe:       #D4B5B8;   /* 藕荷 */
+    --color-momei:      #5D3A4A;   /* 墨梅 */
+    --color-yuegui:     #6B7A5A;   /* 月桂 */
+    --color-yanzhi:     #9B3A47;   /* 胭脂 — Mira 唯一允许的红 */
+    --color-tanxiang:   #C8A882;   /* 檀香 */
+
+    /* Functional — Ink scale (冷调中性灰,基于墨蓝) */
+    --color-ink-900:    #0F1B28;   /* = molan-deep */
+    --color-ink-700:    #3A4A5C;
+    --color-ink-500:    #6B7A8A;
+    --color-ink-300:    #A8B3BF;
+    --color-ink-100:    #D8DEE4;
+    --color-ink-50:     #EEF1F4;
+
+    /* Functional — 语义色 */
+    --color-success:    #6B8E5A;   /* 呼应 yuegui */
+    --color-error:      #A84545;   /* 呼应 yanzhi */
+    --color-warning:    #B8924A;   /* = jinbo */
+
+    /* Typography (沿用) */
     --font-serif: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
     --font-sans: 'Jost', 'Noto Sans SC', -apple-system, sans-serif;
 }
@@ -27,8 +58,8 @@ html {
 
 body {
     font-family: var(--font-sans);
-    color: var(--text);
-    background: var(--bg);
+    color: var(--color-ink-900);
+    background: var(--color-yuebai);
     line-height: 1.7;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
@@ -79,7 +110,7 @@ img {
     font-size: 1.3rem;
     letter-spacing: 0.25em;
     font-weight: 500;
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .nav-links {
@@ -92,7 +123,7 @@ img {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 400;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     transition: color 0.3s;
     position: relative;
 }
@@ -104,12 +135,12 @@ img {
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--accent);
+    background: var(--color-jinbo);
     transition: width 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .nav-links a:hover::after {
@@ -139,16 +170,16 @@ img {
 }
 
 .lang-toggle:hover {
-    border-color: var(--accent);
+    border-color: var(--color-jinbo);
 }
 
 .lang-option {
-    color: var(--text-light);
+    color: var(--color-ink-500);
     transition: color 0.3s, font-weight 0.3s;
 }
 
 .lang-option.active {
-    color: var(--text);
+    color: var(--color-ink-900);
     font-weight: 500;
 }
 
@@ -171,7 +202,7 @@ img {
     display: block;
     width: 24px;
     height: 1.5px;
-    background: var(--text);
+    background: var(--color-ink-900);
     transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -187,7 +218,7 @@ img {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: #1a1a1a;
+    background-color: var(--color-ink-900);
     overflow: hidden;
 }
 
@@ -196,12 +227,12 @@ img {
 .hero[style*="none"] {
     background: linear-gradient(
         160deg,
-        #1a1a1a 0%,
-        #2d2d2d 20%,
-        #4a4a4a 40%,
-        #8B9A7B 60%,
-        #C4917B 80%,
-        #F5F1EA 100%
+        var(--color-ink-900) 0%,
+        var(--color-ink-700) 20%,
+        var(--color-ink-500) 40%,
+        var(--color-qingmei) 60%,
+        var(--color-jinbo) 80%,
+        var(--color-yuebai-warm) 100%
     );
 }
 
@@ -231,7 +262,7 @@ img {
     font-size: clamp(2.4rem, 6vw, 4.5rem);
     font-weight: 300;
     letter-spacing: 0.08em;
-    color: var(--white);
+    color: var(--color-yuebai-cool);
     line-height: 1.3;
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 40px rgba(0,0,0,0.1);
@@ -270,26 +301,26 @@ img {
 }
 
 .hero-btn-primary {
-    background: var(--white);
-    color: var(--text);
-    border: 1px solid var(--white);
+    background: var(--color-yuebai-cool);
+    color: var(--color-ink-900);
+    border: 1px solid var(--color-yuebai-cool);
 }
 
 .hero-btn-primary:hover {
     background: transparent;
-    color: var(--white);
+    color: var(--color-yuebai-cool);
 }
 
 .hero-btn-ghost {
     background: transparent;
-    color: var(--white);
+    color: var(--color-yuebai-cool);
     border: 1px solid rgba(255,255,255,0.6);
 }
 
 .hero-btn-ghost:hover {
-    background: var(--white);
-    color: var(--text);
-    border-color: var(--white);
+    background: var(--color-yuebai-cool);
+    color: var(--color-ink-900);
+    border-color: var(--color-yuebai-cool);
 }
 
 .hero-micro {
@@ -303,7 +334,7 @@ img {
 /* ===== Intro Strip ===== */
 .intro-strip {
     padding: 5rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
     text-align: center;
 }
 
@@ -312,7 +343,7 @@ img {
     margin: 0 auto;
     font-size: 1.05rem;
     line-height: 2;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     font-weight: 300;
 }
 
@@ -321,7 +352,7 @@ img {
     font-size: 0.72rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--color-jinbo);
     margin-bottom: 1rem;
     font-weight: 500;
     text-align: center;
@@ -333,7 +364,7 @@ img {
     font-weight: 400;
     text-align: center;
     margin-bottom: 4rem;
-    color: var(--text);
+    color: var(--color-ink-900);
     letter-spacing: 0.05em;
     line-height: 1.3;
 }
@@ -341,7 +372,7 @@ img {
 .section-subtitle {
     text-align: center;
     font-size: 0.95rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     font-weight: 300;
     max-width: 560px;
     margin: -2.5rem auto 4rem;
@@ -356,21 +387,21 @@ img {
 .cta-link {
     font-size: 0.88rem;
     letter-spacing: 0.12em;
-    color: var(--text);
+    color: var(--color-ink-900);
     font-weight: 400;
     transition: color 0.3s;
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--color-jinbo);
     padding-bottom: 4px;
 }
 
 .cta-link:hover {
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
 }
 
 /* ===== About ===== */
 .about {
     padding: 8rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .about-grid {
@@ -383,7 +414,7 @@ img {
 .about-text p {
     margin-bottom: 1.5rem;
     font-size: 0.95rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 2;
 }
 
@@ -414,7 +445,7 @@ img {
 .about-image-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(145deg, var(--accent-light), var(--bg-warm));
+    background: linear-gradient(145deg, var(--color-yuebai-warm), var(--color-yuebai-cool));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -423,14 +454,14 @@ img {
 
 .placeholder-icon {
     font-size: 4rem;
-    color: var(--accent);
+    color: var(--color-jinbo);
     margin-bottom: 1rem;
     opacity: 0.7;
 }
 
 .about-image-placeholder p {
     font-family: var(--font-serif);
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     font-size: 1rem;
     letter-spacing: 0.15em;
     opacity: 0.7;
@@ -439,7 +470,7 @@ img {
 /* ===== Services ===== */
 .services {
     padding: 8rem 0;
-    background: var(--bg);
+    background: var(--color-yuebai);
 }
 
 .services-grid {
@@ -449,7 +480,7 @@ img {
 }
 
 .service-card {
-    background: var(--white);
+    background: var(--color-yuebai-cool);
     padding: 3rem 2.2rem;
     text-align: center;
     transition: transform 0.4s, box-shadow 0.4s;
@@ -465,7 +496,7 @@ img {
     width: 48px;
     height: 48px;
     margin: 0 auto 1.8rem;
-    color: var(--accent);
+    color: var(--color-jinbo);
 }
 
 .service-icon svg {
@@ -483,14 +514,14 @@ img {
 
 .service-card p {
     font-size: 0.88rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.8;
 }
 
 /* ===== Portfolio ===== */
 .portfolio {
     padding: 8rem 0;
-    background: var(--bg-warm);
+    background: var(--color-yuebai-warm);
 }
 
 .portfolio-grid {
@@ -509,7 +540,7 @@ img {
     width: 100%;
     height: 100%;
     position: relative;
-    background: linear-gradient(145deg, var(--accent-light), var(--bg-warm));
+    background: linear-gradient(145deg, var(--color-yuebai-warm), var(--color-yuebai-cool));
     overflow: hidden;
 }
 
@@ -532,7 +563,7 @@ img {
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    color: var(--accent);
+    color: var(--color-jinbo);
     opacity: 0.4;
 }
 
@@ -569,14 +600,14 @@ img {
 /* ===== Quote ===== */
 .quote-section {
     padding: 7rem 0;
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #3a3a3a);
+    background: linear-gradient(135deg, var(--color-ink-900), var(--color-ink-700), var(--color-molan-soft));
     text-align: center;
 }
 
 .quote p {
     font-family: var(--font-serif);
     font-size: clamp(1.4rem, 3vw, 2rem);
-    color: var(--white);
+    color: var(--color-yuebai-cool);
     font-weight: 400;
     line-height: 1.8;
     font-style: italic;
@@ -595,7 +626,7 @@ img {
 /* ===== Contact ===== */
 .contact {
     padding: 8rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .contact-wechat {
@@ -629,7 +660,7 @@ img {
 
 .contact-area {
     font-size: 0.82rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     letter-spacing: 0.1em;
     margin-top: -0.8rem;
     margin-bottom: 1.5rem;
@@ -639,7 +670,7 @@ img {
     font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.08em;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 0.5rem;
     font-family: var(--font-sans);
     user-select: all;
@@ -647,16 +678,16 @@ img {
 
 .wechat-hint {
     font-size: 0.82rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     margin-bottom: 1.5rem;
 }
 
 .copy-btn {
     display: inline-block;
     padding: 0.75rem 2.2rem;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--color-jinbo);
     background: transparent;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     font-size: 0.82rem;
     letter-spacing: 0.15em;
     cursor: pointer;
@@ -665,14 +696,14 @@ img {
 }
 
 .copy-btn:hover {
-    background: var(--accent);
-    color: var(--white);
+    background: var(--color-jinbo);
+    color: var(--color-yuebai-cool);
 }
 
 .copy-btn.copied {
     background: #07c160;
     border-color: #07c160;
-    color: var(--white);
+    color: var(--color-yuebai-cool);
 }
 
 .contact-social {
@@ -693,7 +724,7 @@ img {
 }
 
 .social-link-card:hover {
-    border-color: var(--accent);
+    border-color: var(--color-jinbo);
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
@@ -702,7 +733,7 @@ img {
     width: 28px;
     height: 28px;
     flex-shrink: 0;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     transition: color 0.3s;
 }
 
@@ -712,33 +743,33 @@ img {
 }
 
 .social-link-card:hover .social-icon {
-    color: var(--accent);
+    color: var(--color-jinbo);
 }
 
 .social-name {
     font-size: 0.9rem;
     font-weight: 400;
     letter-spacing: 0.08em;
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .social-arrow {
     margin-left: auto;
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     transition: transform 0.3s, color 0.3s;
 }
 
 .social-link-card:hover .social-arrow {
     transform: translateX(4px);
-    color: var(--accent);
+    color: var(--color-jinbo);
 }
 
 
 /* ===== Occasions Grid ===== */
 .occasions {
     padding: 8rem 0;
-    background: var(--bg);
+    background: var(--color-yuebai);
 }
 
 .occasions-grid {
@@ -750,7 +781,7 @@ img {
 .occasion-card {
     display: flex;
     flex-direction: column;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
     border: 1px solid rgba(0,0,0,0.04);
     transition: transform 0.4s, box-shadow 0.4s;
     text-decoration: none;
@@ -765,7 +796,7 @@ img {
 .occasion-img-wrapper {
     width: 100%;
     aspect-ratio: 4 / 3;
-    background: linear-gradient(145deg, var(--sage-light), var(--bg-warm));
+    background: linear-gradient(145deg, var(--color-yuebai-warm), var(--color-yuebai-cool));
     overflow: hidden;
     position: relative;
 }
@@ -784,7 +815,7 @@ img {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: var(--sage);
+    color: var(--color-qingmei);
     opacity: 0.4;
 }
 
@@ -794,13 +825,13 @@ img {
     font-weight: 400;
     margin: 1.8rem 2rem 0.8rem;
     letter-spacing: 0.03em;
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .occasion-card p {
     margin: 0 2rem 1.5rem;
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.7;
     flex: 1;
 }
@@ -809,7 +840,7 @@ img {
     margin: 0 2rem 1.8rem;
     font-size: 0.82rem;
     letter-spacing: 0.12em;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     font-weight: 400;
 }
 
@@ -822,7 +853,7 @@ img {
     margin-top: 1.5rem;
     font-family: var(--font-serif);
     font-size: 1.05rem;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     letter-spacing: 0.06em;
     font-style: italic;
 }
@@ -830,7 +861,7 @@ img {
 /* ===== Process ===== */
 .process {
     padding: 8rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .process-grid {
@@ -860,13 +891,13 @@ img {
 .process-num {
     font-family: var(--font-serif);
     font-size: 1.6rem;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     letter-spacing: 0.1em;
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: var(--white);
-    border: 1px solid var(--accent);
+    background: var(--color-yuebai-cool);
+    border: 1px solid var(--color-jinbo);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -881,12 +912,12 @@ img {
     font-weight: 400;
     margin-bottom: 0.8rem;
     letter-spacing: 0.04em;
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .process-step p {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.8;
     max-width: 240px;
     margin: 0 auto;
@@ -895,14 +926,14 @@ img {
 /* ===== Service Area ===== */
 .service-area {
     padding: 8rem 0;
-    background: var(--bg-warm);
+    background: var(--color-yuebai-warm);
 }
 
 .service-area-intro {
     text-align: center;
     max-width: 640px;
     margin: -2.5rem auto 3.5rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     font-size: 0.95rem;
     line-height: 1.8;
 }
@@ -929,7 +960,7 @@ img {
 .cities-list li {
     font-family: var(--font-serif);
     font-size: 1.05rem;
-    color: var(--text);
+    color: var(--color-ink-900);
     letter-spacing: 0.02em;
     padding: 0.4rem 0;
     border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -937,7 +968,7 @@ img {
 
 .cities-note {
     font-size: 0.88rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.8;
     font-style: italic;
 }
@@ -945,7 +976,7 @@ img {
 /* ===== Testimonials ===== */
 .testimonials {
     padding: 8rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .testimonial-grid {
@@ -956,15 +987,15 @@ img {
 
 .testimonial-card {
     padding: 2.5rem;
-    background: var(--bg);
-    border-left: 2px solid var(--sage);
+    background: var(--color-yuebai);
+    border-left: 2px solid var(--color-qingmei);
 }
 
 .testimonial-card p {
     font-family: var(--font-serif);
     font-size: 1.1rem;
     line-height: 1.7;
-    color: var(--text);
+    color: var(--color-ink-900);
     font-style: italic;
     margin-bottom: 1.5rem;
     font-weight: 400;
@@ -973,7 +1004,7 @@ img {
 .testimonial-card cite {
     font-family: var(--font-sans);
     font-size: 0.82rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     letter-spacing: 0.15em;
     font-style: normal;
     text-transform: uppercase;
@@ -982,8 +1013,8 @@ img {
 /* ===== Closing CTA ===== */
 .closing-cta {
     padding: 8rem 0;
-    background: var(--text);
-    color: var(--bg);
+    background: var(--color-ink-900);
+    color: var(--color-yuebai);
     text-align: center;
 }
 
@@ -991,7 +1022,7 @@ img {
     font-family: var(--font-serif);
     font-size: clamp(2rem, 4.5vw, 3.2rem);
     font-weight: 300;
-    color: var(--bg);
+    color: var(--color-yuebai);
     letter-spacing: 0.02em;
     line-height: 1.3;
     margin-bottom: 1.5rem;
@@ -1010,20 +1041,20 @@ img {
 .closing-btn {
     display: inline-block;
     padding: 1.1rem 3rem;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--color-yuebai);
+    color: var(--color-ink-900);
     font-size: 0.85rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     font-weight: 500;
-    border: 1px solid var(--bg);
+    border: 1px solid var(--color-yuebai);
     transition: all 0.3s;
     font-family: var(--font-sans);
 }
 
 .closing-btn:hover {
     background: transparent;
-    color: var(--bg);
+    color: var(--color-yuebai);
 }
 
 .closing-alt {
@@ -1032,23 +1063,23 @@ img {
 
 .closing-alt .cta-link {
     color: rgba(253, 251, 247, 0.7);
-    border-bottom-color: var(--sage);
+    border-bottom-color: var(--color-qingmei);
 }
 
 .closing-alt .cta-link:hover {
-    color: var(--bg);
+    color: var(--color-yuebai);
 }
 
 /* ===== WeChat Secondary Section ===== */
 .contact-wechat-section {
     padding: 8rem 0;
-    background: var(--bg-warm);
+    background: var(--color-yuebai-warm);
 }
 
 /* ===== Footer (4-column) ===== */
 .footer {
     padding: 5rem 0 2rem;
-    background: var(--text);
+    background: var(--color-ink-900);
     color: rgba(253, 251, 247, 0.75);
     border-top: none;
 }
@@ -1065,7 +1096,7 @@ img {
     font-size: 0.75rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--bg);
+    color: var(--color-yuebai);
     margin-bottom: 1.5rem;
     font-weight: 500;
 }
@@ -1088,8 +1119,8 @@ img {
 
 .footer-col ul li a:hover,
 .footer-col p a:hover {
-    color: var(--bg);
-    border-bottom-color: var(--sage);
+    color: var(--color-yuebai);
+    border-bottom-color: var(--color-qingmei);
 }
 
 .footer-col p {
@@ -1103,7 +1134,7 @@ img {
     font-size: 1.3rem;
     letter-spacing: 0.25em;
     margin-bottom: 1rem;
-    color: var(--bg);
+    color: var(--color-yuebai);
     font-weight: 400;
 }
 
@@ -1129,7 +1160,7 @@ img {
 }
 
 .footer-social a:hover {
-    color: var(--bg);
+    color: var(--color-yuebai);
 }
 
 .footer-response {
@@ -1170,8 +1201,8 @@ img {
     align-items: center;
     gap: 0.6rem;
     padding: 0.9rem 1.4rem;
-    background: var(--text);
-    color: var(--bg);
+    background: var(--color-ink-900);
+    color: var(--color-yuebai);
     border-radius: 999px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.18);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -1369,7 +1400,7 @@ body.no-floating .text-us-float {
 /* ===== Subpage Common ===== */
 .page-hero {
     padding: 11rem 0 5rem;
-    background: var(--bg-warm);
+    background: var(--color-yuebai-warm);
     text-align: center;
 }
 
@@ -1378,7 +1409,7 @@ body.no-floating .text-us-float {
     font-size: clamp(2.4rem, 5vw, 3.8rem);
     font-weight: 300;
     letter-spacing: 0.04em;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 1.2rem;
     font-style: italic;
     line-height: 1.2;
@@ -1388,18 +1419,18 @@ body.no-floating .text-us-float {
     max-width: 640px;
     margin: 0 auto;
     font-size: 1.05rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.8;
     font-weight: 300;
 }
 
 .page-section {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .page-section.alt {
-    background: var(--bg);
+    background: var(--color-yuebai);
 }
 
 .page-section h2 {
@@ -1407,7 +1438,7 @@ body.no-floating .text-us-float {
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     font-weight: 400;
     letter-spacing: 0.02em;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 1.5rem;
     font-style: italic;
 }
@@ -1416,14 +1447,14 @@ body.no-floating .text-us-float {
     font-family: var(--font-serif);
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin: 2.5rem 0 1rem;
     letter-spacing: 0.02em;
 }
 
 .page-section p {
     font-size: 1rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.9;
     margin-bottom: 1.2rem;
     max-width: 720px;
@@ -1437,7 +1468,7 @@ body.no-floating .text-us-float {
 
 .page-section ul.styled li {
     padding: 0.6rem 0 0.6rem 1.5rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     position: relative;
     line-height: 1.7;
@@ -1447,7 +1478,7 @@ body.no-floating .text-us-float {
     content: '\2014';
     position: absolute;
     left: 0;
-    color: var(--accent);
+    color: var(--color-jinbo);
 }
 
 .page-cta {
@@ -1457,7 +1488,7 @@ body.no-floating .text-us-float {
 /* ===== FAQ ===== */
 .faq-section {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .faq-group {
@@ -1469,11 +1500,11 @@ body.no-floating .text-us-float {
     font-family: var(--font-serif);
     font-size: 1.5rem;
     font-weight: 400;
-    color: var(--text);
+    color: var(--color-ink-900);
     letter-spacing: 0.05em;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--color-jinbo);
     font-style: italic;
 }
 
@@ -1486,14 +1517,14 @@ body.no-floating .text-us-float {
     font-family: var(--font-serif);
     font-size: 1.15rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 0.8rem;
     letter-spacing: 0.02em;
 }
 
 .faq-item p {
     font-size: 0.95rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.85;
     margin: 0;
 }
@@ -1516,7 +1547,7 @@ body.no-floating .text-us-float {
 .process-detail .num-large {
     font-family: var(--font-serif);
     font-size: 3rem;
-    color: var(--accent);
+    color: var(--color-jinbo);
     font-style: italic;
     line-height: 1;
     font-weight: 300;
@@ -1539,7 +1570,7 @@ body.no-floating .text-us-float {
 /* ===== Portfolio Page ===== */
 .portfolio-page {
     padding: 4rem 0 6rem;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .filter-bar {
@@ -1555,7 +1586,7 @@ body.no-floating .text-us-float {
     padding: 0.55rem 1.2rem;
     background: transparent;
     border: 1px solid rgba(0,0,0,0.15);
-    color: var(--text-light);
+    color: var(--color-ink-500);
     font-size: 0.78rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1566,14 +1597,14 @@ body.no-floating .text-us-float {
 }
 
 .filter-chip:hover {
-    border-color: var(--accent);
-    color: var(--text);
+    border-color: var(--color-jinbo);
+    color: var(--color-ink-900);
 }
 
 .filter-chip.active {
-    background: var(--text);
-    border-color: var(--text);
-    color: var(--bg);
+    background: var(--color-ink-900);
+    border-color: var(--color-ink-900);
+    color: var(--color-yuebai);
 }
 
 .masonry-grid {
@@ -1587,7 +1618,7 @@ body.no-floating .text-us-float {
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    background: linear-gradient(145deg, var(--sage-light), var(--bg-warm));
+    background: linear-gradient(145deg, var(--color-yuebai-warm), var(--color-yuebai-cool));
     transition: opacity 0.4s;
 }
 
@@ -1617,7 +1648,7 @@ body.no-floating .text-us-float {
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    color: var(--sage);
+    color: var(--color-qingmei);
     opacity: 0.4;
 }
 
@@ -1637,7 +1668,7 @@ body.no-floating .text-us-float {
 }
 
 .masonry-caption-inner {
-    color: var(--bg);
+    color: var(--color-yuebai);
 }
 
 .masonry-caption .cap-title {
@@ -1693,17 +1724,17 @@ body.no-floating .text-us-float {
 .lightbox-placeholder {
     width: min(90vw, 520px);
     aspect-ratio: 4/5;
-    background: linear-gradient(145deg, var(--sage-light), var(--bg-warm));
+    background: linear-gradient(145deg, var(--color-yuebai-warm), var(--color-yuebai-cool));
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--sage);
+    color: var(--color-qingmei);
     font-size: 3rem;
     margin: 0 auto 1.5rem;
 }
 
 .lightbox-info {
-    color: var(--bg);
+    color: var(--color-yuebai);
     font-family: var(--font-serif);
 }
 
@@ -1737,7 +1768,7 @@ body.no-floating .text-us-float {
     right: 32px;
     background: none;
     border: none;
-    color: var(--bg);
+    color: var(--color-yuebai);
     font-size: 2rem;
     cursor: pointer;
     line-height: 1;
@@ -1764,7 +1795,7 @@ body.no-floating .text-us-float {
     font-size: clamp(1.8rem, 3.5vw, 2.4rem);
     font-weight: 400;
     font-style: italic;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 0.5rem;
     letter-spacing: 0.02em;
 }
@@ -1773,13 +1804,13 @@ body.no-floating .text-us-float {
     font-size: 0.85rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     margin-bottom: 1.8rem;
 }
 
 .service-block p {
     font-size: 1rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.9;
     margin-bottom: 1.2rem;
 }
@@ -1791,7 +1822,7 @@ body.no-floating .text-us-float {
 /* ===== Inquire Page ===== */
 .contact-choice {
     padding: 4rem 0 2rem;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .contact-cards {
@@ -1812,9 +1843,9 @@ body.no-floating .text-us-float {
 }
 
 .contact-card.primary {
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--text);
+    background: var(--color-ink-900);
+    color: var(--color-yuebai);
+    border-color: var(--color-ink-900);
 }
 
 .contact-card h3 {
@@ -1865,21 +1896,21 @@ body.no-floating .text-us-float {
 }
 
 .contact-card.primary .contact-btn {
-    background: var(--bg);
-    color: var(--text);
-    border-color: var(--bg);
+    background: var(--color-yuebai);
+    color: var(--color-ink-900);
+    border-color: var(--color-yuebai);
 }
 .contact-card.primary .contact-btn:hover {
     background: transparent;
-    color: var(--bg);
+    color: var(--color-yuebai);
 }
 
 .contact-card:not(.primary) .contact-btn {
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 .contact-card:not(.primary) .contact-btn:hover {
-    background: var(--text);
-    color: var(--bg);
+    background: var(--color-ink-900);
+    color: var(--color-yuebai);
 }
 
 @media (max-width: 968px) {
@@ -1889,7 +1920,7 @@ body.no-floating .text-us-float {
 /* ===== Inquire Form ===== */
 .inquire-form-section {
     padding: 6rem 0;
-    background: var(--bg-warm);
+    background: var(--color-yuebai-warm);
 }
 
 .inquire-form {
@@ -1916,14 +1947,14 @@ body.no-floating .text-us-float {
     font-size: 0.78rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
 
 .form-group .hint {
     font-size: 0.78rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     font-style: italic;
     margin-top: 0.4rem;
     text-transform: none;
@@ -1936,11 +1967,11 @@ body.no-floating .text-us-float {
 .form-group textarea {
     width: 100%;
     padding: 0.9rem 1rem;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
     border: 1px solid rgba(0,0,0,0.12);
     font-family: var(--font-sans);
     font-size: 0.95rem;
-    color: var(--text);
+    color: var(--color-ink-900);
     transition: border-color 0.3s;
 }
 
@@ -1948,7 +1979,7 @@ body.no-floating .text-us-float {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent);
+    border-color: var(--color-jinbo);
 }
 
 .form-group textarea {
@@ -1961,13 +1992,13 @@ body.no-floating .text-us-float {
 .form-toggle-more {
     background: none;
     border: none;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     font-size: 0.88rem;
     letter-spacing: 0.1em;
     cursor: pointer;
     padding: 1rem 0;
     font-family: var(--font-sans);
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--color-jinbo);
     margin-bottom: 2rem;
 }
 
@@ -1982,9 +2013,9 @@ body.no-floating .text-us-float {
 
 .form-submit {
     padding: 1.1rem 3rem;
-    background: var(--text);
-    color: var(--bg);
-    border: 1px solid var(--text);
+    background: var(--color-ink-900);
+    color: var(--color-yuebai);
+    border: 1px solid var(--color-ink-900);
     font-size: 0.82rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -1996,13 +2027,13 @@ body.no-floating .text-us-float {
 
 .form-submit:hover {
     background: transparent;
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .form-disclaimer {
     margin-top: 1.5rem;
     font-size: 0.8rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     font-style: italic;
     line-height: 1.7;
 }
@@ -2019,14 +2050,14 @@ body.no-floating .text-us-float {
     font-family: var(--font-serif);
     font-size: 1rem;
     font-style: italic;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 0.8rem;
     letter-spacing: 0.04em;
 }
 
 .hours p {
     font-size: 0.88rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.8;
     margin-bottom: 0.3rem;
 }
@@ -2035,7 +2066,7 @@ body.no-floating .text-us-float {
 .thank-you {
     min-height: calc(100vh - 72px);
     padding: 10rem 0 6rem;
-    background: var(--bg-warm);
+    background: var(--color-yuebai-warm);
     text-align: center;
     display: flex;
     align-items: center;
@@ -2051,29 +2082,29 @@ body.no-floating .text-us-float {
     font-size: clamp(2.4rem, 5vw, 3.5rem);
     font-weight: 300;
     font-style: italic;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 1.5rem;
     letter-spacing: 0.02em;
 }
 
 .thank-you p {
     font-size: 1.05rem;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     line-height: 1.9;
     margin-bottom: 1.2rem;
 }
 
 .thank-you .phone-link {
     font-family: var(--font-serif);
-    color: var(--text);
-    border-bottom: 1px solid var(--accent);
+    color: var(--color-ink-900);
+    border-bottom: 1px solid var(--color-jinbo);
     font-style: italic;
 }
 
 /* ===== Occasion Landing Pages ===== */
 .occasion-intro {
     padding: 6rem 0;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
 }
 
 .occasion-intro p {
@@ -2081,12 +2112,12 @@ body.no-floating .text-us-float {
     margin: 0 auto;
     font-size: 1.05rem;
     line-height: 2;
-    color: var(--text-light);
+    color: var(--color-ink-500);
 }
 
 .occasion-gallery {
     padding: 4rem 0;
-    background: var(--bg);
+    background: var(--color-yuebai);
 }
 
 .gallery-grid {
@@ -2099,7 +2130,7 @@ body.no-floating .text-us-float {
 
 .gallery-item {
     aspect-ratio: 4 / 5;
-    background: linear-gradient(145deg, var(--sage-light), var(--bg-warm));
+    background: linear-gradient(145deg, var(--color-yuebai-warm), var(--color-yuebai-cool));
     overflow: hidden;
     position: relative;
 }
@@ -2118,7 +2149,7 @@ body.no-floating .text-us-float {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: var(--sage);
+    color: var(--color-qingmei);
     opacity: 0.4;
 }
 
@@ -2143,7 +2174,7 @@ body.no-floating .text-us-float {
 
 .expect-card {
     padding: 2.5rem 2rem;
-    background: var(--white);
+    background: var(--color-yuebai-cool);
     border: 1px solid rgba(0,0,0,0.06);
     text-align: center;
 }
@@ -2153,7 +2184,7 @@ body.no-floating .text-us-float {
     font-size: 0.85rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     margin-bottom: 1rem;
     font-weight: 500;
 }
@@ -2161,20 +2192,20 @@ body.no-floating .text-us-float {
 .expect-card p {
     font-family: var(--font-serif);
     font-size: 1.05rem;
-    color: var(--text);
+    color: var(--color-ink-900);
     line-height: 1.7;
     font-style: italic;
 }
 
 .page-section.inquiry-band {
-    background: var(--text);
-    color: var(--bg);
+    background: var(--color-ink-900);
+    color: var(--color-yuebai);
     text-align: center;
     padding: 5rem 0;
 }
 
 .page-section.inquiry-band h2 {
-    color: var(--bg);
+    color: var(--color-yuebai);
     margin-bottom: 1.5rem;
 }
 
@@ -2187,27 +2218,27 @@ body.no-floating .text-us-float {
 .inquiry-band-btn {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--color-yuebai);
+    color: var(--color-ink-900);
     font-size: 0.82rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    border: 1px solid var(--bg);
+    border: 1px solid var(--color-yuebai);
     transition: all 0.3s;
     font-weight: 500;
 }
 
 .inquiry-band-btn:hover {
     background: transparent;
-    color: var(--bg);
+    color: var(--color-yuebai);
 }
 
 /* Sympathy page special muted palette */
 body.page-sympathy .page-hero {
-    background: var(--sage-light);
+    background: var(--color-yuebai-warm);
 }
 body.page-sympathy .page-hero h1 {
-    color: #3a4a3d;
+    color: var(--color-ink-700);
 }
 
 /* =========================================================
@@ -2246,7 +2277,7 @@ body.page-sympathy .page-hero h1 {
 
 /* ===== Marquee Band — Italian flower names (clean cream gradient) ===== */
 .marquee-band {
-    background: linear-gradient(90deg, var(--bg) 0%, var(--bg-warm) 50%, var(--bg) 100%);
+    background: linear-gradient(90deg, var(--color-yuebai) 0%, var(--color-yuebai-warm) 50%, var(--color-yuebai) 100%);
     border-top: 1px solid rgba(0,0,0,0.06);
     border-bottom: 1px solid rgba(0,0,0,0.06);
     overflow: hidden;
@@ -2264,7 +2295,7 @@ body.page-sympathy .page-hero h1 {
     font-size: 1.35rem;
     font-style: italic;
     font-weight: 300;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     letter-spacing: 0.04em;
 }
 
@@ -2294,7 +2325,7 @@ body.page-sympathy .page-hero h1 {
 }
 
 .marquee-track .dot {
-    color: var(--sage);
+    color: var(--color-qingmei);
     font-style: normal;
     opacity: 0.5;
     align-self: flex-end;
@@ -2335,7 +2366,7 @@ body.page-sympathy .page-hero h1 {
     padding: 9rem 0;
     overflow: hidden;
     isolation: isolate;
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .heritage-bg {
@@ -2369,14 +2400,14 @@ body.page-sympathy .page-hero h1 {
 .heritage-content {
     text-align: center;
     max-width: 760px;
-    color: var(--text);
+    color: var(--color-ink-900);
 }
 
 .botanical-divider {
     width: 120px;
     height: 16px;
     margin: 0 auto 2.5rem;
-    color: var(--sage);
+    color: var(--color-qingmei);
     opacity: 0.7;
 }
 
@@ -2384,7 +2415,7 @@ body.page-sympathy .page-hero h1 {
     font-size: 0.78rem;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    color: var(--accent-dark);
+    color: var(--color-jinbo-deep);
     margin-bottom: 2rem;
     font-weight: 500;
 }
@@ -2394,7 +2425,7 @@ body.page-sympathy .page-hero h1 {
     font-size: clamp(1.4rem, 2.6vw, 2rem);
     font-style: italic;
     line-height: 1.6;
-    color: var(--text);
+    color: var(--color-ink-900);
     margin-bottom: 2rem;
     font-weight: 300;
     letter-spacing: 0.01em;
@@ -2405,7 +2436,7 @@ body.page-sympathy .page-hero h1 {
     font-size: 0.78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: var(--color-ink-500);
     font-style: normal;
 }
 
@@ -2415,7 +2446,7 @@ body.page-sympathy .page-hero h1 {
     width: 80px;
     height: 12px;
     margin: 0 auto;
-    color: var(--sage);
+    color: var(--color-qingmei);
     opacity: 0.5;
 }
 
