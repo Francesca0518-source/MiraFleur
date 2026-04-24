@@ -2459,3 +2459,433 @@ body.page-sympathy .page-hero h1 {
         animation: none !important;
     }
 }
+
+/* ============================================================
+   /portfolio/spaces/ — Spaces archive page (Issue #1)
+   Spec: brand/spec-portfolio-spaces.md
+   ============================================================ */
+
+.spaces-page {
+    background: var(--color-yuebai-cool);
+    color: var(--color-ink-900);
+}
+
+/* [A] Hero — text only, no image */
+.spaces-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20vh 32px;
+    text-align: center;
+}
+.spaces-hero-inner {
+    max-width: 720px;
+}
+.spaces-hero-title {
+    font-family: var(--font-serif-en, "Cormorant Garamond", Georgia, serif);
+    font-weight: 400;
+    font-size: clamp(56px, 9vw, 120px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--color-molan);
+    margin: 0 0 32px;
+}
+.spaces-hero-title[data-cn]:lang(zh),
+html[lang^="zh"] .spaces-hero-title {
+    font-family: "Noto Serif SC", serif;
+    letter-spacing: 0.08em;
+}
+.spaces-hero-sub {
+    font-family: var(--font-serif-en, "Cormorant Garamond", serif);
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 26px);
+    color: var(--color-molan-soft);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* [B] Feature 三联 — full-bleed dark band */
+.feature-band {
+    background: var(--color-molan-deep);
+    padding: 120px 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: relative;
+}
+.feature-band::before {
+    /* very subtle paper-noise overlay */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events: none;
+}
+.feature-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+.feature-item {
+    margin: 0;
+    position: relative;
+    transition: filter 0.3s ease;
+}
+.feature-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+.feature-item:hover {
+    filter: brightness(1.03);
+}
+
+/* [C] Editorial Grid — irregular 2 columns */
+.editorial-section {
+    padding: 120px 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.editorial-grid {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    column-gap: 48px;
+    row-gap: 80px;
+    align-items: start;
+}
+.editorial-item {
+    margin: 0;
+}
+.editorial-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.editorial-item.ed-left {
+    grid-column: 1;
+    transform: translateY(0);
+}
+.editorial-item.ed-right {
+    grid-column: 2;
+    transform: translateY(64px);   /* stagger: right column sits lower */
+}
+
+/* Breathing rows — span full width, pure typography or color card */
+.editorial-breath {
+    grid-column: 1 / -1;
+    padding: 48px 0;
+    text-align: center;
+}
+.editorial-breath blockquote {
+    margin: 0 auto;
+    max-width: 640px;
+    font-family: var(--font-serif-en, "Cormorant Garamond", serif);
+    font-style: italic;
+}
+.editorial-breath blockquote p {
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.5;
+    color: var(--color-molan);
+    margin: 0 0 12px;
+}
+.editorial-breath blockquote cite {
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--color-molan-soft);
+}
+.editorial-colorcard {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+.color-card-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--color-molan);
+}
+.color-swatch {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+/* [D] Archive Strip — horizontal scroll on desktop, 2-col grid on mobile */
+.archive-section {
+    padding: 80px 0 120px;
+    max-width: 100%;
+    overflow: hidden;
+}
+.archive-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 48px;
+    margin-bottom: 48px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.archive-label {
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--color-molan-soft);
+}
+.archive-count {
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-size: 12px;
+    color: var(--color-ink-500);
+    letter-spacing: 0.08em;
+}
+.archive-strip {
+    display: flex;
+    gap: 24px;
+    padding: 0 48px 24px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-ink-300) transparent;
+}
+.archive-strip::-webkit-scrollbar {
+    height: 8px;
+}
+.archive-strip::-webkit-scrollbar-track {
+    background: transparent;
+}
+.archive-strip::-webkit-scrollbar-thumb {
+    background: var(--color-ink-300);
+    border-radius: 4px;
+}
+.archive-item {
+    flex: 0 0 auto;
+    margin: 0;
+    scroll-snap-align: start;
+}
+.archive-item img {
+    display: block;
+    height: 300px;
+    width: auto;
+    transition: filter 0.3s ease;
+}
+.archive-item:hover img {
+    filter: brightness(1.03);
+}
+
+/* [E] CTA — exits */
+.spaces-cta {
+    padding: 15vh 32px;
+    text-align: center;
+    background: var(--color-yuebai);
+}
+.cta-prompt {
+    font-family: var(--font-serif-en, "Cormorant Garamond", serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 30px);
+    color: var(--color-molan);
+    margin: 0 0 32px;
+}
+.cta-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+.cta-exit {
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    color: var(--color-molan);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-jinbo);
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.cta-exit:hover {
+    color: var(--color-jinbo-deep);
+    border-bottom-color: var(--color-jinbo-deep);
+}
+
+/* Quiet inline link — for homepage About段 + /portfolio/ hero secondary link */
+.quiet-link {
+    color: var(--color-molan);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-jinbo);
+    padding-bottom: 1px;
+    transition: border-bottom-width 0.15s ease;
+}
+.quiet-link:hover {
+    border-bottom-width: 2px;
+}
+.quiet-link-soft {
+    color: var(--color-molan-soft);
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 12px;
+}
+.quiet-link-soft:hover {
+    color: var(--color-jinbo-deep);
+}
+
+/* Homepage Portfolio Grid — Spaces angle-tag on swapped cells */
+.portfolio-spaces-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(26, 43, 61, 0.88);
+    color: var(--color-yuebai-cool);
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    padding: 5px 10px;
+    z-index: 2;
+}
+.archive-outlink {
+    text-align: center;
+    margin-top: 32px;
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+}
+.archive-outlink a {
+    color: var(--color-molan-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+.archive-outlink a:hover {
+    color: var(--color-jinbo-deep);
+    border-bottom-color: var(--color-jinbo);
+}
+
+/* ===== Dev mode (?dev=1) ===== */
+.dev-tooltip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background: var(--color-molan-deep);
+    color: var(--color-yuebai-cool);
+    padding: 10px 14px;
+    font-family: "SF Mono", "Menlo", Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid var(--color-jinbo);
+    max-width: 360px;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.dev-tooltip.visible {
+    opacity: 1;
+}
+.dev-tt-file {
+    color: var(--color-yuebai-cool);
+    word-break: break-all;
+}
+.dev-tt-zone {
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 2px 6px;
+    align-self: flex-start;
+}
+.dev-tt-zone-hero      { background: var(--color-jinbo); color: var(--color-molan-deep); }
+.dev-tt-zone-editorial { background: var(--color-yanmei); color: var(--color-yuebai-cool); }
+.dev-tt-zone-archive   { background: var(--color-ink-500); color: var(--color-yuebai-cool); }
+
+body.dev-mode [data-zone] {
+    outline: 1px dashed rgba(184, 146, 74, 0.35);
+    outline-offset: -1px;
+    cursor: crosshair;
+}
+body.dev-mode [data-zone]::after {
+    content: attr(data-zone);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--color-molan-deep);
+    color: var(--color-yuebai-cool);
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 3px 7px;
+    pointer-events: none;
+}
+body.dev-mode [data-zone] {
+    position: relative;   /* so ::after positions inside */
+}
+
+.dev-badge {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 9998;
+    background: var(--color-molan-deep);
+    color: var(--color-jinbo-warm);
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 8px 12px;
+    border: 1px solid var(--color-jinbo);
+}
+.dev-badge span { color: var(--color-yuebai-cool); font-weight: 600; }
+
+/* ===== Responsive ===== */
+@media (max-width: 1279px) {
+    .feature-trio { gap: 16px; padding: 0 24px; }
+    .editorial-grid { column-gap: 32px; row-gap: 64px; }
+}
+@media (max-width: 767px) {
+    .spaces-hero { min-height: 70vh; padding: 12vh 24px; }
+    .feature-band { padding: 64px 0; }
+    .feature-trio {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .feature-item img { aspect-ratio: 4 / 5; }
+    .editorial-section { padding: 64px 24px; }
+    .editorial-grid {
+        grid-template-columns: 1fr;
+        row-gap: 48px;
+    }
+    .editorial-item.ed-left,
+    .editorial-item.ed-right {
+        grid-column: 1;
+        transform: none;
+    }
+    .editorial-breath { padding: 24px 0; }
+
+    /* Archive strip → 2-col vertical grid on mobile (spec §7.1) */
+    .archive-section { padding: 48px 0 64px; }
+    .archive-heading { padding: 0 24px; margin-bottom: 24px; }
+    .archive-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 0 24px;
+        overflow-x: visible;
+    }
+    .archive-item img { height: auto; width: 100%; }
+
+    .spaces-cta { padding: 10vh 24px; }
+}
