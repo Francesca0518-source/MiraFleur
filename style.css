@@ -1607,6 +1607,32 @@ body.no-floating .text-us-float {
     color: var(--color-yuebai);
 }
 
+/* Spec v5 §0.1: two-tier chip hierarchy.
+   Top-tier (Hospitality / Corporate / Galleries & Retail) use gold accent
+   when active; secondary (Celebrations / New Beginnings / Everyday) stay
+   lighter. Hidden chips (weddings / proposals / sympathy) kept in DOM for
+   future unhide, display:none for now. */
+.filter-chip.chip-top.active {
+    background: transparent;
+    border-color: transparent;
+    color: var(--color-molan);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-jinbo);
+    border-radius: 0;
+    padding-bottom: calc(0.55rem - 2px);
+}
+.filter-chip.chip-secondary.active {
+    background: transparent;
+    border-color: transparent;
+    color: var(--color-molan-soft);
+    border-bottom: 1px solid var(--color-molan-soft);
+    border-radius: 0;
+    padding-bottom: calc(0.55rem - 1px);
+}
+.filter-chip.chip-hidden {
+    display: none !important;
+}
+
 .masonry-grid {
     column-count: 3;
     column-gap: 1.2rem;
@@ -2888,4 +2914,81 @@ body.dev-mode [data-zone] {
     .archive-item img { height: auto; width: 100%; }
 
     .spaces-cta { padding: 10vh 24px; }
+}
+
+/* Spec v5 §4.5: per-image caption under Editorial + Archive figures.
+   Feature 三联 does NOT get captions (气势优先). */
+.spaces-caption {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--color-molan-soft);
+    line-height: 1.6;
+}
+.spaces-caption .en {
+    font-family: var(--font-serif-en, "Cormorant Garamond", Georgia, serif);
+    font-style: italic;
+}
+.spaces-caption .zh {
+    font-family: var(--font-serif-zh, "Noto Serif SC", serif);
+    display: block;
+}
+.spaces-caption .dot {
+    margin: 0 8px;
+    color: var(--color-jinbo);
+}
+.archive-item:hover .spaces-caption {
+    color: var(--color-molan);
+    transition: color 0.3s ease;
+}
+
+/* Spec v5 §5.3 — two-line CTA replacing single-axis exits */
+.spaces-cta-v4 {
+    padding: 15vh 32px;
+    background: var(--color-yuebai);
+    text-align: center;
+}
+.cta-heading {
+    font-family: var(--font-serif-en, "Cormorant Garamond", serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 30px);
+    color: var(--color-molan);
+    margin: 0 0 40px;
+}
+.cta-lane {
+    max-width: 520px;
+    margin: 0 auto 48px;
+}
+.cta-lane:last-child { margin-bottom: 0; }
+.cta-lane a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-molan);
+    font-family: var(--font-serif-en, "Cormorant Garamond", serif);
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.4;
+    border-bottom: 1px solid var(--color-jinbo);
+    padding-bottom: 8px;
+    transition: border-bottom-width 0.15s ease, color 0.2s ease;
+}
+.cta-lane a:hover {
+    border-bottom-width: 2px;
+}
+.cta-lane .cta-sub {
+    font-family: var(--font-sans-en, "Jost", sans-serif);
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: var(--color-molan-soft);
+    margin-top: 10px;
+    line-height: 1.6;
+}
+.cta-lane.cta-secondary a {
+    color: var(--color-molan-soft);
+    font-size: clamp(18px, 1.8vw, 22px);
+    border-bottom-color: var(--color-molan-soft);
+}
+.cta-lane.cta-secondary a:hover {
+    color: var(--color-molan);
 }
