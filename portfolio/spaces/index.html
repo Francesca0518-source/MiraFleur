@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spaces · Mira Fleur</title>
-    <meta name="description" content="Mira Fleur 过往空间花艺作品存档 — Newport Coast & Orange County · Archive of space florals by Mira Fleur.">
-    <meta property="og:title" content="Spaces · Mira Fleur">
-    <meta property="og:description" content="Archive of hotel, gallery, and private-residence floral installations by Mira Fleur.">
+    <title>Spaces · Mira Fleur — Hospitality, Corporate, Gallery Florals</title>
+    <meta name="description" content="Archive of Mira Fleur's space florals for hotels, offices, galleries, and private residences across Newport Coast, Orange County, and Greater Los Angeles — hospitality florals, corporate florals, and gallery floral installations.">
+    <meta property="og:title" content="Spaces · Mira Fleur — Hospitality · Corporate · Galleries & Retail">
+    <meta property="og:description" content="Hospitality florals, corporate florals, and gallery floral installations. Florals for spaces that stay in bloom — weekly, by subscription, or for a single occasion.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://francesca0518-source.github.io/MiraFleur/portfolio/spaces/">
     <meta property="og:image" content="../../images/spaces/_source/1697-Photoroom.JPG">
@@ -39,43 +39,53 @@
         </div>
     </nav>
 
-    <!-- [A] Hero — text only, no image (spec §2[A]) -->
+    <!-- [A] Hero — spec v5 §5.1 v4 subtitle -->
     <section class="spaces-hero">
         <div class="spaces-hero-inner">
             <h1 class="spaces-hero-title" data-en="Spaces" data-cn="空间">Spaces</h1>
-            <p class="spaces-hero-sub" data-en="Florals made for rooms that remember them." data-cn="为会记住它们的空间而做的花。">Florals made for rooms that remember them.</p>
+            <p class="spaces-hero-sub" data-en="Florals for spaces that stay in bloom — weekly, by subscription, or for a single occasion." data-cn="为常年盛放的空间而做的花 — 按周订阅,或为某一场合。">Florals for spaces that stay in bloom — weekly, by subscription, or for a single occasion.</p>
         </div>
     </section>
 
-    <!-- [B] Feature 三联 — three strongest works, dark band (spec §2[B]) -->
-    <section class="feature-band" aria-label="Feature works">
+    <!--
+      Captions: "{Scene} · {Region}" format (matches /portfolio/ convention).
+      Palette stays in data-palette attribute (used in alt text for SEO + dev mode).
+      Each figure carries: data-zone, data-category (space-separated multi-tag),
+      data-scene (§3.1b), data-palette (§3.1c), data-region.
+    -->
+
+    <!-- [B] Feature 三联 — dark band, NO captions per spec §4.5 -->
+    <section class="feature-band" aria-label="Feature works — hospitality, corporate, and gallery florals">
         <div class="feature-trio">
-            <figure class="feature-item" data-zone="hero" data-filename="1697-Photoroom.JPG">
-                <img src="../../images/spaces/_source/1697-Photoroom.JPG" alt="Mira Fleur space work — large installation, warm autumn palette" loading="eager">
+            <figure class="feature-item" data-zone="hero" data-filename="1697-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Reception" data-palette="Orchid + Paradise" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/1697-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel reception pair, orchid and bird-of-paradise palette" loading="eager">
             </figure>
-            <figure class="feature-item" data-zone="hero" data-filename="1701-Photoroom.JPG">
-                <img src="../../images/spaces/_source/1701-Photoroom.JPG" alt="Mira Fleur space work — hotel lobby, ember tones" loading="eager">
+            <figure class="feature-item" data-zone="hero" data-filename="1701-Photoroom.JPG" data-category="corporate" data-scene="Boardroom" data-palette="Powder Pink + Palm" data-region="Irvine">
+                <img src="../../images/spaces/_source/1701-Photoroom.JPG" alt="Mira Fleur corporate floral — boardroom ikebana, powder pink and palm palette" loading="eager">
             </figure>
-            <figure class="feature-item" data-zone="hero" data-filename="1702-Photoroom.JPG">
-                <img src="../../images/spaces/_source/1702-Photoroom.JPG" alt="Mira Fleur space work — banquet centerpiece detail" loading="eager">
+            <figure class="feature-item" data-zone="hero" data-filename="1702-Photoroom.JPG" data-category="galleries-retail" data-scene="Gallery · Exhibition" data-palette="Cherry Blossom + Sage" data-region="Pasadena">
+                <img src="../../images/spaces/_source/1702-Photoroom.JPG" alt="Mira Fleur gallery floral — exhibition cherry blossom branches, cherry blossom and sage palette" loading="eager">
             </figure>
         </div>
     </section>
 
-    <!-- [C] Editorial Grid — 6–9 selected works, irregular 2-column (spec §2[C]) -->
+    <!-- [C] Editorial Grid — captioned with {Scene} · {Region} -->
     <section class="editorial-section">
         <div class="editorial-grid">
-            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="1724-Photoroom.JPG">
-                <img src="../../images/spaces/_source/1724-Photoroom.JPG" alt="Mira Fleur space work — gallery installation, muted tones" loading="lazy">
+            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="1724-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Persimmon + Oncidium" data-region="Newport Beach">
+                <img src="../../images/spaces/_source/1724-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel lobby arrangement, persimmon and oncidium palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Newport Beach</span><span class="zh">酒店大堂<span class="dot">·</span>Newport Beach</span></figcaption>
             </figure>
-            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="06f1c2ee7aa1e7a1484400b9a4a1cc1a-Photoroom.jpg">
-                <img src="../../images/spaces/_source/06f1c2ee7aa1e7a1484400b9a4a1cc1a-Photoroom.jpg" alt="Mira Fleur space work — close-up floral detail" loading="lazy">
+            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="06f1c2ee7aa1e7a1484400b9a4a1cc1a-Photoroom.jpg" data-category="corporate" data-scene="Boardroom" data-palette="Chartreuse + Jet" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/06f1c2ee7aa1e7a1484400b9a4a1cc1a-Photoroom.jpg" alt="Mira Fleur corporate floral — boardroom pedestal piece, chartreuse and jet palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Boardroom<span class="dot">·</span>Newport Coast</span><span class="zh">会议室<span class="dot">·</span>Newport Coast</span></figcaption>
             </figure>
-            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="08c6bbc44ede930de43c857f518d1477-Photoroom.jpg">
-                <img src="../../images/spaces/_source/08c6bbc44ede930de43c857f518d1477-Photoroom.jpg" alt="Mira Fleur space work — statement entryway piece" loading="lazy">
+            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="08c6bbc44ede930de43c857f518d1477-Photoroom.jpg" data-category="hospitality" data-scene="Hotel Reception" data-palette="Crimson + Mimosa" data-region="Irvine">
+                <img src="../../images/spaces/_source/08c6bbc44ede930de43c857f518d1477-Photoroom.jpg" alt="Mira Fleur hospitality floral — hotel reception statement, crimson and mimosa palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Irvine</span><span class="zh">酒店前台<span class="dot">·</span>尔湾</span></figcaption>
             </figure>
 
-            <!-- Breathing row: pull-quote between 3rd and 4th (spec §2[C]) -->
+            <!-- Breathing row: pull-quote -->
             <div class="editorial-breath">
                 <blockquote>
                     <p data-en="Florals don't decorate a room. They let the room speak." data-cn="花在空间里不是装饰,是让空间开口说话。">Florals don't decorate a room. They let the room speak.</p>
@@ -83,14 +93,17 @@
                 </blockquote>
             </div>
 
-            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="0fe02aa1b1f1c247bd7510b4631abce9-Photoroom.JPG">
-                <img src="../../images/spaces/_source/0fe02aa1b1f1c247bd7510b4631abce9-Photoroom.JPG" alt="Mira Fleur space work — low centerpiece, warm tones" loading="lazy">
+            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="0fe02aa1b1f1c247bd7510b4631abce9-Photoroom.JPG" data-category="hospitality celebrations" data-scene="Banquet Tablescape" data-palette="Magenta + Paradise" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/0fe02aa1b1f1c247bd7510b4631abce9-Photoroom.JPG" alt="Mira Fleur hospitality floral — banquet tablescape, magenta and bird-of-paradise palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Banquet Tablescape<span class="dot">·</span>Newport Coast</span><span class="zh">宴会桌花<span class="dot">·</span>Newport Coast</span></figcaption>
             </figure>
-            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="178edb94fe670b41910961031e9199d0-Photoroom.JPG">
-                <img src="../../images/spaces/_source/178edb94fe670b41910961031e9199d0-Photoroom.JPG" alt="Mira Fleur space work — tall installation piece" loading="lazy">
+            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="178edb94fe670b41910961031e9199d0-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Persimmon Monochrome" data-region="Laguna Beach">
+                <img src="../../images/spaces/_source/178edb94fe670b41910961031e9199d0-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel lobby all-orange installation, persimmon monochrome palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Laguna Beach</span><span class="zh">酒店大堂<span class="dot">·</span>Laguna Beach</span></figcaption>
             </figure>
-            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="1ab43585fd6a3d88745f27e790053849-Photoroom.JPG">
-                <img src="../../images/spaces/_source/1ab43585fd6a3d88745f27e790053849-Photoroom.JPG" alt="Mira Fleur space work — editorial composition" loading="lazy">
+            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="1ab43585fd6a3d88745f27e790053849-Photoroom.JPG" data-category="galleries-retail" data-scene="Gallery · Exhibition" data-palette="Saffron + Goldenrod" data-region="Pasadena">
+                <img src="../../images/spaces/_source/1ab43585fd6a3d88745f27e790053849-Photoroom.JPG" alt="Mira Fleur gallery floral — exhibition composition, saffron and goldenrod palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Gallery · Exhibition<span class="dot">·</span>Pasadena</span><span class="zh">画廊展陈<span class="dot">·</span>Pasadena</span></figcaption>
             </figure>
 
             <!-- Second breathing row: color card -->
@@ -105,59 +118,145 @@
                 </div>
             </div>
 
-            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="1eb76318b913507eb5058dc9b1070651-Photoroom.jpg">
-                <img src="../../images/spaces/_source/1eb76318b913507eb5058dc9b1070651-Photoroom.jpg" alt="Mira Fleur space work — sculptural arrangement" loading="lazy">
+            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="1eb76318b913507eb5058dc9b1070651-Photoroom.jpg" data-category="hospitality everyday" data-scene="Hotel Reception" data-palette="Magenta + Palm" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/1eb76318b913507eb5058dc9b1070651-Photoroom.jpg" alt="Mira Fleur hospitality floral — weekly hotel reception pair, magenta and palm palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Newport Coast</span><span class="zh">酒店前台<span class="dot">·</span>Newport Coast</span></figcaption>
             </figure>
-            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="1f1b49375bb6bb93086368234b05b3cf-Photoroom.JPG">
-                <img src="../../images/spaces/_source/1f1b49375bb6bb93086368234b05b3cf-Photoroom.JPG" alt="Mira Fleur space work — cascading installation" loading="lazy">
+            <figure class="editorial-item ed-right" data-zone="editorial" data-filename="1f1b49375bb6bb93086368234b05b3cf-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Oncidium + Paradise" data-region="Newport Beach">
+                <img src="../../images/spaces/_source/1f1b49375bb6bb93086368234b05b3cf-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel lobby tropical installation, oncidium and bird-of-paradise palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Newport Beach</span><span class="zh">酒店大堂<span class="dot">·</span>Newport Beach</span></figcaption>
             </figure>
-            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="2c865e96222f8a3780f6142d20c9bef2-Photoroom.JPG">
-                <img src="../../images/spaces/_source/2c865e96222f8a3780f6142d20c9bef2-Photoroom.JPG" alt="Mira Fleur space work — venue floral centerpiece" loading="lazy">
+            <figure class="editorial-item ed-left" data-zone="editorial" data-filename="2c865e96222f8a3780f6142d20c9bef2-Photoroom.JPG" data-category="corporate everyday" data-scene="Executive Office" data-palette="Gold + Amber" data-region="Beverly Hills">
+                <img src="../../images/spaces/_source/2c865e96222f8a3780f6142d20c9bef2-Photoroom.JPG" alt="Mira Fleur corporate floral — executive office gilt pair, gold and amber palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Executive Office<span class="dot">·</span>Beverly Hills</span><span class="zh">行政办公<span class="dot">·</span>Beverly Hills</span></figcaption>
             </figure>
         </div>
     </section>
 
-    <!-- [D] Archive Strip — remaining works, horizontal scroll (spec §2[D]) -->
+    <!-- [D] Archive Strip -->
     <section class="archive-section">
         <div class="archive-heading">
             <span class="archive-label" data-en="ARCHIVE" data-cn="档案">ARCHIVE</span>
             <span class="archive-count"><span id="archiveIndex">01</span> / <span id="archiveTotal">25</span></span>
         </div>
         <div class="archive-strip" id="archiveStrip">
-            <figure class="archive-item" data-zone="archive" data-filename="3ac021e8caf7c4118a579c7ff5e5162f-Photoroom.JPG"><img src="../../images/spaces/_source/3ac021e8caf7c4118a579c7ff5e5162f-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 01" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="4038bec7095c520433c8b1ab792bd198-Photoroom.jpg"><img src="../../images/spaces/_source/4038bec7095c520433c8b1ab792bd198-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 02" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="492c3244a312e4d189348400e81d5b32-Photoroom.jpg"><img src="../../images/spaces/_source/492c3244a312e4d189348400e81d5b32-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 03" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="4a07ae5a82625bcd0b40df91d485068b-Photoroom.jpg"><img src="../../images/spaces/_source/4a07ae5a82625bcd0b40df91d485068b-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 04" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="4a34895dac561c714359b40e9318868e-Photoroom.JPG"><img src="../../images/spaces/_source/4a34895dac561c714359b40e9318868e-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 05" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="5057f059a553c94004f175860f35d06b-Photoroom.JPG"><img src="../../images/spaces/_source/5057f059a553c94004f175860f35d06b-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 06" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="51d5b0613ba91a0f6969f9dcef49e54f-Photoroom.jpg"><img src="../../images/spaces/_source/51d5b0613ba91a0f6969f9dcef49e54f-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 07" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="54dcef2459e858809b6e13595fe5e42c-Photoroom.jpg"><img src="../../images/spaces/_source/54dcef2459e858809b6e13595fe5e42c-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 08" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="6395bbdd37e12a543809c897393d19d1-Photoroom.JPG"><img src="../../images/spaces/_source/6395bbdd37e12a543809c897393d19d1-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 09" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="645d18129b240745d19bd2e7dc4e8a04-Photoroom.JPG"><img src="../../images/spaces/_source/645d18129b240745d19bd2e7dc4e8a04-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 10" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="6873b2c62cbe4e4a118a44d0f85daa42-Photoroom.JPG"><img src="../../images/spaces/_source/6873b2c62cbe4e4a118a44d0f85daa42-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 11" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="919619e4225e74e551495890424607fe-Photoroom.JPG"><img src="../../images/spaces/_source/919619e4225e74e551495890424607fe-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 12" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="92aa2e583d0ce2c73a43085e7ce74991-Photoroom.JPG"><img src="../../images/spaces/_source/92aa2e583d0ce2c73a43085e7ce74991-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 13" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="97d40bcd32cfb9f58aba9e6fe0fc3107-Photoroom.JPG"><img src="../../images/spaces/_source/97d40bcd32cfb9f58aba9e6fe0fc3107-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 14" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="b63821c82212283f6248c4c06425fa44-Photoroom.JPG"><img src="../../images/spaces/_source/b63821c82212283f6248c4c06425fa44-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 15" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="c9d33310c0c9e9f21d9440958f9d58f3-Photoroom.JPG"><img src="../../images/spaces/_source/c9d33310c0c9e9f21d9440958f9d58f3-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 16" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="cb33135b3a53f7cdf397812b516457d4-Photoroom.JPG"><img src="../../images/spaces/_source/cb33135b3a53f7cdf397812b516457d4-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 17" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="d01fca241e1940565d1127645b60e4ad-Photoroom.jpg"><img src="../../images/spaces/_source/d01fca241e1940565d1127645b60e4ad-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 18" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="d3f9d3797b9be1683a7f7fdac260605f-Photoroom.JPG"><img src="../../images/spaces/_source/d3f9d3797b9be1683a7f7fdac260605f-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 19" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="dafe2072cbc4fe0bc7ada84e4419c510-Photoroom.JPG"><img src="../../images/spaces/_source/dafe2072cbc4fe0bc7ada84e4419c510-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 20" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="dd735e3c04d76861fd24f222c8220e31-Photoroom.JPG"><img src="../../images/spaces/_source/dd735e3c04d76861fd24f222c8220e31-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 21" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="eee50170e9dc14d40ad87b2a35c8a30d-Photoroom.jpg"><img src="../../images/spaces/_source/eee50170e9dc14d40ad87b2a35c8a30d-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 22" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="ef9810e9f2b724be3be7d45fcfb6a9d7-Photoroom.jpg"><img src="../../images/spaces/_source/ef9810e9f2b724be3be7d45fcfb6a9d7-Photoroom.jpg" alt="Mira Fleur space archive — arrangement 23" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="f6d2903f127a1884b6e932e94e8a0b1c-Photoroom.JPG"><img src="../../images/spaces/_source/f6d2903f127a1884b6e932e94e8a0b1c-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 24" loading="lazy"></figure>
-            <figure class="archive-item" data-zone="archive" data-filename="fa507396337dd16b914311918a8daa7c-Photoroom.JPG"><img src="../../images/spaces/_source/fa507396337dd16b914311918a8daa7c-Photoroom.JPG" alt="Mira Fleur space archive — arrangement 25" loading="lazy"></figure>
+            <figure class="archive-item" data-zone="archive" data-filename="3ac021e8caf7c4118a579c7ff5e5162f-Photoroom.JPG" data-category="hospitality everyday" data-scene="Hotel Reception" data-palette="Moss + Ivory" data-region="Corona del Mar">
+                <img src="../../images/spaces/_source/3ac021e8caf7c4118a579c7ff5e5162f-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel reception pedestal pair, moss and ivory palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Corona del Mar</span><span class="zh">酒店前台<span class="dot">·</span>Corona del Mar</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="4038bec7095c520433c8b1ab792bd198-Photoroom.jpg" data-category="hospitality" data-scene="Hotel Reception" data-palette="Peach + Cream" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/4038bec7095c520433c8b1ab792bd198-Photoroom.jpg" alt="Mira Fleur hospitality floral — hotel reception blue-glass piece, peach and cream palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Newport Coast</span><span class="zh">酒店前台<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="492c3244a312e4d189348400e81d5b32-Photoroom.jpg" data-category="hospitality" data-scene="Hotel Reception" data-palette="Peach + Blush" data-region="Irvine">
+                <img src="../../images/spaces/_source/492c3244a312e4d189348400e81d5b32-Photoroom.jpg" alt="Mira Fleur hospitality floral — hotel reception generous piece, peach and blush palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Irvine</span><span class="zh">酒店前台<span class="dot">·</span>尔湾</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="4a07ae5a82625bcd0b40df91d485068b-Photoroom.jpg" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Lemon + Vermilion" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/4a07ae5a82625bcd0b40df91d485068b-Photoroom.jpg" alt="Mira Fleur hospitality floral — hotel lobby ceramic fruit piece, lemon and vermilion palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Newport Coast</span><span class="zh">酒店大堂<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="4a34895dac561c714359b40e9318868e-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Coral + Ember" data-region="Newport Beach">
+                <img src="../../images/spaces/_source/4a34895dac561c714359b40e9318868e-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel lobby long low piece, coral and ember palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Newport Beach</span><span class="zh">酒店大堂<span class="dot">·</span>Newport Beach</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="5057f059a553c94004f175860f35d06b-Photoroom.JPG" data-category="hospitality celebrations" data-scene="Banquet Tablescape" data-palette="Crimson + Rouge" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/5057f059a553c94004f175860f35d06b-Photoroom.JPG" alt="Mira Fleur hospitality floral — banquet wrapped bouquet, crimson and rouge palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Banquet Tablescape<span class="dot">·</span>Newport Coast</span><span class="zh">宴会桌花<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="51d5b0613ba91a0f6969f9dcef49e54f-Photoroom.jpg" data-category="corporate" data-scene="Boardroom" data-palette="Fuchsia + Ember" data-region="Downtown LA">
+                <img src="../../images/spaces/_source/51d5b0613ba91a0f6969f9dcef49e54f-Photoroom.jpg" alt="Mira Fleur corporate floral — boardroom bold piece, fuchsia and ember palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Boardroom<span class="dot">·</span>Downtown LA</span><span class="zh">会议室<span class="dot">·</span>洛杉矶市中心</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="54dcef2459e858809b6e13595fe5e42c-Photoroom.jpg" data-category="hospitality everyday" data-scene="Hotel Reception" data-palette="Ranunculus + Indigo" data-region="Irvine">
+                <img src="../../images/spaces/_source/54dcef2459e858809b6e13595fe5e42c-Photoroom.jpg" alt="Mira Fleur hospitality floral — weekly reception piece, ranunculus and indigo palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Irvine</span><span class="zh">酒店前台<span class="dot">·</span>尔湾</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="6395bbdd37e12a543809c897393d19d1-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Reception" data-palette="Persimmon + Ochre" data-region="Laguna Niguel">
+                <img src="../../images/spaces/_source/6395bbdd37e12a543809c897393d19d1-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel reception pincushion piece, persimmon and ochre palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Laguna Niguel</span><span class="zh">酒店前台<span class="dot">·</span>Laguna Niguel</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="645d18129b240745d19bd2e7dc4e8a04-Photoroom.JPG" data-category="galleries-retail new-beginnings" data-scene="Gallery · Exhibition" data-palette="Gold + Goldenrod" data-region="Costa Mesa">
+                <img src="../../images/spaces/_source/645d18129b240745d19bd2e7dc4e8a04-Photoroom.JPG" alt="Mira Fleur gallery floral — exhibition gilt-fan piece, gold and goldenrod palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Gallery · Exhibition<span class="dot">·</span>Costa Mesa</span><span class="zh">画廊展陈<span class="dot">·</span>Costa Mesa</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="6873b2c62cbe4e4a118a44d0f85daa42-Photoroom.JPG" data-category="corporate" data-scene="Executive Office" data-palette="Jade + Ivory" data-region="Newport Beach">
+                <img src="../../images/spaces/_source/6873b2c62cbe4e4a118a44d0f85daa42-Photoroom.JPG" alt="Mira Fleur corporate floral — executive office sculptural piece, jade and ivory palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Executive Office<span class="dot">·</span>Newport Beach</span><span class="zh">行政办公<span class="dot">·</span>Newport Beach</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="919619e4225e74e551495890424607fe-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Shell Pink + Ivory" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/919619e4225e74e551495890424607fe-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel lobby cube piece, shell pink and ivory palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Newport Coast</span><span class="zh">酒店大堂<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="92aa2e583d0ce2c73a43085e7ce74991-Photoroom.JPG" data-category="hospitality celebrations" data-scene="Banquet Tablescape" data-palette="Ivory + Oncidium" data-region="Corona del Mar">
+                <img src="../../images/spaces/_source/92aa2e583d0ce2c73a43085e7ce74991-Photoroom.JPG" alt="Mira Fleur hospitality floral — banquet layered piece, ivory and oncidium palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Banquet Tablescape<span class="dot">·</span>Corona del Mar</span><span class="zh">宴会桌花<span class="dot">·</span>Corona del Mar</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="97d40bcd32cfb9f58aba9e6fe0fc3107-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Reception" data-palette="Oncidium + Hydrangea" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/97d40bcd32cfb9f58aba9e6fe0fc3107-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel reception tall piece, oncidium and hydrangea palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Newport Coast</span><span class="zh">酒店前台<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="b63821c82212283f6248c4c06425fa44-Photoroom.JPG" data-category="corporate" data-scene="Boardroom" data-palette="Jade + Ivory" data-region="Irvine">
+                <img src="../../images/spaces/_source/b63821c82212283f6248c4c06425fa44-Photoroom.JPG" alt="Mira Fleur corporate floral — boardroom green-and-white piece, jade and ivory palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Boardroom<span class="dot">·</span>Irvine</span><span class="zh">会议室<span class="dot">·</span>尔湾</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="c9d33310c0c9e9f21d9440958f9d58f3-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Blush + Lavender" data-region="Newport Beach">
+                <img src="../../images/spaces/_source/c9d33310c0c9e9f21d9440958f9d58f3-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel lobby pair, blush and lavender palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Newport Beach</span><span class="zh">酒店大堂<span class="dot">·</span>Newport Beach</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="cb33135b3a53f7cdf397812b516457d4-Photoroom.JPG" data-category="hospitality celebrations" data-scene="Banquet Tablescape" data-palette="Saffron + Protea" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/cb33135b3a53f7cdf397812b516457d4-Photoroom.JPG" alt="Mira Fleur hospitality floral — banquet chinoiserie piece, saffron and protea palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Banquet Tablescape<span class="dot">·</span>Newport Coast</span><span class="zh">宴会桌花<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="d01fca241e1940565d1127645b60e4ad-Photoroom.jpg" data-category="hospitality everyday" data-scene="Hotel Reception" data-palette="Ember + Burgundy" data-region="Irvine">
+                <img src="../../images/spaces/_source/d01fca241e1940565d1127645b60e4ad-Photoroom.jpg" alt="Mira Fleur hospitality floral — weekly reception pair in gold vessels, ember and burgundy palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Irvine</span><span class="zh">酒店前台<span class="dot">·</span>尔湾</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="d3f9d3797b9be1683a7f7fdac260605f-Photoroom.JPG" data-category="hospitality" data-scene="Corridor Installation" data-palette="Astilbe + Jade" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/d3f9d3797b9be1683a7f7fdac260605f-Photoroom.JPG" alt="Mira Fleur hospitality floral — corridor installation, astilbe and jade palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Corridor Installation<span class="dot">·</span>Newport Coast</span><span class="zh">走廊装置<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="dafe2072cbc4fe0bc7ada84e4419c510-Photoroom.JPG" data-category="galleries-retail new-beginnings" data-scene="Gallery · Exhibition" data-palette="Violet Monochrome" data-region="Beverly Hills">
+                <img src="../../images/spaces/_source/dafe2072cbc4fe0bc7ada84e4419c510-Photoroom.JPG" alt="Mira Fleur gallery floral — exhibition all-violet arrangement, violet monochrome palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Gallery · Exhibition<span class="dot">·</span>Beverly Hills</span><span class="zh">画廊展陈<span class="dot">·</span>Beverly Hills</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="dd735e3c04d76861fd24f222c8220e31-Photoroom.JPG" data-category="hospitality" data-scene="Hotel Reception" data-palette="Ember + Burgundy" data-region="Newport Coast">
+                <img src="../../images/spaces/_source/dd735e3c04d76861fd24f222c8220e31-Photoroom.JPG" alt="Mira Fleur hospitality floral — hotel reception generous piece, ember and burgundy palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Reception<span class="dot">·</span>Newport Coast</span><span class="zh">酒店前台<span class="dot">·</span>Newport Coast</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="eee50170e9dc14d40ad87b2a35c8a30d-Photoroom.jpg" data-category="corporate" data-scene="Boardroom" data-palette="Saffron + Palm" data-region="Tustin">
+                <img src="../../images/spaces/_source/eee50170e9dc14d40ad87b2a35c8a30d-Photoroom.jpg" alt="Mira Fleur corporate floral — boardroom mokara piece, saffron and palm palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Boardroom<span class="dot">·</span>Tustin</span><span class="zh">会议室<span class="dot">·</span>Tustin</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="ef9810e9f2b724be3be7d45fcfb6a9d7-Photoroom.jpg" data-category="hospitality" data-scene="Hotel Lobby" data-palette="Persimmon + Ochre" data-region="Laguna Beach">
+                <img src="../../images/spaces/_source/ef9810e9f2b724be3be7d45fcfb6a9d7-Photoroom.jpg" alt="Mira Fleur hospitality floral — hotel lobby red-fan piece, persimmon and ochre palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Hotel Lobby<span class="dot">·</span>Laguna Beach</span><span class="zh">酒店大堂<span class="dot">·</span>Laguna Beach</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="f6d2903f127a1884b6e932e94e8a0b1c-Photoroom.JPG" data-category="hospitality" data-scene="Corridor Installation" data-palette="Crimson + Fuchsia" data-region="Aliso Viejo">
+                <img src="../../images/spaces/_source/f6d2903f127a1884b6e932e94e8a0b1c-Photoroom.JPG" alt="Mira Fleur hospitality floral — corridor installation, crimson and fuchsia palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Corridor Installation<span class="dot">·</span>Aliso Viejo</span><span class="zh">走廊装置<span class="dot">·</span>Aliso Viejo</span></figcaption>
+            </figure>
+            <figure class="archive-item" data-zone="archive" data-filename="fa507396337dd16b914311918a8daa7c-Photoroom.JPG" data-category="corporate everyday" data-scene="Executive Office" data-palette="Sunflower + Vermilion" data-region="Irvine">
+                <img src="../../images/spaces/_source/fa507396337dd16b914311918a8daa7c-Photoroom.JPG" alt="Mira Fleur corporate floral — executive office weekly piece, sunflower and vermilion palette" loading="lazy">
+                <figcaption class="spaces-caption"><span class="en">Executive Office<span class="dot">·</span>Irvine</span><span class="zh">行政办公<span class="dot">·</span>尔湾</span></figcaption>
+            </figure>
         </div>
     </section>
 
-    <!-- [E] CTA — exits to Corporate and Inquire (spec §2[E]) -->
-    <section class="spaces-cta">
-        <p class="cta-prompt" data-en="Have a space in mind?" data-cn="对空间项目有想法?">Have a space in mind?</p>
-        <div class="cta-links">
-            <a href="../../occasions/corporate-events/" class="cta-exit" data-en="Corporate · 企业花艺" data-cn="企业花艺 · Corporate">Corporate · 企业花艺</a>
-            <a href="../../inquire/" class="cta-exit" data-en="Get in touch · 写信给我们" data-cn="写信给我们 · Get in touch">Get in touch · 写信给我们</a>
+    <!-- [E] CTA — double lane, subscription-first (spec v5 §5.3) -->
+    <section class="spaces-cta-v4">
+        <p class="cta-heading" data-en="Two ways to work together" data-cn="两种合作方式">Two ways to work together</p>
+        <div class="cta-lane cta-primary">
+            <a href="../../inquire/?source=spaces-subscription">
+                <span data-en="Weekly florals for your space" data-cn="每周花艺订阅">Weekly florals for your space</span>
+            </a>
+            <p class="cta-sub" data-en="for hotels, galleries, offices, and private residences" data-cn="为酒店、画廊、办公空间与私人住宅而做">for hotels, galleries, offices, and private residences</p>
+        </div>
+        <div class="cta-lane cta-secondary">
+            <a href="../../inquire/?source=spaces-event">
+                <span data-en="For a one-time event or installation" data-cn="单次活动与装置委托">For a one-time event or installation</span>
+            </a>
+            <p class="cta-sub" data-en="galas, openings, celebrations" data-cn="盛宴、开幕、庆典">galas, openings, celebrations</p>
         </div>
     </section>
 
@@ -196,35 +295,38 @@
                     <p class="footer-response" data-en="Response time: same business day" data-cn="响应时间：当个工作日内">Response time: same business day</p>
                 </div>
             </div>
+            <div class="footer-keywords">hospitality florist Newport Coast · corporate florist Orange County · gallery floral installation Los Angeles · weekly floral subscription Irvine · hotel floral design OC</div>
             <div class="footer-legal">&copy; 2026 Mira Fleur. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- Dev-mode tooltip: activates with ?dev=1. Shows filename + zone on hover -->
+    <!-- Dev-mode tooltip -->
     <div class="dev-tooltip" id="devTooltip" role="status" aria-live="polite"></div>
 
     <script src="../../script.js"></script>
     <script>
-        // ===== Dev mode (?dev=1): hover image → show filename + zone tag =====
+        // ===== Dev mode (?dev=1): hover image → filename + zone + category + scene + palette + region =====
         (function () {
             const params = new URLSearchParams(window.location.search);
             if (params.get('dev') !== '1') return;
 
             document.body.classList.add('dev-mode');
-
             const tooltip = document.getElementById('devTooltip');
             const zoneLabel = { hero: 'Feature 三联', editorial: 'Editorial Grid', archive: 'Archive Strip' };
 
             document.querySelectorAll('[data-filename][data-zone]').forEach(el => {
                 el.addEventListener('mousemove', (e) => {
-                    const filename = el.dataset.filename;
-                    const zone = el.dataset.zone;
-                    tooltip.innerHTML = `<span class="dev-tt-file">${filename}</span><span class="dev-tt-zone dev-tt-zone-${zone}">${zone} · ${zoneLabel[zone] || ''}</span>`;
+                    tooltip.innerHTML = `
+                      <span class="dev-tt-file">${el.dataset.filename}</span>
+                      <span class="dev-tt-zone dev-tt-zone-${el.dataset.zone}">${el.dataset.zone} · ${zoneLabel[el.dataset.zone] || ''}</span>
+                      <span class="dev-tt-cat">${el.dataset.category || ''}</span>
+                      <span class="dev-tt-scene">${el.dataset.scene || ''} · ${el.dataset.region || ''}</span>
+                      <span class="dev-tt-palette">palette: ${el.dataset.palette || ''}</span>
+                    `;
                     tooltip.classList.add('visible');
-                    // Position near cursor with viewport edge clamping
                     const pad = 14;
-                    const tw = tooltip.offsetWidth || 240;
-                    const th = tooltip.offsetHeight || 60;
+                    const tw = tooltip.offsetWidth || 300;
+                    const th = tooltip.offsetHeight || 110;
                     let x = e.clientX + pad;
                     let y = e.clientY + pad;
                     if (x + tw > window.innerWidth - pad) x = e.clientX - tw - pad;
@@ -232,20 +334,22 @@
                     tooltip.style.left = x + 'px';
                     tooltip.style.top = y + 'px';
                 });
-                el.addEventListener('mouseleave', () => {
-                    tooltip.classList.remove('visible');
-                });
+                el.addEventListener('mouseleave', () => tooltip.classList.remove('visible'));
             });
 
-            // Summary badge showing zone counts
-            const counts = { hero: 0, editorial: 0, archive: 0 };
+            const zoneCounts = { hero: 0, editorial: 0, archive: 0 };
+            const tierCounts = { hospitality: 0, corporate: 0, 'galleries-retail': 0 };
             document.querySelectorAll('[data-zone]').forEach(el => {
                 const z = el.dataset.zone;
-                if (counts[z] !== undefined) counts[z]++;
+                if (zoneCounts[z] !== undefined) zoneCounts[z]++;
+                (el.dataset.category || '').split(/\s+/).forEach(t => { if (tierCounts[t] !== undefined) tierCounts[t]++; });
             });
             const badge = document.createElement('div');
             badge.className = 'dev-badge';
-            badge.innerHTML = `<span>DEV MODE</span> · hero ${counts.hero} · editorial ${counts.editorial} · archive ${counts.archive}`;
+            badge.innerHTML = `
+              <span>DEV</span> · zones: hero ${zoneCounts.hero} · editorial ${zoneCounts.editorial} · archive ${zoneCounts.archive}<br>
+              <span>TIER</span> · hospitality ${tierCounts.hospitality} · corporate ${tierCounts.corporate} · galleries-retail ${tierCounts['galleries-retail']}
+            `;
             document.body.appendChild(badge);
         })();
     </script>

@@ -1,14 +1,21 @@
 # Mira Fleur · 空间作品档案页 · 排盘规范
 
 > **交付对象:** 前端开发(GitHub repo: `Francesca0518-source/MiraFleur`)
-> **输入素材:** 30+ 张黑底空间花艺图(Photoroom 处理过,来自花艺师过往酒店空间项目)
-> **页面定位:** 专业背书 + C 线(企业账户)隐性销售素材 + 首页 About "30 年酒店花艺经验" 的视觉证据
+> **输入素材:** **37 张**黑底空间花艺图(来自"黑色背景板空间花艺"文件夹,Photoroom 处理过)——**绝大多数是酒店前台花 / 大堂 / 宴会场景,全部满足"可重复容器"准入规则**
+> **分类 Taxonomy(v5 定案):** Line 1 下分三档顶级 tag,每张图可多 tag(最多 3 个):
+>   - `Hospitality · 酒店花艺`(酒店/餐厅/度假村)
+>   - `Corporate · 企业花艺`(办公楼/律所/诊所/精品健身)
+>   - `Galleries & Retail · 商务空间`(画廊/精品店/showroom)
+> **放弃的命名:** ~~Resident Florals / 驻场花艺~~(造词负担大、英语 native 理解有摩擦,2026-04-23 弃用)
+> **页面定位:** 过往作品 / 能力档案——同时承担两条动线:
+>   - **动线 A(首要 · Line 1):** 企业 + 私宅**空间花订阅**的销售证据。点进来的客户看完会想"我的空间也能一直这样"
+>   - **动线 B(次要 · 大单接入):** 一次性 bespoke 活动 / 装置委托的能力证明。看完会想"我们家开幕/活动可以找她"
 > **品牌锚点:** 华丽但克制 / 有故事的花 / NY 审美底子 × 南加州生活感
-> **文档版本:** v2 · 2026-04-23(对齐现有 repo 架构与 `brand/colors.md`)
+> **文档版本:** v5 · 2026-04-23(三档 taxonomy · 多 tag 机制 · 放弃 Resident 造词)
 
 ---
 
-## 0.0 · 与现有 repo 的关系(v2 新增)
+## 0.0 · 与现有 repo 的关系(v2 新增,v4 补充图片准入规则)
 
 读完 repo 后的关键对齐:
 
@@ -16,7 +23,77 @@
 - **本文档描述的是一个新页面 `/portfolio/spaces/`**——空间花艺的编辑型深度页,承担档案 / 专业背书角色。
 - 两者关系:`/portfolio/` 是**目录**,`/portfolio/spaces/` 是**专题**。目录让客户快速筛到自己的场景,专题让 Corporate / 高端客户看到真功夫。
 - 首页联动(见 §1.4):About 段内嵌链接指向本页;首页 Portfolio Grid 6 格里留 2 格给空间作品 + 一个 "View Spaces Archive →" 出口。
+
+### 0.0b · 图片准入规则(v4 新增 · **严格执行**)
+
+本页**只收**下列一种图:
+
+✅ **可重复容器的花艺作品(玻璃 / 陶瓷 / 金属等)** + Photoroom 黑底或墨蓝深底
+
+**不属于本页的作品**(请勿混入,各走各的页面,详见 `project_mira_portfolio_visual_taxonomy.md`):
+
+- ❌ 抱抱桶 / 纸包花束 / 礼盒 / 丝带包装等一次性容器 → 未来 `/portfolio/gifts/`,月白暖底 `#F5F1E8`
+- ❌ 宴会 / 活动现场组图(多张环境叙事照) → `/journal/` 或 `/portfolio/events/`,**不抠图,保留原环境**
+- ❌ 周更花 / 盲盒作品 → Line 2 未启动,**不进任何 Portfolio**
+
+**理由:** 容器类型反映业务关系(持续 vs 一次性 vs 周期标品),视觉语言必须匹配业务语言。混入其他类型会稀释 Spaces 档案的 Line 1 订阅叙事。
 - 同一批图可以**部分复用**到 `/portfolio/` 的 Corporate / Celebrations / New Beginnings / Everyday 滤镜下,但封面图要避开 `/portfolio/spaces/` 的 Feature 三联那三张,否则目录感稀释专题感。
+
+### 0.1 · `/portfolio/` 目录页的 Taxonomy 填充(v5 定案)
+
+**顶级 Tag 体系(三档,每张图必须有至少一个):**
+
+| Tag | 中文 chip 显示 | 触发条件 |
+|---|---|---|
+| `hospitality` | 酒店花艺 | 酒店 / 餐厅 / 度假村 / Spa 场景 |
+| `corporate` | 企业花艺 | 办公 / 诊所 / 律所 / 健身/医美/月子/早教 |
+| `galleries-retail` | 商务空间 | 画廊 / 精品店 / showroom / 展陈 |
+
+**横向二级 Tag(可叠加):**
+`celebrations` · `new-beginnings` · `everyday`
+
+**不用的 Tag:** `weddings` · `proposals` · `sympathy`(无真实素材,filter chip 隐藏)
+
+**多 Tag 规则:**
+
+- 每张图 **最多 3 个 tag**
+- 必须有**至少 1 个顶级 tag**
+- 可叠加 1-2 个横向二级 tag
+- **场景子 tag**(Hotel Reception / Hotel Lobby / Banquet 等 8 档,见 §3.1b)**是 caption 素材,不是 data-category**
+- 顶级 tag 可以同时多选(如酒店 gallery 联合活动 → `hospitality galleries-retail`)
+
+**顶级 tag 从现有场景子 tag 自动 roll-up:**
+
+| 场景子 tag | → 顶级 tag(默认映射) |
+|---|---|
+| Hotel Reception / Hotel Lobby / Banquet Tablescape | → `hospitality` |
+| Boardroom / Executive Office | → `corporate` |
+| Gallery · Exhibition | → `galleries-retail` |
+| Corridor Installation / Event Foyer | 看图人工判定(走廊在酒店→hospitality,在 office→corporate,在画廊→galleries-retail) |
+
+**data-category 实现:**
+
+```html
+<!-- 单顶级 tag -->
+<div class="portfolio-item" data-category="hospitality">...</div>
+
+<!-- 顶级 + 横向 -->
+<div class="portfolio-item" data-category="hospitality celebrations">...</div>
+
+<!-- 跨顶级(酒店办的画廊活动) -->
+<div class="portfolio-item" data-category="hospitality galleries-retail new-beginnings">...</div>
+```
+
+Filter 逻辑:点击某 chip 时 OR 匹配——图片的 data-category 含该 tag 就显示。
+
+**filter chip 顺序与视觉:**
+
+顺序:`All · Hospitality · Corporate · Galleries & Retail · Celebrations · New Beginnings · Everyday`
+
+视觉:
+- 三档顶级 tag(Hospitality / Corporate / Galleries & Retail):激活态用 `--color-jinbo` 金箔下划线 + 粗体
+- 二级横向 tag(Celebrations / New Beginnings / Everyday):激活态用 `--color-molan-soft` 下划线,视觉权重低一级
+- 暂时隐藏的 chip(Weddings / Proposals / Sympathy):在 HTML 保留,CSS `display:none`,以便日后有图时一行改回
 
 ---
 
@@ -238,6 +315,41 @@ Florals made for rooms that remember them.
 - 颜色过饱和、艳俗(粉+红+黄堆砌)
 - 能看出拍摄仓促(光线平、没氛围)
 
+### 3.1b 场景 Taxonomy(v3 新增 · 每张图必填)
+
+每张图除了归 hero/editorial/archive 三档,还要从下面这张表里挑一个**场景 tag**(`scene`)——作为 caption 和 alt 的基础:
+
+| 中文 | English | 触发场景 |
+|---|---|---|
+| 酒店前台 | Hotel Reception | 大部分图应该落在这里——前台迎宾花 |
+| 酒店大堂 | Hotel Lobby | 大堂装置、中央花台、入口 |
+| 宴会桌花 | Banquet Tablescape | 婚宴/商务宴会长桌或圆桌 |
+| 活动入口 | Event Foyer | 发布会/ gala /开幕式入口 |
+| 走廊装置 | Corridor Installation | 走道、电梯间 |
+| 会议室 | Boardroom | 会议桌中央或侧几 |
+| 画廊 / 展陈 | Gallery · Exhibition | 画廊开幕、展览配花 |
+| 行政办公 | Executive Office | 高管办公室桌花 |
+
+**分配建议:** 看一眼 30 张图,至少 60–70% 应落在 `Hotel Reception` + `Hotel Lobby` + `Banquet Tablescape` 这三档——这符合你商业规划(Corporate / Hospitality)。若某一档只有 1 张孤图,合并到最近的档。
+
+### 3.1c 调色板 Tag(每张图必填)
+
+每张图再配一个 1–2 色的调色板描述,用于 caption。参考 `brand/colors.md` 里的命名体系,**优先用中文诗意色名**:
+
+**常见组合范例:**
+
+| 主色 | 副色 | 英文 | 氛围 |
+|---|---|---|---|
+| 月白 | 月桂 | Ivory + Laurel | 清冷克制 |
+| 烟玫 | 藕荷 | Misty Rose | 柔美克制 |
+| 霜柿 | 胭脂 | Persimmon + Rouge | 秋冬暖意 |
+| 墨梅 | 檀香 | Deep Plum + Sandalwood | 浓郁内敛 |
+| 青梅 | 月白 | Green Plum + Ivory | 清透诗意 |
+| 金箔 | 墨蓝 | Amber + Navy | 正式华丽 |
+| 纯白 | — | Full White | 极简高级 |
+
+(不够的组合按现场实际调配,但名字必须走 `brand/colors.md` 的诗意中文 + 英文范式,不用粉红 / 亮橙 / 玫红 这种直白色词)
+
 ### 3.2 色彩与节奏编排
 
 分类之后,在 `02_editorial` 和 `03_archive` 里按**色彩分簇**再排序:
@@ -313,31 +425,93 @@ mira-spaces-archive-17.jpg
 
 ### 4.4 Alt Text(无障碍 + SEO)
 
-每张图一条 alt,格式:
+每张图一条 alt,格式(v3 更新 · Corporate 导向):
 
 ```
-Mira Fleur space work — [场景类别], [主色调/情绪]
+Mira Fleur corporate floral — [scene], [palette] palette
 ```
 
 **例:**
-- `Mira Fleur space work — hotel lobby installation, warm autumn palette`
-- `Mira Fleur space work — banquet tablescape, muted ivory and green`
+- `Mira Fleur corporate floral — hotel reception arrangement, ivory and laurel palette`
+- `Mira Fleur hospitality floral — hotel lobby installation, persimmon and rouge palette`
+- `Mira Fleur corporate event floral — banquet tablescape, amber and navy palette`
+- `Mira Fleur corporate floral — gallery exhibition, full white palette`
 
-**不要**:写酒店名 / 客户名(保护客户 + 避免商业感)。
+**关键词必须包含一个:** `corporate floral` / `hospitality floral` / `hotel floral` / `corporate event floral`——这是 SEO 端抓 C 线长尾(如 "Newport Coast hotel florist")的关键。
+
+**不要:** 写酒店名 / 客户名 / 品牌名(保护客户 + 避免商业感)。
+
+### 4.5 图片 Caption(v3 新增 · 图下可见文字)
+
+每张 Editorial Grid 和 Archive Strip 的图都配一条双行 caption,图下居中,小字:
+
+```
+EN · 衬线:   Hotel Reception · Ivory + Laurel
+ZH · 宋体:   酒店前台 · 月白 + 月桂
+```
+
+**样式:**
+```css
+.spaces-caption {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-molan-soft);     /* #2D4057 */
+  line-height: 1.6;
+}
+.spaces-caption .en {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+}
+.spaces-caption .zh {
+  font-family: var(--font-serif-zh);
+  display: block;
+}
+.spaces-caption .dot {
+  margin: 0 8px;
+  color: var(--color-jinbo);          /* #B8924A 金箔做分隔 */
+}
+```
+
+**不做:**
+- ❌ Feature 三联(§2[B])**不加 caption**——让三张气势图呼吸,太多字会降格
+- ❌ **绝不**写日期("2023 Autumn")、地点("Pelican Hill")、客户名("for the Smiths")——全部匿名化
+- ❌ 不写长文案(不是 case study,是 caption 层)
+
+**Hover 可选增强(非必要):**
+Archive Strip 的图 hover 时,caption 颜色从 `--color-molan-soft` 渐变到 `--color-molan`(加深 30%),暗示可交互。不要浮出新的 tooltip。
 
 ---
 
 ## 5 · 文案稿(可直接复制)
 
-### 5.1 Hero(§2[A])
+### 5.1 Hero(§2[A] · v4 更新 · 订阅优先 + 大单兼容)
 
+**主标:**
 ```
 EN:  Spaces
 ZH:  空间
-
-EN:  Florals made for rooms that remember them.
-ZH:  为会记住它们的空间而做的花。
 ```
+
+**副标(定稿):**
+```
+EN:  Florals for spaces that stay in bloom —
+     weekly, by subscription, or for a single occasion.
+
+ZH:  为常年盛放的空间而做的花 —
+     按周订阅,或为某一场合。
+```
+
+**关键词解读(给 Claude Code / 审核者):**
+- `stay in bloom / 常年盛放` → 暗示订阅的持续性(Line 1 主调性)
+- `weekly, by subscription` → 明确 Line 1 入口信号,SEO 抓 "weekly floral subscription" 长尾
+- `for a single occasion / 或为某一场合` → 开一扇门给大单客户,不排斥 bespoke 活动委托
+- "stay in bloom" 比 "remember them" 更具体,比 "subscribe now" 更克制,两全
+
+**不用的版本(历史参考,别用):**
+- ~~"Florals made for rooms that remember them"~~ (v1,太抽象,无商业信号)
+- ~~"Florals for rooms where the first impression begins"~~ (v3,偏 C 线单轴,没涵盖订阅)
 
 ### 5.2 Editorial 呼吸行(§2[C],任选 1–2 段)
 
@@ -359,15 +533,34 @@ Selected works · 2021—2026
 霜柿 · Persimmon Frost · #C9622E
 ```
 
-### 5.3 底部 CTA(§2[E])
+### 5.3 底部 CTA(§2[E] · v4 更新 · 双动线,订阅优先)
 
 ```
-Have a space in mind?
-对空间项目有想法?
+Two ways to work together ·
+两种合作方式
 
-→ Corporate · 企业花艺
-→ Get in touch · 写信给我们
+→ [Primary · 订阅动线 A]
+    Weekly florals for your space ·
+    每周花艺订阅
+    → for hotels, galleries, offices, and private residences
+
+→ [Secondary · 大单动线 B]
+    For a one-time event or installation ·
+    单次活动与装置委托
+    → galas, openings, celebrations
 ```
+
+**视觉层级:**
+- Primary(订阅):`--color-molan` 标题文字 + `--color-jinbo` 细下划线,hover 下划线加粗
+- Primary 下一行补充说明:`--color-molan-soft` 小字,解释覆盖场景
+- Secondary(大单):整体用 `--color-molan-soft`,hover 变 `--color-molan`
+- **两个都不是按钮**,维持档案页克制感
+- 两者之间垂直间距 `48px`,不要并排(桌面端也纵向堆叠,防止"二选一"感)
+
+**Primary 指向:** `/services/` 页的订阅档位 anchor(`/services/#subscription`);若 `/services/` 尚未建订阅分区,临时指向 `/inquire/?source=spaces-subscription`
+**Secondary 指向:** `/inquire/?source=spaces-event`
+
+**URL 参数解读:** `?source=` 让 Inquiry 表单后端知道客户从哪里进来,便于 Francesca 手工优先级排序——订阅线索优于单次活动线索。
 
 ### 5.4 Meta(SEO / 分享)
 
@@ -510,26 +703,13 @@ Have a space in mind?
 
 ---
 
-## 9.5 · ⚠️ 图片权属红线(必读)
+## 9.5 · 图片素材规则
 
-**本 `/portfolio/spaces/` 页的 30 张图都是 Mira 花艺师本人过往作品,权属清晰,可直接用。**
+本 `/portfolio/spaces/` 页的 30 张图以及首页 Portfolio Grid 里所有的 Mira 作品图,**全部是 Mira Fleur 自有作品**(品牌主理人已确认)。Claude Code / 任何后续维护者在这页工作时:
 
-但关于你在对话里提到的另一件事——**"分类作品页 (`/portfolio/` filter-grid) 想去找一些'我们能做的'别人的图抠图放上去"——这件事强烈建议不要做。** 原因:
-
-1. **版权风险**:用他人摄影作品(含抠图后的)做商业营销素材,即便只是"示意我们能做这种风格",在美国属于侵权。最坏情况是 DMCA takedown + 赔偿。OC/洛杉矶圈子不大,婚礼/活动摄影师之间会互相认出对方的图。
-2. **品牌杀伤**:`/portfolio/` 现有文案是 "Every piece below was designed for a specific person, occasion, or space. None of them have been repeated." 如果后面这句话对应的图不是你做的,**一次被扒出就彻底塌房**——对"华丽但克制"这种靠信任撑起来的品牌是致命的。
-3. **客户心里明白**:高端客户(尤其 OC 华人妈妈圈)大概率认得出网图,Pinterest 一搜就露馅,反而掉信任。
-
-**替代方案(排序:从最稳到最灵活):**
-
-- ✅ **先只放真作品**:30 张空间图 + 白底花束图,真实拥有什么上什么。`/portfolio/` 初期条目可以少(比如 12 格而非 18 格),**空间和真实比数量重要**。
-- ✅ **"Styled Inspiration"分区明确标注**:若一定要用非自己作品的图做风格参考,单独开一个分区(如 "Inspiration · 灵感",不在 Portfolio 里),每张图加 photographer/source credit + "Not by Mira Fleur — a reference for style conversations"。这种透明坦诚反而加分,但**不能算作 portfolio**。
-- ✅ **委托 2–3 场免费/成本价的样片拍摄**:找 1–2 个真实客户(朋友家的 dinner party / 一次小型 celebration),自己出花材,换来专业摄影权。一周内能补齐 Celebrations / New Beginnings / Everyday 三个分类各 3 张真实作品。这条路线最值得投入。
-- ✅ **用 AI 生成图,但标注清楚**:`MIDJOURNEY_PROMPTS.md` 已经在 repo 里,说明 AI 图是品牌已在使用的素材。但 **AI 图只放在 Heritage 段 / Classical 段那种"氛围图"位置,绝不进 Portfolio**(Portfolio 是"我们做过"的承诺,AI 图违反这个承诺)。
-
-**底线:`/portfolio/` 里的每一张都必须是 Mira 真实做过的。** 如果某个 Occasion 分类暂时没有真实作品,**宁可让那个分类空着**(或 filter chip 暂时隐藏),也不要填假的。
-
-本文档会把这条记入品牌铁律。
+- 图片文件直接使用 Francesca 提供的素材
+- Alt 文案按规范 §4.4 的脱敏格式写(不含客户/酒店名),但这是隐私保护而非版权理由
+- AI 生成图(如 `MIDJOURNEY_PROMPTS.md` 产出)用于 Heritage / Classical 等氛围段即可,不进入 Portfolio
 
 ---
 
