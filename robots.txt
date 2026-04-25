@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /inquire/thank-you/
 
-Sitemap: https://francesca0518-source.github.io/MiraFleur/sitemap.xml
+Sitemap: https://maisonmirafleur.com/sitemap.xml
