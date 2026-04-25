@@ -4271,3 +4271,37 @@ html[lang='zh-CN'] .line-cta-sub {
     line-height: 2.0;
     letter-spacing: 0.04em;
 }
+
+/* ===== Hide floating "Text Us" pill on grid pages — overlaps images ===== */
+.line-page .text-us-float,
+.line-page-all .text-us-float {
+    display: none !important;
+}
+
+/* ===== "View full archive" button (replaces text link below showcase grid) ===== */
+.line-view-all {
+    text-align: center;
+    margin: 64px auto 0;
+}
+.line-view-all a {
+    display: inline-block;
+    padding: 16px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-molan);
+    background: transparent;
+    border: 1px solid var(--color-molan);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.line-view-all a:hover {
+    background: var(--color-molan);
+    color: var(--color-yuebai-cool);
+}
+html[lang='zh-CN'] .line-view-all a {
+    font-family: 'Noto Sans SC', sans-serif;
+    text-transform: none;
+    letter-spacing: 0.16em;
+    font-size: 0.92rem;
+}
