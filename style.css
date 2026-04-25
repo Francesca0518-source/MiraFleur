@@ -3184,49 +3184,71 @@ body.dev-mode [data-zone] {
 }
 
 /* Grid */
-.line-grid-section { padding: 8vh 32px; }
+/* Line page grid — fixed-aspect tile layout (4:5 portrait).
+   Switches: messy CSS columns → orderly grid; full-bleed source → cover-cropped tiles
+   for consistent visual rhythm across mixed image aspect ratios. */
+.line-grid-section { padding: 8vh 24px; }
 .line-filter-bar {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
     justify-content: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     padding: 0 1rem;
 }
 .line-grid {
-    column-count: 3;
-    column-gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     max-width: 1280px;
     margin: 0 auto;
 }
 .line-card {
-    break-inside: avoid;
-    margin: 0 0 16px;
+    aspect-ratio: 4 / 5;
     background: var(--color-yuebai-cool);
     overflow: hidden;
     cursor: pointer;
-    transition: filter 0.3s;
+    position: relative;
+    margin: 0;
+    border: 1px solid rgba(0,0,0,0.04);
 }
 .line-card img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
+    transition: transform 0.6s ease, filter 0.3s ease;
 }
-.line-card:hover { filter: brightness(1.03); }
+.line-card:hover img {
+    transform: scale(1.025);
+    filter: brightness(1.03);
+}
 .line-grid-count {
     text-align: center;
-    margin-top: 32px;
-    font-size: 0.82rem;
-    letter-spacing: 0.15em;
+    margin-top: 48px;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-ink-500);
 }
 
-@media (max-width: 1024px) {
-    .line-grid { column-count: 2; }
+/* Corporate uses dark-bg images — give cards a subtle dark backdrop so the
+   black bg flows into the tile evenly, not as a square cutout on cream. */
+.line-page-corporate .line-card { background: var(--color-molan-deep); border-color: transparent; }
+
+/* Events uses on-site environmental shots — slightly tighter grid + neutral tone */
+.line-page-events .line-card { background: var(--color-yuebai-warm); }
+
+@media (max-width: 1100px) {
+    .line-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
 }
-@media (max-width: 640px) {
-    .line-grid { column-count: 1; }
+@media (max-width: 860px) {
+    .line-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+@media (max-width: 520px) {
+    .line-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .line-grid-section { padding: 6vh 12px; }
     .line-hero { padding: 16vh 24px 8vh; }
     .killer-box { padding: 56px 28px; }
 }
