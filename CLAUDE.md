@@ -155,5 +155,5 @@
 
 ---
 
-*最后更新: 2026-04-25(本次重大更新:服务范围收窄、hero slogan 定稿为"把难以言说的情感,托付给一束得体的花"、彻底删除"atelier / 工作室 / By appointment / Newport Coast 起源"等门店暗示、明确 SMS-only 沟通口径、inquire 表单加入 brief 引导字段。完整决策与禁用词清单见 `brand/services-scope.md`)*
+*最后更新: 2026-04-25(本轮第二次重大更新:四条业务线 IA 重构 — 主导航改为 Weekly · Gifts · Corporate · Events,删除 /portfolio/ 与 /occasions/ 整个目录,旧 URL 全部 301 跳转到新业务线。Issue #1/#2 的 hospitality/corporate/galleries-retail 三档 sub-tag 对外作废。完整决策见 `brand/services-scope.md`)*
 *这份文档会随项目演进。每次有重大品牌/技术决策,更新这里并在 git commit 里说明。*
