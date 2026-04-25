@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Palette Compare — Mira Fleur (private)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;500&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Jost', -apple-system, sans-serif;
+    background: #ECECEC;
+    color: #1A1A1A;
+    line-height: 1.7;
+    padding: 48px 24px;
+}
+.page-head {
+    max-width: 1200px;
+    margin: 0 auto 56px;
+}
+.page-head h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+.page-head p {
+    font-size: 0.95rem;
+    color: #555;
+    max-width: 720px;
+}
+.note {
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 16px;
+    letter-spacing: 0.05em;
+}
+.palette-stack {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+/* --- Palette card frame --- */
+.palette-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+.palette-meta {
+    padding: 28px 32px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.palette-meta-l h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 6px;
+}
+.palette-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #888;
+}
+.palette-meta-r {
+    font-size: 0.85rem;
+    color: #444;
+}
+.palette-meta-r strong { color: #1A1A1A; font-weight: 500; }
+.palette-meta-r em { font-style: italic; color: #666; }
+.palette-ref a {
+    color: #1A1A1A;
+    border-bottom: 1px solid #B8924A;
+    text-decoration: none;
+    padding-bottom: 1px;
+}
+
+/* Swatch row */
+.swatches {
+    display: flex;
+    height: 64px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.sw {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 0.08em;
+}
+.sw-light { color: #1A1A1A; }
+.sw-dark { color: #FAFAFA; }
+
+/* Live preview mock */
+.preview {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0;
+}
+@media (max-width: 920px) {
+    .preview { grid-template-columns: 1fr; }
+    .palette-meta { grid-template-columns: 1fr; }
+}
+
+.mock-hero {
+    padding: 64px 40px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mock-hero .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    opacity: 0.65;
+}
+.mock-hero h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+.mock-hero h3 .zh {
+    font-family: 'Noto Serif SC', serif;
+    display: block;
+    font-style: normal;
+    font-size: 0.7em;
+    margin-top: 6px;
+    opacity: 0.85;
+}
+.mock-hero p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 380px;
+    opacity: 0.78;
+}
+.mock-cta {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    align-self: flex-start;
+    transition: opacity 0.3s;
+}
+.mock-cta-secondary {
+    margin-top: 12px;
+    align-self: flex-start;
+    font-size: 0.78rem;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 2px;
+}
+
+/* Mock card column (right side) */
+.mock-card-col {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.mock-card {
+    aspect-ratio: 4 / 5;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.mock-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.fineprint {
+    padding: 16px 32px 24px;
+    font-size: 0.82rem;
+    color: #555;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    background: #FAFAFA;
+}
+.fineprint strong { color: #1A1A1A; }
+
+/* Anchor tag for current */
+.is-current {
+    border: 2px solid #1A2B3D;
+    box-shadow: 0 0 0 6px #ECECEC, 0 0 0 7px #1A2B3D;
+}
+.current-stamp {
+    display: inline-block;
+    background: #1A2B3D;
+    color: #F5F1E8;
+    padding: 3px 10px;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+footer.legend {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: 0.85rem;
+    color: #555;
+}
+footer.legend ul { list-style: none; padding: 0; margin-top: 12px; }
+footer.legend li { padding: 4px 0; }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+    <h1>Palette directions to choose from</h1>
+    <p>Each block shows a live preview of how your hero, CTAs, and image cards would look in that palette. Real reference brands linked. Click swatches to copy hex.</p>
+    <p class="note">PRIVATE · noindex · /brand/palettes/</p>
+</div>
+
+<div class="palette-stack">
+
+<!-- ============ 1. CURRENT (Belle Époque) ============ -->
+<article class="palette-card is-current">
+    <div class="palette-meta">
+        <div class="palette-meta-l">
+            <div class="palette-tag">DIRECTION 0 · YOUR CURRENT</div>
+            <h2>Belle Époque <span class="current-stamp">LIVE</span></h2>
+            <p style="font-size:0.85rem;color:#666;margin-top:6px;">深藏蓝 / 琥珀金 / 月白 — La Grande Boucherie NYC anchor</p>
+        </div>
+        <div class="palette-meta-r">
+            <strong>Reference:</strong> La Grande Boucherie (NYC), Bemelmans Bar, NoMad NY<br>
+            <span class="palette-ref"><strong>Look at:</strong> <a href="https://lagrandeboucherie.com/" target="_blank">lagrandeboucherie.com</a> · <a href="https://www.bemelmansbar.com/" target="_blank">bemelmansbar.com</a></span><br>
+            <em>Pick if:</em> the East-coast restaurant gravitas reads "trustworthy heritage" to your OC clientele.
+        </div>
+    </div>
+    <div class="swatches">
+        <div class="sw sw-dark"  style="background:#1A2B3D;">墨蓝 · #1A2B3D</div>
+        <div class="sw sw-dark"  style="background:#0F1B28;">深墨 · #0F1B28</div>
+        <div class="sw sw-light" style="background:#B8924A;">金箔 · #B8924A</div>
+        <div class="sw sw-light" style="background:#F5F1E8;">月白 · #F5F1E8</div>
+        <div class="sw sw-light" style="background:#FAF7F0;">月白冷 · #FAF7F0</div>
+    </div>
+    <div class="preview">
+        <div class="mock-hero" style="background:#F5F1E8;color:#1A2B3D;">
+            <span class="eyebrow">SIGNATURE GIFTS</span>
+            <h3>Some things,<br>only flowers can say.<span class="zh">把难以言说的情感,托付给一束得体的花。</span></h3>
+            <p>Bespoke floral design for Orange County's most meaningful moments. From Irvine.</p>
+            <a class="mock-cta" style="background:#1A2B3D;color:#F5F1E8;">Browse Signature Gifts</a>
+            <a class="mock-cta-secondary" style="color:#1A2B3D;border-bottom-color:#B8924A;">Inquire for custom design →</a>
+        </div>
+        <div class="mock-card-col" style="background:#FAF7F0;">
+            <div class="mock-card" style="background-image:url('../../images/gifts/_source/0deb50150198f2fdf38ffac4b5b8f36e-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#1A2B3D;color:#F5F1E8;">GIFTS</span>
+            </div>
+            <div class="mock-card" style="background-image:url('../../images/corporate/_source/1697-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#B8924A;color:#1A2B3D;">CORPORATE</span>
+            </div>
+        </div>
+    </div>
+    <p class="fineprint"><strong>Reads as:</strong> NY old-money restaurant. Weight + craft + a little ceremonial. <strong>Risk:</strong> can read masculine / hospitality-industry if not balanced with cream + softness elsewhere.</p>
+</article>
+
+<!-- ============ 1. LOEWE GARDEN ============ -->
+<article class="palette-card">
+    <div class="palette-meta">
+        <div class="palette-meta-l">
+            <div class="palette-tag">DIRECTION 1 · BOTANICAL LUXURY</div>
+            <h2>Loewe Garden</h2>
+            <p style="font-size:0.85rem;color:#666;margin-top:6px;">深苔绿 / 暖象牙 / 香槟铜 — high-end botanical, Casa Loewe DNA</p>
+        </div>
+        <div class="palette-meta-r">
+            <strong>Reference:</strong> Casa Loewe, Aesop, Officine Universelle Buly (florals & plants)<br>
+            <span class="palette-ref"><strong>Look at:</strong> <a href="https://www.loewe.com/usa/en/casa-loewe.html" target="_blank">casa loewe</a> · <a href="https://www.aesop.com/" target="_blank">aesop.com</a></span><br>
+            <em>Pick if:</em> you want the brand to read "of nature, by craftspeople" — not "luxury hotel". Strongest fit for Line D Events.
+        </div>
+    </div>
+    <div class="swatches">
+        <div class="sw sw-dark"  style="background:#2D3F30;">深苔 · #2D3F30</div>
+        <div class="sw sw-dark"  style="background:#1A241D;">墨苔 · #1A241D</div>
+        <div class="sw sw-light" style="background:#B85C3A;">陶土 · #B85C3A</div>
+        <div class="sw sw-light" style="background:#F4EFE5;">象牙 · #F4EFE5</div>
+        <div class="sw sw-light" style="background:#E8DFCD;">奶米 · #E8DFCD</div>
+    </div>
+    <div class="preview">
+        <div class="mock-hero" style="background:#F4EFE5;color:#1A241D;">
+            <span class="eyebrow" style="color:#B85C3A;">SIGNATURE GIFTS</span>
+            <h3>Some things,<br>only flowers can say.<span class="zh">把难以言说的情感,托付给一束得体的花。</span></h3>
+            <p>Bespoke floral design for Orange County's most meaningful moments. From Irvine.</p>
+            <a class="mock-cta" style="background:#2D3F30;color:#F4EFE5;">Browse Signature Gifts</a>
+            <a class="mock-cta-secondary" style="color:#2D3F30;border-bottom-color:#B85C3A;">Inquire for custom design →</a>
+        </div>
+        <div class="mock-card-col" style="background:#E8DFCD;">
+            <div class="mock-card" style="background-image:url('../../images/gifts/_source/0deb50150198f2fdf38ffac4b5b8f36e-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#2D3F30;color:#F4EFE5;">GIFTS</span>
+            </div>
+            <div class="mock-card" style="background-image:url('../../images/corporate/_source/1697-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#B85C3A;color:#F4EFE5;">CORPORATE</span>
+            </div>
+        </div>
+    </div>
+    <p class="fineprint"><strong>Reads as:</strong> botanical atelier, soil-and-stems craft, gardener's eye. <strong>Risk:</strong> if too green-heavy, can drift toward "wellness brand". Keep accent terra-cotta usage strict (≤2% of any view).</p>
+</article>
+
+<!-- ============ 2. BULY 1803 PARFUMERIE ============ -->
+<article class="palette-card">
+    <div class="palette-meta">
+        <div class="palette-meta-l">
+            <div class="palette-tag">DIRECTION 2 · PARFUMERIE HERITAGE</div>
+            <h2>Buly 1803</h2>
+            <p style="font-size:0.85rem;color:#666;margin-top:6px;">血红 / 古董金 / 羊皮纸 — 19th-century Parisian apothecary</p>
+        </div>
+        <div class="palette-meta-r">
+            <strong>Reference:</strong> Officine Universelle Buly, Cire Trudon, Astier de Villatte<br>
+            <span class="palette-ref"><strong>Look at:</strong> <a href="https://www.buly1803.com/" target="_blank">buly1803.com</a> · <a href="https://www.ciretrudon.com/" target="_blank">ciretrudon.com</a></span><br>
+            <em>Pick if:</em> you want "Mira Fleur, est. 2026 — but feels like est. 1903" — heritage-leaning, ceremonial, gift-forward.
+        </div>
+    </div>
+    <div class="swatches">
+        <div class="sw sw-dark"  style="background:#5C2228;">血红 · #5C2228</div>
+        <div class="sw sw-dark"  style="background:#2A1A1A;">墨棕 · #2A1A1A</div>
+        <div class="sw sw-light" style="background:#C9A961;">古金 · #C9A961</div>
+        <div class="sw sw-light" style="background:#F1ECE0;">羊皮 · #F1ECE0</div>
+        <div class="sw sw-light" style="background:#E5DCC6;">米玉 · #E5DCC6</div>
+    </div>
+    <div class="preview">
+        <div class="mock-hero" style="background:#F1ECE0;color:#2A1A1A;">
+            <span class="eyebrow" style="color:#5C2228;">SIGNATURE GIFTS</span>
+            <h3>Some things,<br>only flowers can say.<span class="zh">把难以言说的情感,托付给一束得体的花。</span></h3>
+            <p>Bespoke floral design for Orange County's most meaningful moments. From Irvine.</p>
+            <a class="mock-cta" style="background:#5C2228;color:#F1ECE0;">Browse Signature Gifts</a>
+            <a class="mock-cta-secondary" style="color:#5C2228;border-bottom-color:#C9A961;">Inquire for custom design →</a>
+        </div>
+        <div class="mock-card-col" style="background:#E5DCC6;">
+            <div class="mock-card" style="background-image:url('../../images/gifts/_source/0deb50150198f2fdf38ffac4b5b8f36e-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#5C2228;color:#F1ECE0;">GIFTS</span>
+            </div>
+            <div class="mock-card" style="background-image:url('../../images/corporate/_source/1697-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#C9A961;color:#2A1A1A;">CORPORATE</span>
+            </div>
+        </div>
+    </div>
+    <p class="fineprint"><strong>Reads as:</strong> Parisian heritage parfumerie, ceremonial gift box, family-shop-with-archives. <strong>Risk:</strong> too much oxblood = perfume brand vibe. Best if you reserve oxblood for accents (chinese-new-year line, anniversary line).</p>
+</article>
+
+<!-- ============ 3. AMAN SAND ============ -->
+<article class="palette-card">
+    <div class="palette-meta">
+        <div class="palette-meta-l">
+            <div class="palette-tag">DIRECTION 3 · ASIAN-INFLECTED RESTRAINT</div>
+            <h2>Aman Sand</h2>
+            <p style="font-size:0.85rem;color:#666;margin-top:6px;">暖炭 / 黄铜 / 沙白 — Aman Tokyo / Sezane neutrality</p>
+        </div>
+        <div class="palette-meta-r">
+            <strong>Reference:</strong> Aman Resorts (esp. Aman Tokyo, Amangiri), Sezane, Le Labo<br>
+            <span class="palette-ref"><strong>Look at:</strong> <a href="https://www.aman.com/" target="_blank">aman.com</a> · <a href="https://www.sezane.com/us" target="_blank">sezane.com</a></span><br>
+            <em>Pick if:</em> you want the Eastern × NY × SoCal positioning to read most clearly. Strongest match to your CLAUDE.md anchor.
+        </div>
+    </div>
+    <div class="swatches">
+        <div class="sw sw-dark"  style="background:#3A352D;">暖炭 · #3A352D</div>
+        <div class="sw sw-dark"  style="background:#2A2620;">深炭 · #2A2620</div>
+        <div class="sw sw-light" style="background:#A88456;">黄铜 · #A88456</div>
+        <div class="sw sw-light" style="background:#E8DFCD;">沙白 · #E8DFCD</div>
+        <div class="sw sw-light" style="background:#F4EEE2;">米沙 · #F4EEE2</div>
+    </div>
+    <div class="preview">
+        <div class="mock-hero" style="background:#F4EEE2;color:#2A2620;">
+            <span class="eyebrow" style="color:#A88456;">SIGNATURE GIFTS</span>
+            <h3>Some things,<br>only flowers can say.<span class="zh">把难以言说的情感,托付给一束得体的花。</span></h3>
+            <p>Bespoke floral design for Orange County's most meaningful moments. From Irvine.</p>
+            <a class="mock-cta" style="background:#3A352D;color:#F4EEE2;">Browse Signature Gifts</a>
+            <a class="mock-cta-secondary" style="color:#3A352D;border-bottom-color:#A88456;">Inquire for custom design →</a>
+        </div>
+        <div class="mock-card-col" style="background:#E8DFCD;">
+            <div class="mock-card" style="background-image:url('../../images/gifts/_source/0deb50150198f2fdf38ffac4b5b8f36e-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#3A352D;color:#F4EEE2;">GIFTS</span>
+            </div>
+            <div class="mock-card" style="background-image:url('../../images/corporate/_source/1697-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#A88456;color:#2A2620;">CORPORATE</span>
+            </div>
+        </div>
+    </div>
+    <p class="fineprint"><strong>Reads as:</strong> Aman resort lobby in Kyoto / wabi luxury / tea-ceremony minimalism. <strong>Risk:</strong> too soft if you ever need to do something dramatic (Chinese New Year red moments). Pair with `胭脂` accent for those.</p>
+</article>
+
+<!-- ============ 4. THE ROW WHISPER ============ -->
+<article class="palette-card">
+    <div class="palette-meta">
+        <div class="palette-meta-l">
+            <div class="palette-tag">DIRECTION 4 · QUIET LUXURY (MAX RESTRAINT)</div>
+            <h2>The Row Whisper</h2>
+            <p style="font-size:0.85rem;color:#666;margin-top:6px;">暖黑 / 燕麦 / 骨白 — almost no color, all texture</p>
+        </div>
+        <div class="palette-meta-r">
+            <strong>Reference:</strong> The Row, Khaite, Lemaire, Margiela web<br>
+            <span class="palette-ref"><strong>Look at:</strong> <a href="https://www.therow.com/" target="_blank">therow.com</a> · <a href="https://khaite.com/" target="_blank">khaite.com</a></span><br>
+            <em>Pick if:</em> the photography is going to do all the talking. Site frames, doesn't compete.
+        </div>
+    </div>
+    <div class="swatches">
+        <div class="sw sw-dark"  style="background:#2C2A26;">暖黑 · #2C2A26</div>
+        <div class="sw sw-dark"  style="background:#5A5650;">石墨 · #5A5650</div>
+        <div class="sw sw-light" style="background:#9D8E73;">燕麦 · #9D8E73</div>
+        <div class="sw sw-light" style="background:#EFEAE0;">骨白 · #EFEAE0</div>
+        <div class="sw sw-light" style="background:#FAF7F0;">月白 · #FAF7F0</div>
+    </div>
+    <div class="preview">
+        <div class="mock-hero" style="background:#EFEAE0;color:#2C2A26;">
+            <span class="eyebrow" style="color:#9D8E73;">SIGNATURE GIFTS</span>
+            <h3>Some things,<br>only flowers can say.<span class="zh">把难以言说的情感,托付给一束得体的花。</span></h3>
+            <p>Bespoke floral design for Orange County's most meaningful moments. From Irvine.</p>
+            <a class="mock-cta" style="background:#2C2A26;color:#EFEAE0;">Browse Signature Gifts</a>
+            <a class="mock-cta-secondary" style="color:#2C2A26;border-bottom-color:#9D8E73;">Inquire for custom design →</a>
+        </div>
+        <div class="mock-card-col" style="background:#FAF7F0;">
+            <div class="mock-card" style="background-image:url('../../images/gifts/_source/0deb50150198f2fdf38ffac4b5b8f36e-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#2C2A26;color:#EFEAE0;">GIFTS</span>
+            </div>
+            <div class="mock-card" style="background-image:url('../../images/corporate/_source/1697-Photoroom.JPG');">
+                <span class="mock-tag" style="background:#5A5650;color:#EFEAE0;">CORPORATE</span>
+            </div>
+        </div>
+    </div>
+    <p class="fineprint"><strong>Reads as:</strong> The Row gallery, Margiela showroom, no-logo luxury. <strong>Risk:</strong> can read "fashion brand" not "florist" if you don't lean hard into the imagery. Strongest if all your photos are tonally consistent.</p>
+</article>
+
+</div>
+
+<footer class="legend">
+    <p><strong>How to pick:</strong> open this on your phone too, scroll through, see which preview makes you feel "yes that's Mira". Don't overthink the hex values — pick the <em>direction</em>, I'll tune the exact tones once we lock it.</p>
+    <ul>
+        <li>📍 <strong>Most-on-brand candidates</strong> for Mira Fleur:  <em>Direction 1 (Loewe Garden)</em> or <em>Direction 3 (Aman Sand)</em>.</li>
+        <li>🌹 <strong>If you want gift-forward / ceremonial:</strong> Direction 2 (Buly).</li>
+        <li>📷 <strong>If your photography is bulletproof:</strong> Direction 4 (The Row).</li>
+        <li>🏛️ <strong>If "trusted heritage" is the priority:</strong> stay on Direction 0 (current).</li>
+    </ul>
+    <p style="margin-top:18px;">Tell me 1–4, I'll swap the live site to the new palette in one PR — keep your existing 中文 color names (烟玫/霜柿…) intact for the Flora layer, only change the Foundation 三色锚.</p>
+</footer>
+
+<script>
+// click-to-copy hex from any swatch
+document.querySelectorAll('.sw').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.title = 'Click to copy hex';
+    el.addEventListener('click', () => {
+        const hex = el.textContent.trim().split(' · ').pop();
+        navigator.clipboard.writeText(hex).then(() => {
+            const orig = el.textContent;
+            el.textContent = '✓ Copied ' + hex;
+            setTimeout(() => el.textContent = orig, 1200);
+        });
+    });
+});
+</script>
+</body>
+</html>
