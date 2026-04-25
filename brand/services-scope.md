@@ -228,3 +228,71 @@ Francesca 反馈:之前几版仍偏自我加冕。新口径如下:
 ### 替换示例
 - ❌ "我们的工艺承接自三十年五星级酒店花艺的积淀——那种必须在大理石大堂、宴会厅与私人餐厅中独当一面的修养"
 - ✅ "我们能拿出来的,是过去三十年在五星级酒店花艺部门里养成的修养、稳妥与可靠"
+
+---
+
+## 2026-04-25 · 四条业务线 IA 定型(supersedes 之前所有 portfolio/occasions taxonomy)
+
+### 主导航四条线(顺序固定)
+
+| 顺序 | URL | 中文 | English | 视觉容器 | 主 CTA |
+|---|---|---|---|---|---|
+| 1 | `/weekly/` | 周更花礼盲盒 | Weekly Bloom | (Coming Soon) | Email capture |
+| 2 | `/gifts/` | 单次花礼 | Signature Gifts | 月白底 `#F5F1E8` Photoroom | Inquire to order |
+| 3 | `/corporate/` | 企业服务 | Corporate Florals | 墨蓝深底 `#0F1B28` Photoroom | **Book free 2-week pilot** |
+| 4 | `/events/` | 活动定制 | Event Florals | 原环境实拍(不抠图) | Inquire for consultation |
+
+次级 nav:About · Process · FAQ · Inquire(WeChat QR 在 contact 区)
+
+### 已废弃的 IA(本次完全替代)
+
+- ❌ `/portfolio/` 整个目录(连同 `/portfolio/spaces/`)
+- ❌ `/occasions/` 整个目录(6 个子页)
+- ❌ `/services/`(内容并入 `/corporate/`)
+- ❌ Issue #1 / #2 中的 `hospitality / corporate / galleries-retail` 三档 sub-tag —— 对外取消,对内 SOP 仍可保留
+- ❌ 之前 `Mira_Fleur_空间作品档案_排盘规范` v5 中的 `Spaces` 专题页定位 —— 内容并入 `/corporate/`
+
+### 旧 URL 重定向(meta-refresh,GitHub Pages 不支持服务端 301)
+
+| 旧 URL | → 新 URL |
+|---|---|
+| `/portfolio/` | `/gifts/` |
+| `/portfolio/spaces/` | `/corporate/` |
+| `/occasions/celebrations/` | `/gifts/?filter=celebration` |
+| `/occasions/new-beginnings/` | `/gifts/?filter=new-beginnings` |
+| `/occasions/sympathy-remembrance/` | `/gifts/?filter=sympathy` |
+| `/occasions/everyday-luxury/` | `/gifts/` |
+| `/occasions/corporate-events/` | `/corporate/` |
+| `/occasions/weddings-proposals/` | `/events/?filter=wedding` |
+| `/services/` | `/corporate/` |
+
+### Tag 体系(spec §6)
+
+- 4 个维度:Color · Occasion · Form/Type · Style/Mood
+- 每张图 5–10 tag,跨维度 AND 匹配,同维度内 OR 匹配
+- 不打 location tag(no city/region/state)
+- 客户可见 chip 不再细分 hospitality / corporate / galleries-retail
+
+### 图源映射(`/产品/` → `/images/{line}/_source/`)
+
+| 源文件夹 | → Line | 处理 |
+|---|---|---|
+| `企业酒店商业作品/` | C 企业 | 用户已编辑,直接上传(Photoroom 跳过) |
+| `黑色背景板空间花艺/` | C 企业 | 已 Photoroom 黑底,直接上传 |
+| `花束抱桶礼物/` | B 单次 | 用户已编辑,直接上传 |
+| `活动宴会餐桌花/` | D 活动 | 原环境保留,直接上传 |
+
+### 婚礼策略调整
+
+- 旧:"❌ 婚礼大单" 一刀切
+- 新:✅ 小型婚礼 / 求婚 / 私人宴请 走 Line D,主导航位置靠后,显式声明客人数门槛(待 Francesca 填具体数字)
+- 仍然 ❌:多人手 · 数万元 · 一次性 bespoke 大单
+
+### 尚未完成(后续 issue 或 commit)
+
+- WebP + JPG fallback 双版本(本机无 ImageMagick / cwebp,需要等机器配齐工具或 CI 上跑)
+- 600px `_grid/` thumbnail 同上
+- `image-tag-manifest.csv`(vision 跑过 235 张图,生成建议 tag 给 Francesca review)
+- 每条线的 chip filter UI 实际接线(等 tag manifest 通过后)
+- 文件名 rename 到 `mira-{line}-{seq}-{occ}.{ext}` 规范(等 tag manifest)
+- Cloudflare 启用 proxy(橙云)后,把 meta-refresh 升级为真正的 301(Cloudflare Bulk Redirects)
