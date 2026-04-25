@@ -40,7 +40,7 @@
     <section class="page-hero">
         <div class="container">
             <h1 data-en="Let's Begin" data-cn="让我们开始">Let's Begin</h1>
-            <p data-en="Text is the fastest way to reach us. Or share the details below — we'll respond within the same business day." data-cn="短信是联系我们最快的方式。或在下方提交详情——我们将在当个工作日内回复。">Text is the fastest way to reach us. Or share the details below — we'll respond within the same business day.</p>
+            <p data-en="Text is how we work — quick, written, easy to share. For events, weddings, and any larger commission, the request form below is the cleanest way to give us everything in one place. We respond within the same business day." data-cn="我们以短信为主——快、留痕、好转发。活动、婚礼或任何较大型委托，建议直接填写下方的 request form，一次性把信息说清。我们将在当个工作日内回复。">Text is how we work — quick, written, easy to share. For events, weddings, and any larger commission, the request form below is the cleanest way to give us everything in one place. We respond within the same business day.</p>
         </div>
     </section>
 
@@ -48,20 +48,19 @@
         <div class="container">
             <div class="contact-cards">
                 <div class="contact-card primary">
-                    <h3 data-en="Text Us" data-cn="发短信">Text Us</h3>
-                    <div class="phone">949-899-4022</div>
-                    <p data-en="Typical reply within minutes during business hours." data-cn="营业时间内通常数分钟内回复。">Typical reply within minutes during business hours.</p>
+                    <h3 data-en="Text" data-cn="短信">Text</h3>
+                    <p data-en="Fastest for short questions, last-minute orders, and same-day inquiries (before 12:00 PM PT, rush fee applies)." data-cn="适合简短的问题、临时下单与当日咨询（太平洋时间中午 12:00 前提交，需收取加急费用）。">Fastest for short questions, last-minute orders, and same-day inquiries (before 12:00 PM PT, rush fee applies).</p>
                     <a href="sms:9498994022?body=Hi%20Mira%20Fleur%2C%20I'd%20like%20to%20inquire%20about" class="contact-btn" data-en="Open Messages →" data-cn="打开短信 →">Open Messages →</a>
                 </div>
                 <div class="contact-card">
-                    <h3 data-en="Email Us" data-cn="发邮件">Email Us</h3>
+                    <h3 data-en="Email" data-cn="邮件">Email</h3>
                     <div class="email-addr">hello@mirafleur.com</div>
-                    <p data-en="For detailed briefs or attachments." data-cn="适合详细需求或附件。">For detailed briefs or attachments.</p>
+                    <p data-en="For longer briefs, attachments, and reference images." data-cn="适合较长的需求、附件与参考图。">For longer briefs, attachments, and reference images.</p>
                     <a href="mailto:hello@mirafleur.com?subject=Mira%20Fleur%20Inquiry" class="contact-btn" data-en="Open Email →" data-cn="打开邮件 →">Open Email →</a>
                 </div>
                 <div class="contact-card">
-                    <h3 data-en="Share Details" data-cn="填写表单">Share Details</h3>
-                    <p data-en="A short form — helpful for weddings, events, and commissions where you'd like to share a full brief in one place." data-cn="一张简短的表单——适合婚礼、活动或你希望一次性完整说明的委托。">A short form — helpful for weddings, events, and commissions where you'd like to share a full brief in one place.</p>
+                    <h3 data-en="Request Form" data-cn="请填写 Request Form">Request Form</h3>
+                    <p data-en="Recommended for weddings, events, Space Florals, and any commission where venue, palette, and references all matter. One place, one response." data-cn="推荐用于婚礼、活动、Space Florals，与所有需要交代场地、配色、参考图的委托。一次填好，一次回复。">Recommended for weddings, events, Space Florals, and any commission where venue, palette, and references all matter. One place, one response.</p>
                     <a href="#inquireForm" class="contact-btn" data-en="Open Form ↓" data-cn="打开表单 ↓">Open Form ↓</a>
                 </div>
             </div>
@@ -70,38 +69,58 @@
 
     <section class="inquire-form-section" id="inquireForm">
         <div class="container">
-            <h2 class="section-title" data-en="Share Your Details" data-cn="分享你的需求">Share Your Details</h2>
-            <p class="section-subtitle" data-en="The more you tell us, the more precisely we can design." data-cn="你分享得越多，我们就能设计得越精准。">The more you tell us, the more precisely we can design.</p>
+            <h2 class="section-title" data-en="Request Form" data-cn="Request Form">Request Form</h2>
+            <p class="section-subtitle" data-en="The more specific you are — the venue, the time, the palette, the references — the more precisely we can design. Plan to spend three to five minutes." data-cn="你说得越具体——场地、时间、配色、参考图——我们的设计就能越精准。预计花 3–5 分钟。">The more specific you are — the venue, the time, the palette, the references — the more precisely we can design. Plan to spend three to five minutes.</p>
 
             <form action="https://formspree.io/f/xnjldozr" method="POST" class="inquire-form">
                 <input type="hidden" name="_subject" value="🌿 New Mira Fleur Inquiry">
                 <input type="hidden" name="_next" value="https://maisonmirafleur.com/inquire/thank-you/">
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
+                <h4 class="form-section-h" data-en="Who you are" data-cn="关于你">Who you are</h4>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name" data-en="Name *" data-cn="姓名 *">Name *</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone" data-en="Phone — we'll text you back *" data-cn="电话 —— 我们会发短信回复 *">Phone — we'll text you back *</label>
+                        <label for="phone" data-en="Mobile (for SMS only) *" data-cn="手机号（仅用于发短信回复） *">Mobile (for SMS only) *</label>
                         <input type="tel" id="phone" name="phone" required>
-                        <p class="hint" data-en="We respond primarily by SMS." data-cn="我们主要通过短信回复。">We respond primarily by SMS.</p>
+                        <p class="hint" data-en="We reply by text — please use a number that can receive SMS. We do not call." data-cn="我们以短信回复——请使用可接收短信的号码。我们不会拨打电话。">We reply by text — please use a number that can receive SMS. We do not call.</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" data-en="Email" data-cn="邮箱">Email</label>
+                        <input type="email" id="email" name="email">
+                        <p class="hint" data-en="Optional — useful for sending references and quotes." data-cn="可选——用于发送参考图与报价。">Optional — useful for sending references and quotes.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred_lang" data-en="Preferred language" data-cn="偏好语言">Preferred language</label>
+                        <select id="preferred_lang" name="preferred_lang">
+                            <option value="">—</option>
+                            <option value="English">English</option>
+                            <option value="中文">中文</option>
+                            <option value="Either">Either</option>
+                        </select>
                     </div>
                 </div>
 
+                <h4 class="form-section-h" data-en="The occasion" data-cn="场合">The occasion</h4>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="occasion" data-en="Occasion *" data-cn="场合 *">Occasion *</label>
                         <select id="occasion" name="occasion" required>
                             <option value="">—</option>
-                            <option value="Wedding">Wedding</option>
-                            <option value="Proposal">Proposal</option>
                             <option value="Birthday">Birthday</option>
+                            <option value="Proposal">Proposal</option>
                             <option value="Anniversary">Anniversary</option>
-                            <option value="New Baby">New Baby</option>
+                            <option value="Baby Shower / New Baby">Baby Shower / New Baby</option>
                             <option value="Housewarming">Housewarming</option>
-                            <option value="Corporate">Corporate</option>
+                            <option value="Dinner / Hosting">Dinner / Hosting</option>
+                            <option value="Intimate Wedding / Ceremony">Intimate Wedding / Ceremony</option>
+                            <option value="Space Florals (ongoing)">Space Florals — hotel / office / gallery (ongoing)</option>
+                            <option value="Business event">Business dinner / board / conference (single)</option>
                             <option value="Sympathy">Sympathy</option>
                             <option value="Subscription">Subscription</option>
                             <option value="Other">Other</option>
@@ -110,58 +129,88 @@
                     <div class="form-group">
                         <label for="date" data-en="Date needed *" data-cn="需要日期 *">Date needed *</label>
                         <input type="date" id="date" name="date" required>
+                        <p class="hint" data-en="Most events: 1 week minimum. Weddings & ceremonies: 3–6 weeks preferred." data-cn="日常活动至少提前 1 周；婚礼与仪式建议 3–6 周。">Most events: 1 week minimum. Weddings & ceremonies: 3–6 weeks preferred.</p>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="time_of_day" data-en="Time of day (delivery / install)" data-cn="时间（送达 / 布置时间）">Time of day (delivery / install)</label>
+                        <input type="text" id="time_of_day" name="time_of_day" placeholder="e.g. 4:00 PM install, dinner at 7:00 PM">
+                    </div>
+                    <div class="form-group">
+                        <label for="headcount" data-en="Headcount (events only)" data-cn="人数（仅活动需填）">Headcount (events only)</label>
+                        <input type="text" id="headcount" name="headcount" placeholder="e.g. 12 at one table">
                     </div>
                 </div>
 
+                <h4 class="form-section-h" data-en="The place" data-cn="地点">The place</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="venue" data-en="Venue / location" data-cn="场地 / 地点">Venue / location</label>
+                        <input type="text" id="venue" name="venue" placeholder="e.g. Pelican Hill ballroom; private home in Newport Coast">
+                    </div>
+                    <div class="form-group">
+                        <label for="city" data-en="Delivery city" data-cn="送达城市">Delivery city</label>
+                        <input type="text" id="city" name="city" placeholder="e.g. Irvine, Newport Coast">
+                    </div>
+                </div>
+
+                <h4 class="form-section-h" data-en="The look you're after" data-cn="你想要的样子">The look you're after</h4>
+                <div class="form-group">
+                    <label for="style" data-en="Style direction" data-cn="风格方向">Style direction</label>
+                    <textarea id="style" name="style" rows="2" placeholder="Words you'd use to describe the feeling — e.g. 'restrained, sculptural, ikebana-inspired' or 'lush, garden, romantic but not pink'"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="palette" data-en="Color palette" data-cn="配色">Color palette</label>
+                        <input type="text" id="palette" name="palette" placeholder="e.g. champagne + ivory + soft amber; or 'no pink'">
+                    </div>
+                    <div class="form-group">
+                        <label for="flowers" data-en="Specific flowers (love or avoid)" data-cn="特定花材（喜欢或避开）">Specific flowers (love or avoid)</label>
+                        <input type="text" id="flowers" name="flowers" placeholder="e.g. peony, magnolia, no lilies (allergy)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="references" data-en="Reference image links" data-cn="参考图链接">Reference image links</label>
+                    <textarea id="references" name="references" rows="2" placeholder="Paste Pinterest, Instagram, or Xiaohongshu links — or describe images you've saved. You can also email images to hello@mirafleur.com."></textarea>
+                    <p class="hint" data-en="If you have references, please share — three to five images is more useful than ten." data-cn="如有参考图，请分享——3 到 5 张比 10 张更有用。">If you have references, please share — three to five images is more useful than ten.</p>
+                </div>
+
+                <h4 class="form-section-h" data-en="Anything else" data-cn="其他">Anything else</h4>
                 <div class="form-group">
                     <label for="details" data-en="Tell us more *" data-cn="告诉我们更多 *">Tell us more *</label>
-                    <textarea id="details" name="details" rows="5" required placeholder="Who is it for? What's the feeling? Any colors, flowers, or traditions we should know about?"></textarea>
+                    <textarea id="details" name="details" rows="5" required placeholder="Who is it for? What's the feeling you want the room to hold? Any traditions, allergies, or constraints we should know about?"></textarea>
                 </div>
-
-                <button type="button" class="form-toggle-more" id="toggleMore" data-en="+ Add more details" data-cn="+ 添加更多信息">+ Add more details</button>
-
-                <div class="form-optional" id="optionalFields">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email" data-en="Email" data-cn="邮箱">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="city" data-en="Delivery city" data-cn="送达城市">Delivery city</label>
-                            <input type="text" id="city" name="city">
-                        </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget" data-en="Estimated budget" data-cn="预算范围">Estimated budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">—</option>
+                            <option value="Under $250">Under $250</option>
+                            <option value="$250-$500">$250–$500</option>
+                            <option value="$500-$1,000">$500–$1,000</option>
+                            <option value="$1,000-$2,500">$1,000–$2,500</option>
+                            <option value="$2,500+">$2,500+</option>
+                            <option value="Prefer to discuss">Prefer to discuss</option>
+                        </select>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="budget" data-en="Estimated budget" data-cn="预算范围">Estimated budget</label>
-                            <select id="budget" name="budget">
-                                <option value="">—</option>
-                                <option value="Under $250">Under $250</option>
-                                <option value="$250-$500">$250–$500</option>
-                                <option value="$500-$1,000">$500–$1,000</option>
-                                <option value="$1,000-$2,500">$1,000–$2,500</option>
-                                <option value="$2,500+">$2,500+</option>
-                                <option value="Prefer to discuss">Prefer to discuss</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="source" data-en="How did you hear about us?" data-cn="你是如何了解我们的？">How did you hear about us?</label>
-                            <select id="source" name="source">
-                                <option value="">—</option>
-                                <option value="Google">Google</option>
-                                <option value="Yelp">Yelp</option>
-                                <option value="Instagram">Instagram</option>
-                                <option value="Xiaohongshu">Xiaohongshu</option>
-                                <option value="Friend">Friend</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="source" data-en="How did you hear about us?" data-cn="你是如何了解我们的？">How did you hear about us?</label>
+                        <select id="source" name="source">
+                            <option value="">—</option>
+                            <option value="Google">Google</option>
+                            <option value="Yelp">Yelp</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Xiaohongshu">Xiaohongshu</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
                 </div>
 
-                <button type="submit" class="form-submit" data-en="Send Inquiry" data-cn="提交咨询">Send Inquiry</button>
+                <button type="submit" class="form-submit" data-en="Send Request" data-cn="提交申请">Send Request</button>
 
-                <p class="form-disclaimer" data-en="By submitting, you agree to be contacted by Mira Fleur regarding your inquiry. We never share your details." data-cn="提交即代表你同意 Mira Fleur 就此次咨询与你联系。我们绝不会分享你的信息。">By submitting, you agree to be contacted by Mira Fleur regarding your inquiry. We never share your details.</p>
+                <p class="form-disclaimer" data-en="By submitting, you agree to be contacted by Mira Fleur regarding your inquiry. We respond by SMS, never by phone call. We never share your details." data-cn="提交即代表你同意 Mira Fleur 就此次咨询与你联系。我们以短信回复，不会拨打电话。我们绝不会分享你的信息。">By submitting, you agree to be contacted by Mira Fleur regarding your inquiry. We respond by SMS, never by phone call. We never share your details.</p>
             </form>
 
             <div class="hours">
@@ -177,7 +226,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">MIRA FLEUR</div>
-                    <p class="footer-tagline" data-en="Bespoke floral design. Made to order, Newport Coast." data-cn="定制花艺。源自 Newport Coast，件件只为你而作。">Bespoke floral design. Made to order, Newport Coast.</p>
+                    <p class="footer-tagline" data-en="Bespoke floral design. Made to order, from Irvine." data-cn="定制花艺。来自尔湾，件件只为你而作。">Bespoke floral design. Made to order, from Irvine.</p>
                     <div class="footer-social"><a href="https://www.instagram.com/maisonmirafleur" target="_blank" rel="noopener noreferrer">Instagram</a></div>
                 </div>
                 <div class="footer-col">
@@ -192,10 +241,9 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5 data-en="Visit" data-cn="工作室">Visit</h5>
-                    <p data-en="By appointment only" data-cn="仅接受预约">By appointment only</p>
-                    <p>Newport Coast, California</p>
-                    <p data-en="Service area: Centered in Irvine, surrounding OC" data-cn="服务范围：以尔湾为中心的橙县地区">Service area: Centered in Irvine, surrounding OC</p>
+                    <h5 data-en="Service Area" data-cn="服务区域">Service Area</h5>
+                    <p data-en="Based in Irvine" data-cn="基地：尔湾">Based in Irvine</p>
+                    <p data-en="Newport Coast & surrounding OC" data-cn="服务范围：Newport Coast 与橙县周边">Newport Coast & surrounding OC</p>
                 </div>
                 <div class="footer-col">
                     <h5 data-en="Contact" data-cn="联系">Contact</h5>
@@ -211,15 +259,5 @@
     </footer>
 
     <script src="../script.js"></script>
-    <script>
-        // Toggle optional form fields
-        document.getElementById('toggleMore').addEventListener('click', function() {
-            const opt = document.getElementById('optionalFields');
-            opt.classList.toggle('open');
-            this.textContent = opt.classList.contains('open')
-                ? (currentLang === 'cn' ? '− 收起更多信息' : '− Hide extra details')
-                : (currentLang === 'cn' ? '+ 添加更多信息' : '+ Add more details');
-        });
-    </script>
 </body>
 </html>
