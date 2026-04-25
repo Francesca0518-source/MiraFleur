@@ -332,6 +332,45 @@ img {
     border-color: var(--color-yuebai-cool);
 }
 
+/* ===== Homepage hero · 烟蓝 atmospheric wash (no image) =====
+   Spec v2.0: hero gets soft 烟蓝 wash on 月白, dark text 球菊墨蓝.
+   Replaces old image-driven dark hero. */
+.hero.hero-yanlan-wash {
+    background-color: var(--color-yuebai);
+    background-image:
+        radial-gradient(ellipse 70% 55% at 30% 25%, rgba(168, 184, 208, 0.55), transparent 65%),
+        radial-gradient(ellipse 60% 50% at 75% 70%, rgba(242, 201, 164, 0.18), transparent 65%),
+        radial-gradient(ellipse 90% 60% at 50% 50%, rgba(168, 184, 208, 0.18), transparent 75%);
+    background-blend-mode: normal;
+}
+.hero.hero-yanlan-wash::before { content: none; }       /* kill the dark fallback gradient */
+.hero.hero-yanlan-wash .hero-overlay { display: none; }  /* no need anymore */
+.hero.hero-yanlan-wash .hero-title {
+    color: var(--color-molan);
+    text-shadow: none;
+}
+.hero.hero-yanlan-wash .hero-desc {
+    color: var(--color-molan-soft);
+}
+.hero.hero-yanlan-wash .hero-btn-primary {
+    background: var(--color-molan);
+    color: var(--color-yuebai-cool);
+    border-color: var(--color-molan);
+}
+.hero.hero-yanlan-wash .hero-btn-primary:hover {
+    background: var(--color-molan-deep);
+    color: var(--color-yuebai-cool);
+}
+.hero.hero-yanlan-wash .hero-btn-ghost {
+    color: var(--color-molan);
+    border: 1px solid rgba(59, 74, 120, 0.5);
+}
+.hero.hero-yanlan-wash .hero-btn-ghost:hover {
+    background: var(--color-molan);
+    color: var(--color-yuebai-cool);
+    border-color: var(--color-molan);
+}
+
 .hero-micro {
     font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.55);
