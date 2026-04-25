@@ -3629,3 +3629,645 @@ body.dev-mode [data-zone] {
     .line-entry-meta { padding: 24px 24px 28px; }
     .line-entry-weekly .line-entry-meta { padding: 40px 28px; }
 }
+
+/* ============================================================
+   Homepage Editorial Refresh (Issue #6 · per Mira Claude package brief)
+   ============================================================ */
+
+/* ===== Hero · full-bleed panorama bg + left-overlay text (matches OG mockup composition) ===== */
+.hero-pano {
+    position: relative;
+    min-height: 92vh;
+    background: var(--color-yuebai);
+    overflow: hidden;
+    padding-top: 72px;  /* clear nav */
+}
+.hero-pano-bg,
+.hero-pano-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    z-index: 0;
+}
+/* Soft cream gradient on left so brand text reads cleanly over the wall area */
+.hero-pano-mask {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(245, 241, 232, 0.97) 0%,
+        rgba(245, 241, 232, 0.95) 32%,
+        rgba(245, 241, 232, 0.75) 48%,
+        rgba(245, 241, 232, 0.30) 65%,
+        rgba(245, 241, 232, 0) 82%
+    );
+}
+.hero-pano-text {
+    position: relative;
+    z-index: 2;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 18vh 7vw 8vh 7vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Cap content width so everything sits inside the cream gradient zone */
+.hero-pano-text > h1,
+.hero-pano-text > p,
+.hero-pano-text > div { max-width: 540px; }
+.hero-pano .hero-desc { max-width: 460px; }
+.hero-pano .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    max-width: 540px;
+}
+
+@media (max-width: 900px) {
+    .hero-pano { padding-top: 88px; }
+    .hero-pano-mask {
+        background: linear-gradient(
+            180deg,
+            rgba(245, 241, 232, 0.96) 0%,
+            rgba(245, 241, 232, 0.85) 30%,
+            rgba(245, 241, 232, 0.55) 60%,
+            rgba(245, 241, 232, 0.0) 100%
+        );
+    }
+    .hero-pano-text { padding: 12vh 24px 10vh; }
+    .hero-pano .hero-desc { max-width: none; }
+}
+
+/* Backwards-compat: keep .hero-split selectors so any cached references still parse */
+.hero-split { display: none; }
+
+/* Brand-mark composition (matching herro.png reference: upright bold serif, deep navy) */
+.hero-pano .brand-mark {
+    font-family: 'Cormorant Garamond', 'Bodoni 72', Didot, Georgia, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+    line-height: 1.05;
+    color: var(--color-molan);
+    margin: 0 0 16px;
+    letter-spacing: 0.01em;
+}
+.hero-pano .brand-mark .bm-en { letter-spacing: 0.02em; }
+.hero-pano .brand-mark .bm-cn {
+    font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+    font-weight: 500;
+    font-size: 0.92em;
+    letter-spacing: 0.04em;
+    margin-left: 0.08em;
+}
+.hero-pano .brand-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.78rem, 0.92vw, 0.96rem);
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--color-molan);
+    font-weight: 400;
+    margin: 0 0 40px;
+}
+.hero-pano .brand-taglines {
+    margin: 0 0 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.hero-pano .tag-cn {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    letter-spacing: 0.18em;
+    color: var(--color-molan);
+    margin: 0;
+    font-weight: 500;
+}
+.hero-pano .tag-en {
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.66rem, 0.78vw, 0.78rem);
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--color-molan-soft);
+    margin: 0;
+    font-weight: 400;
+}
+.hero-pano .hero-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-molan-soft);
+    margin: 0 0 36px;
+    max-width: 480px;
+    font-weight: 300;
+}
+.hero-pano .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.hero-btn-v2 {
+    display: inline-block;
+    padding: 16px 34px;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    border: 1px solid transparent;
+}
+.hero-btn-v2-primary {
+    background: var(--color-molan);
+    color: var(--color-yuebai-cool);
+    border-color: var(--color-molan);
+}
+.hero-btn-v2-primary:hover {
+    background: var(--color-molan-deep);
+    border-color: var(--color-molan-deep);
+}
+.hero-btn-v2-secondary {
+    background: transparent;
+    color: var(--color-molan);
+    border-color: rgba(59, 74, 120, 0.38);
+}
+.hero-btn-v2-secondary:hover {
+    border-color: var(--color-mitao);
+    background: rgba(242, 201, 164, 0.16);
+}
+
+@media (max-width: 900px) {
+    .hero-split { min-height: auto; padding-top: 88px; padding-bottom: 0; }
+    .hero-split-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .hero-split-text {
+        padding: 6vh 28px 4vh;
+        text-align: center;
+    }
+    .hero-pano .hero-title { margin-left: auto; margin-right: auto; }
+    .hero-pano .hero-desc  { margin-left: auto; margin-right: auto; }
+    .hero-pano .hero-ctas { justify-content: center; }
+    .hero-split-image {
+        min-height: 380px;
+        order: 2;
+    }
+    .hero-split-image::before {
+        background: linear-gradient(
+            180deg,
+            rgba(245, 241, 232, 0.85) 0%,
+            rgba(245, 241, 232, 0) 35%
+        );
+    }
+}
+
+/* ===== Product entry · 4-in-a-row cards ===== */
+.product-entry {
+    padding: 16vh 32px 12vh;
+    background: var(--color-yuebai);
+}
+.product-entry .section-label {
+    text-align: center;
+    color: var(--color-jinbo-deep);
+}
+.product-entry .section-title {
+    text-align: center;
+    margin-bottom: 6vh;
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-molan);
+    font-size: clamp(2rem, 3vw, 2.6rem);
+}
+.product-card-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+.product-card {
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(181, 142, 84, 0.18);
+    padding: 36px 28px 32px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    position: relative;
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(181, 142, 84, 0.42);
+    background: rgba(168, 184, 208, 0.12);
+}
+.product-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-jinbo);
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+}
+.product-card h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-molan);
+    margin: 0 0 14px;
+    line-height: 1.2;
+}
+html[lang='zh-CN'] .product-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-style: normal;
+}
+.product-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-molan-soft);
+    margin: 0 0 24px;
+    flex: 1;
+}
+.product-card-link {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-molan);
+    border-bottom: 1px solid var(--color-jinbo);
+    padding-bottom: 4px;
+    align-self: flex-start;
+    transition: border-bottom-width 0.2s, border-bottom-color 0.2s;
+}
+.product-card:hover .product-card-link {
+    border-bottom-color: var(--color-mitao);
+}
+@media (max-width: 1024px) {
+    .product-card-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+    .product-card-row { grid-template-columns: 1fr; gap: 16px; }
+    .product-card { min-height: auto; padding: 28px 24px; }
+}
+
+/* ===== About v2 · atelier image + text ===== */
+.about-v2 {
+    padding: 16vh 32px 16vh;
+    background: var(--color-yuebai-cool);
+}
+.about-v2-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.about-v2-image {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--color-yuebai-warm);
+}
+.about-v2-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.about-v2-text .section-label {
+    color: var(--color-jinbo-deep);
+    margin-bottom: 16px;
+}
+.about-v2-text .section-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-molan);
+    font-size: clamp(2.2rem, 3.4vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 28px;
+}
+html[lang='zh-CN'] .about-v2-text .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-style: normal;
+}
+.about-v2-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--color-molan-soft);
+    margin: 0 0 18px;
+    max-width: 520px;
+}
+.about-v2-cta {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 14px 32px;
+    background: var(--color-molan);
+    color: var(--color-yuebai-cool);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-molan);
+    transition: background 0.3s;
+}
+.about-v2-cta:hover {
+    background: var(--color-molan-deep);
+}
+
+@media (max-width: 900px) {
+    .about-v2 { padding: 10vh 24px; }
+    .about-v2-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-v2-image { max-width: 480px; margin: 0 auto; }
+}
+
+/* ===== How to Order · 3-step ===== */
+.how-to-order {
+    padding: 14vh 32px;
+    background: var(--color-yuebai);
+}
+.how-to-order .section-label,
+.how-to-order .section-title { text-align: center; }
+.how-to-order .section-label { color: var(--color-jinbo-deep); }
+.how-to-order .section-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-molan);
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    margin-bottom: 6vh;
+}
+.hto-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+.hto-step {
+    text-align: center;
+    padding: 32px 24px;
+}
+.hto-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.4rem;
+    color: var(--color-jinbo);
+    margin-bottom: 18px;
+    line-height: 1;
+}
+.hto-step h4 {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--color-molan);
+    margin: 0 0 14px;
+    line-height: 1.3;
+}
+html[lang='zh-CN'] .hto-step h4 {
+    font-family: 'Noto Serif SC', serif;
+    font-style: normal;
+}
+.hto-step p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-molan-soft);
+    margin: 0;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hto-cta {
+    display: inline-block;
+    margin-top: 4vh;
+    padding: 16px 40px;
+    background: var(--color-molan);
+    color: var(--color-yuebai-cool);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-molan);
+    transition: background 0.3s;
+}
+.hto-cta:hover { background: var(--color-molan-deep); }
+
+@media (max-width: 768px) {
+    .hto-grid { grid-template-columns: 1fr; gap: 24px; }
+    .hto-step { padding: 16px 20px; }
+}
+
+/* ============================================================
+   Editorial typography polish — line-height, vertical rhythm, lang separation
+   ============================================================ */
+
+/* Body copy: more breathing for editorial feel (was 1.7) */
+body { line-height: 1.85; }
+
+/* Hero pano paragraphs: tighter cap on column width, longer line-height */
+.hero-pano .hero-desc {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1rem, 1.2vw, 1.18rem);
+    line-height: 1.85;
+    letter-spacing: 0.005em;
+    color: var(--color-molan-soft);
+    margin: 0 0 40px;
+    max-width: 480px;
+    font-style: italic;
+    font-weight: 400;
+}
+html[lang='zh-CN'] .hero-pano .hero-desc {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    line-height: 2.0;
+    letter-spacing: 0.04em;
+}
+
+/* About section: editorial body */
+.about-v2-text p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--color-molan-soft);
+    margin: 0 0 22px;
+    max-width: 540px;
+    letter-spacing: 0.005em;
+}
+html[lang='zh-CN'] .about-v2-text p {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    line-height: 2.0;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+}
+.about-v2-text .section-title {
+    font-size: clamp(2.4rem, 3.6vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.005em;
+    margin-bottom: 36px;
+}
+html[lang='zh-CN'] .about-v2-text .section-title {
+    letter-spacing: 0.02em;
+    font-size: clamp(2.2rem, 3.2vw, 3rem);
+}
+
+/* About title display override — editorial pull-quote rhythm, no trailing period */
+.about-v2-text .about-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 4.4vw, 4.4rem);
+    line-height: 1.06;
+    letter-spacing: -0.012em;
+    margin-bottom: 48px;
+    color: var(--color-molan);
+}
+html[lang='zh-CN'] .about-v2-text .about-title {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 3.6vw, 3.6rem);
+    line-height: 1.5;
+    letter-spacing: 0.12em;
+}
+
+/* Product card paragraphs */
+.product-card p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: 0.005em;
+}
+html[lang='zh-CN'] .product-card p {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    font-size: 0.95rem;
+}
+
+/* How-to-Order step paragraphs */
+.hto-step p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--color-molan-soft);
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+html[lang='zh-CN'] .hto-step p {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    line-height: 2.0;
+    letter-spacing: 0.04em;
+    font-size: 0.95rem;
+}
+
+/* Section labels: tighter tracking, lighter color */
+.section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-jinbo-deep);
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+/* Section titles: heavier vertical rhythm */
+.section-title {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-molan);
+    line-height: 1.12;
+    letter-spacing: -0.005em;
+}
+html[lang='zh-CN'] .section-title {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+/* Section vertical rhythm: more consistent spacing between blocks */
+.product-entry { padding: 18vh 32px 14vh; }
+.about-v2 { padding: 18vh 32px 18vh; }
+.how-to-order { padding: 18vh 32px 16vh; }
+
+/* Larger title margins for breathing */
+.product-entry .section-title { margin-bottom: 7vh; }
+.how-to-order .section-title { margin-bottom: 7vh; }
+
+/* Brand tagline (single line per language) — editorial spacing */
+.hero-pano .brand-tagline {
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    color: var(--color-molan-soft);
+    margin: 0 0 44px;
+    font-weight: 400;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+}
+html[lang='zh-CN'] .hero-pano .brand-tagline {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    text-transform: none;
+    letter-spacing: 0.18em;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    color: var(--color-molan);
+}
+
+/* Product card titles + how-to step titles bigger headline tone */
+.product-card h3 { font-size: clamp(1.5rem, 2vw, 1.8rem); margin-bottom: 18px; line-height: 1.2; }
+.hto-step h4 { font-size: clamp(1.2rem, 1.5vw, 1.45rem); margin-bottom: 18px; line-height: 1.3; }
+
+/* Tighter image hairline between sections — editorial feel */
+.about-v2-image { box-shadow: 0 12px 40px rgba(15, 27, 40, 0.08); }
+
+/* ===== Events page · confident intro paragraph + CTA sub copy ===== */
+.subcats-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 56px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+    line-height: 1.8;
+    color: var(--color-molan-soft);
+}
+html[lang='zh-CN'] .subcats-intro {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    line-height: 2.0;
+    letter-spacing: 0.04em;
+}
+.line-cta-sub {
+    max-width: 580px;
+    margin: 0 auto 36px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.96rem, 1.1vw, 1.08rem);
+    line-height: 1.85;
+    color: var(--color-molan-soft);
+    text-align: center;
+}
+html[lang='zh-CN'] .line-cta-sub {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    line-height: 2.0;
+    letter-spacing: 0.04em;
+}

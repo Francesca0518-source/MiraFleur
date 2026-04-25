@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mira Fleur — Bespoke Floral Design · Irvine & Orange County</title>
-    <meta name="description" content="Bespoke made-to-order floral design for Irvine and surrounding Orange County. Custom arrangements, intimate events, ongoing space florals, and weekly subscriptions — by text-based request.">
-    <meta name="keywords" content="Irvine florist, Newport Beach flower delivery, Newport Coast custom florals, luxury flowers Orange County, bespoke floral design Irvine, wedding florist Newport Beach, Costa Mesa flower delivery, Laguna Niguel florist, Mira Fleur">
-    <meta property="og:title" content="Mira Fleur | Bespoke Floral Design · Irvine & Orange County">
-    <meta property="og:description" content="Bespoke made-to-order floral design — from Irvine, delivered across Newport Coast and surrounding Orange County.">
+    <title>MIRA FLEUR | Bespoke Floral Design in Orange County</title>
+    <meta name="description" content="Bespoke floral gifts, weekly flowers, corporate florals, and event designs across Newport Coast, Irvine, and Orange County.">
+    <meta name="keywords" content="Irvine florist, Newport Beach flower delivery, Newport Coast custom florals, luxury flowers Orange County, bespoke floral design Irvine, weekly flower subscription Orange County, corporate florist Orange County, Mira Fleur">
+    <meta property="og:title" content="MIRA FLEUR | Bespoke Floral Design in Orange County">
+    <meta property="og:description" content="Bespoke floral gifts, weekly flowers, corporate florals, and event designs across Newport Coast, Irvine, and Orange County.">
+    <meta property="og:image" content="https://maisonmirafleur.com/images/og/og-home.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://maisonmirafleur.com/">
-    <meta name="theme-color" content="#FDFBF7">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MIRA FLEUR | Bespoke Floral Design in Orange County">
+    <meta name="twitter:description" content="Bespoke floral gifts, weekly flowers, corporate florals, and event designs across Newport Coast, Irvine, and Orange County.">
+    <meta name="twitter:image" content="https://maisonmirafleur.com/images/og/og-home.jpg">
+    <meta name="theme-color" content="#F5F1E8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -44,14 +51,20 @@
         </div>
     </nav>
 
-    <!-- Hero · 烟蓝 atmospheric wash (no image, per spec v2.0 §1) -->
-    <section class="hero hero-yanlan-wash">
-        <div class="hero-content">
-            <h1 class="hero-title" data-en="Some things,<br>only flowers can say." data-cn="把难以言说的情感，<br>托付给一束得体的花。">Some things,<br>only flowers can say.</h1>
-            <p class="hero-desc" data-en="Bespoke floral design for Orange County's most meaningful moments. From Irvine, serving Newport Coast and the surrounding area." data-cn="为每一个值得被认真对待的时刻，定制花艺。来自尔湾，服务 Newport Coast 与橙县周边地区。">Bespoke floral design for Orange County's most meaningful moments. From Irvine, serving Newport Coast and the surrounding area.</p>
+    <!-- Hero · full-bleed wide panorama bg + brand-identity overlay (matches OG mockup composition) -->
+    <section class="hero-pano">
+        <picture class="hero-pano-bg" aria-hidden="true">
+            <img src="images/hero/hero-home.jpg" alt="" loading="eager">
+        </picture>
+        <div class="hero-pano-mask" aria-hidden="true"></div>
+        <div class="hero-pano-text">
+            <h1 class="brand-mark" data-en="MIRA FLEUR" data-cn="MIRA 花礼" lang="en"><span class="bm-en">MIRA</span> <span class="bm-cn">FLEUR</span></h1>
+            <p class="brand-sub">MAISON MIRA FLEUR</p>
+            <p class="brand-tagline" data-en="Flowers as poetry" data-cn="以花寄意 · 让心被看见">Flowers as poetry</p>
+            <p class="hero-desc" data-en="Bespoke floral design for meaningful everyday gestures, intimate gatherings, and refined occasions — created in Newport Coast, delivered across Orange County." data-cn="为生命中真正值得郑重对待的瞬间，量身设计的花艺。来自 Newport Coast，服务橙县全境。">Bespoke floral design for meaningful everyday gestures, intimate gatherings, and refined occasions — created in Newport Coast, delivered across Orange County.</p>
             <div class="hero-ctas">
-                <a href="gifts/" class="hero-btn hero-btn-primary" data-en="Browse Signature Gifts" data-cn="浏览单次花礼">Browse Signature Gifts</a>
-                <a href="inquire/" class="hero-btn hero-btn-ghost" data-en="Inquire for Custom Design" data-cn="咨询定制设计">Inquire for Custom Design</a>
+                <a href="gifts/" class="hero-btn-v2 hero-btn-v2-primary" data-en="Browse Floral Gifts" data-cn="浏览单次花礼">Browse Floral Gifts</a>
+                <a href="inquire/" class="hero-btn-v2 hero-btn-v2-secondary" data-en="Request a Custom Design" data-cn="咨询定制设计">Request a Custom Design</a>
             </div>
         </div>
     </section>
@@ -112,84 +125,54 @@
         </div>
     </div>
 
-    <!-- About / Heritage (spec 3.7) -->
-    <section class="about" id="about">
+    <!-- About / Atelier -->
+    <section class="about-v2" id="about">
         <div class="container">
-            <div class="section-label" data-en="ABOUT" data-cn="关于">ABOUT</div>
-            <h2 class="section-title" data-en="The Craft Behind Mira Fleur" data-cn="Mira Fleur 背后的手艺">The Craft Behind Mira Fleur</h2>
-            <div class="about-grid">
-                <div class="about-visual">
-                    <div class="about-image-frame">
-                        <img
-                            src="images/about/atelier-1.webp"
-                            alt="Mira Fleur — hands at work with flowers"
-                            class="about-img"
-                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                        >
-                        <div class="about-image-placeholder" style="display:none;">
-                            <div class="placeholder-icon">&#10047;</div>
-                            <p>Mira Fleur</p>
-                        </div>
-                    </div>
+            <div class="about-v2-grid">
+                <div class="about-v2-image">
+                    <img src="images/about/atelier-1.jpg" alt="Mira Fleur atelier — blue hydrangeas, delphinium, and seasonal blooms on a marble work table, soft window light" loading="lazy">
                 </div>
-                <div class="about-text">
-                    <p data-en="Mira Fleur began with a simple observation: for many of the moments that matter most, the right flower is harder to find than it should be. We started this work to fix that — for the people who live here, in the homes and the celebrations that ask for something more careful." data-cn="Mira Fleur 起始于一个朴素的观察：生活中真正重要的那些时刻，找一束真正合适的花，其实并不容易。我们做这件事，是想替住在这里的人解决这个问题——在家中、在重要的日子里，做一件被认真对待过的花艺。">Mira Fleur began with a simple observation: for many of the moments that matter most, the right flower is harder to find than it should be. We started this work to fix that — for the people who live here, in the homes and the celebrations that ask for something more careful.</p>
-                    <p data-en="What we offer comes from three decades inside five-star hotel floral departments — the discipline, the reliability, the long apprenticeship in proportion and color that lets us know, fairly quickly, what a particular flower can do for a particular room. That training is the honest part of what we bring to every commission." data-cn="我们能给客人的，是过去三十年在五星级酒店花艺部门里养成的修养、稳妥、可靠，与一份在比例和配色上长期反复打磨出来的判断——能比较快地看出一枝花在一个房间里能做什么、不能做什么。这是我们能拿出来的、最实在的部分。">What we offer comes from three decades inside five-star hotel floral departments — the discipline, the reliability, the long apprenticeship in proportion and color that lets us know, fairly quickly, what a particular flower can do for a particular room. That training is the honest part of what we bring to every commission.</p>
-                    <p data-en="Every commission begins with a conversation, by text or by request form, and ends with a piece designed for that conversation alone." data-cn="每一次委托都从一段对话开始——一条短信，或一份 request form——以一件只为这段对话而生的作品收尾。">Every commission begins with a conversation, by text or by request form, and ends with a piece designed for that conversation alone.</p>
-                    <p class="about-spaces-note"><a href="corporate/" class="quiet-link" data-en="See our corporate florals →" data-cn="查看企业花艺作品 →">See our corporate florals →</a></p>
-                    <a href="about/" class="cta-link" data-en="Read Our Full Story →" data-cn="阅读完整故事 →">Read Our Full Story →</a>
+                <div class="about-v2-text">
+                    <div class="section-label" data-en="ABOUT MIRA FLEUR" data-cn="关于 MIRA FLEUR">ABOUT MIRA FLEUR</div>
+                    <h2 class="section-title about-title" data-en="Where emotion<br>takes form" data-cn="让情感<br>化作可见的形状">Where emotion<br>takes form</h2>
+                    <p data-en="Flowers, to us, are not decoration. They are the language we use when words come up short — for a birthday felt deeply, a thank-you that ought to land, a room that wants to be remembered." data-cn="对我们来说，花从来不只是装饰，而是言语未尽时的另一种表达——一份被认真对待的生日，一句郑重传达的感谢，一个值得被记住的空间。">Flowers, to us, are not decoration. They are the language we use when words come up short — for a birthday felt deeply, a thank-you that ought to land, a room that wants to be remembered.</p>
+                    <p data-en="MIRA FLEUR is a bespoke floral atelier in Newport Coast, serving Irvine and the surrounding Orange County. Each commission begins with a conversation and is shaped by season, setting, palette, and the person it is meant for. Nothing is mass-made; every piece is composed for a single moment." data-cn="MIRA FLEUR 坐落于 Newport Coast，是一间定制花艺工作室，服务尔湾及橙县周边地区。每一次委托从一段对话开始，依季节、场所、配色，以及收花人的气质而成。我们不做批量产品——每一件作品，只为某一个特定的时刻而生。">MIRA FLEUR is a bespoke floral atelier in Newport Coast, serving Irvine and the surrounding Orange County. Each commission begins with a conversation and is shaped by season, setting, palette, and the person it is meant for. Nothing is mass-made; every piece is composed for a single moment.</p>
+                    <p data-en="Our practice is built on three decades inside five-star hotel floral departments. From that, we offer the things you cannot order from a catalogue: discipline, restraint, proportion, and the quiet beauty that stays with people long after the flowers are gone." data-cn="我们的手艺，源自三十年在五星级酒店花艺部门的浸润。我们能给客人的，是图册里订不到的那些东西——克制、修养、比例感，以及一种花谢之后，仍会在人心里停留的安静的美。">Our practice is built on three decades inside five-star hotel floral departments. From that, we offer the things you cannot order from a catalogue: discipline, restraint, proportion, and the quiet beauty that stays with people long after the flowers are gone.</p>
+                    <a href="inquire/" class="about-v2-cta" data-en="Request a Custom Design" data-cn="咨询定制花艺">Request a Custom Design</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Four Lines (replaces Selected Work + Occasions + Services after IA refactor — see Issue #5) -->
-    <section class="four-lines" id="lines">
+    <!-- Product Entry · 4 cards -->
+    <section class="product-entry" id="product-entry">
         <div class="container">
-            <div class="section-label" data-en="WHAT WE DO" data-cn="我们做什么">WHAT WE DO</div>
-            <h2 class="section-title" data-en="Four ways to commission flowers" data-cn="四种方式预订花艺">Four ways to commission flowers</h2>
-            <p class="section-subtitle" data-en="Each one is a different conversation. Pick the one closest to what you need." data-cn="四条线是四种不同的对话。挑一条最接近你需要的。">Each one is a different conversation. Pick the one closest to what you need.</p>
-            <div class="four-lines-grid">
-                <a href="weekly/" class="line-entry line-entry-weekly">
-                    <div class="line-entry-meta">
-                        <span class="line-entry-eyebrow" data-en="LINE A · COMING THIS FALL" data-cn="A 线 · 今秋上线">LINE A · COMING THIS FALL</span>
-                        <h3 data-en="Weekly Bloom" data-cn="周更花礼盲盒">Weekly Bloom</h3>
-                        <p data-en="A different palette every week, in a vessel you keep. $49 / $99 / $159." data-cn="每周一种不同配色，装在你可以留下来的器皿里。$49 / $99 / $159。">A different palette every week, in a vessel you keep. $49 / $99 / $159.</p>
-                        <span class="line-entry-cta" data-en="Get notified →" data-cn="开放时通知我 →">Get notified →</span>
-                    </div>
+            <div class="section-label" data-en="WHAT WE OFFER" data-cn="我们提供什么">WHAT WE OFFER</div>
+            <h2 class="section-title" data-en="Four ways to send flowers." data-cn="四种委托花艺的方式。">Four ways to send flowers.</h2>
+            <div class="product-card-row">
+                <a href="gifts/" class="product-card">
+                    <span class="product-card-num">01</span>
+                    <h3 data-en="Floral Gifts" data-cn="单次花礼">Floral Gifts</h3>
+                    <p data-en="One-of-a-kind arrangements for birthdays, thank-yous, sympathy, or any moment that asks to be marked." data-cn="为生日、感谢、致意，以及生活中值得被认真对待的时刻而定制的一束花。">One-of-a-kind arrangements for birthdays, thank-yous, sympathy, or any moment that asks to be marked.</p>
+                    <span class="product-card-link" data-en="Browse the gallery →" data-cn="浏览作品 →">Browse the gallery →</span>
                 </a>
-                <a href="gifts/" class="line-entry line-entry-gifts">
-                    <div class="line-entry-img-wrapper">
-                        <img src="images/gifts/_source/0deb50150198f2fdf38ffac4b5b8f36e-Photoroom.JPG" alt="Mira Fleur signature gift floral" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                    </div>
-                    <div class="line-entry-meta">
-                        <span class="line-entry-eyebrow" data-en="LINE B · FROM $98" data-cn="B 线 · $98 起">LINE B · FROM $98</span>
-                        <h3 data-en="Signature Gifts" data-cn="单次花礼">Signature Gifts</h3>
-                        <p data-en="For birthdays, anniversaries, sympathy, just-because. Same-day for OC." data-cn="生日、周年、追思、无需理由的小礼物。橙县当日送达。">For birthdays, anniversaries, sympathy, just-because. Same-day for OC.</p>
-                        <span class="line-entry-cta" data-en="Browse gifts →" data-cn="浏览花礼 →">Browse gifts →</span>
-                    </div>
+                <a href="weekly/" class="product-card">
+                    <span class="product-card-num">02</span>
+                    <h3 data-en="Weekly Flowers" data-cn="每周花礼">Weekly Flowers</h3>
+                    <p data-en="Seasonal blooms, considered weekly. A standing rhythm of fresh flowers for the home or table you live with." data-cn="每周一束当季花。为日常生活、餐桌或玄关而设的一种节奏。">Seasonal blooms, considered weekly. A standing rhythm of fresh flowers for the home or table you live with.</p>
+                    <span class="product-card-link" data-en="Be notified →" data-cn="开放时通知我 →">Be notified →</span>
                 </a>
-                <a href="corporate/" class="line-entry line-entry-corporate">
-                    <div class="line-entry-img-wrapper">
-                        <img src="images/corporate/_source/1697-Photoroom.JPG" alt="Mira Fleur corporate floral" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                    </div>
-                    <div class="line-entry-meta">
-                        <span class="line-entry-eyebrow" data-en="LINE C · 2 WEEKS FREE" data-cn="C 线 · 免费试装两周">LINE C · 2 WEEKS FREE</span>
-                        <h3 data-en="Corporate Florals" data-cn="企业服务">Corporate Florals</h3>
-                        <p data-en="Weekly fresh flowers for hotels, offices, galleries, boutique studios. Two-week pilot, on us." data-cn="每周为酒店、办公空间、画廊、精品工作室换上新鲜花艺。免费试装两周。">Weekly fresh flowers for hotels, offices, galleries, boutique studios. Two-week pilot, on us.</p>
-                        <span class="line-entry-cta" data-en="Book free pilot →" data-cn="预约免费试装 →">Book free pilot →</span>
-                    </div>
+                <a href="corporate/" class="product-card">
+                    <span class="product-card-num">03</span>
+                    <h3 data-en="Corporate Florals" data-cn="企业花艺">Corporate Florals</h3>
+                    <p data-en="Hospitality, executive offices, galleries, and boutique studios. Standing florals that hold a brand together, week after week." data-cn="酒店、行政办公空间、画廊与精品工作室的长期花艺——让花成为品牌延续的一部分。">Hospitality, executive offices, galleries, and boutique studios. Standing florals that hold a brand together, week after week.</p>
+                    <span class="product-card-link" data-en="Begin a pilot →" data-cn="开通试装 →">Begin a pilot →</span>
                 </a>
-                <a href="events/" class="line-entry line-entry-events">
-                    <div class="line-entry-img-wrapper">
-                        <img src="images/events/_source/1693.JPG" alt="Mira Fleur event floral" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
-                    </div>
-                    <div class="line-entry-meta">
-                        <span class="line-entry-eyebrow" data-en="LINE D · BY CONSULTATION" data-cn="D 线 · 预约咨询">LINE D · BY CONSULTATION</span>
-                        <h3 data-en="Event Florals" data-cn="活动定制">Event Florals</h3>
-                        <p data-en="Private dinners, proposals, intimate weddings. Photographed on-site, not in a studio." data-cn="私人宴会、求婚、小型婚礼。原环境拍摄,不进摄影棚。">Private dinners, proposals, intimate weddings. Photographed on-site, not in a studio.</p>
-                        <span class="line-entry-cta" data-en="Inquire for consultation →" data-cn="预约咨询 →">Inquire for consultation →</span>
-                    </div>
+                <a href="events/" class="product-card">
+                    <span class="product-card-num">04</span>
+                    <h3 data-en="Event Florals" data-cn="活动定制">Event Florals</h3>
+                    <p data-en="Private dinners, proposals, intimate weddings, and brand moments — composed for the room and the day they belong to." data-cn="私人宴会、求婚、小型婚礼与品牌活动——为那一天、那个空间而生的花艺。">Private dinners, proposals, intimate weddings, and brand moments — composed for the room and the day they belong to.</p>
+                    <span class="product-card-link" data-en="Inquire to plan →" data-cn="预约咨询 →">Inquire to plan →</span>
                 </a>
             </div>
         </div>
@@ -198,36 +181,30 @@
     <!-- (Old "Selected Work" / "Occasions" / "Services Preview" sections removed — replaced by the four-lines block above. See Issue #5.) -->
     
 
-    <!-- Process (spec 3.6) -->
-    <section class="process">
+    <!-- How to Order · 3-step -->
+    <section class="how-to-order">
         <div class="container">
-            <div class="section-label" data-en="PROCESS" data-cn="流程">PROCESS</div>
-            <h2 class="section-title" data-en="From Inquiry to Doorstep" data-cn="从咨询到送达">From Inquiry to Doorstep</h2>
-            <p class="section-subtitle" data-en="A considered process, kept simple." data-cn="考究的流程，简洁的体验。">A considered process, kept simple.</p>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="process-num">01</div>
-                    <h4 data-en="Inquire" data-cn="咨询">Inquire</h4>
-                    <p data-en="Share the occasion, date, recipient, and a sense of the feeling you're after. A simple form, or a text." data-cn="分享场合、日期、赠予对象，以及你想传达的感觉。一张简单的表单，或一条短信即可。">Share the occasion, date, recipient, and a sense of the feeling you're after. A simple form, or a text.</p>
+            <div class="section-label" data-en="HOW TO ORDER" data-cn="如何预订">HOW TO ORDER</div>
+            <h2 class="section-title" data-en="A considered process, kept simple." data-cn="考究的流程，留出呼吸的余地。">A considered process, kept simple.</h2>
+            <div class="hto-grid">
+                <div class="hto-step">
+                    <div class="hto-num">01</div>
+                    <h4 data-en="Tell us the occasion" data-cn="说说这一束花的场合">Tell us the occasion</h4>
+                    <p data-en="A birthday, a thank-you, a visit, a reception, an event, or something only you can name. Begin with a short message — we will take it from there." data-cn="一个生日，一份谢意，一次探望，一场宴请，或者只有你能描述的瞬间。先发我们一条简短的留言，剩下的交给我们。">A birthday, a thank-you, a visit, a reception, an event, or something only you can name. Begin with a short message — we will take it from there.</p>
                 </div>
-                <div class="process-step">
-                    <div class="process-num">02</div>
-                    <h4 data-en="Consult" data-cn="沟通">Consult</h4>
-                    <p data-en="We respond within the same business day with a design direction, flower palette, and a transparent quote." data-cn="我们会在当个工作日内回复，提供设计方向、花材配色与透明报价。">We respond within the same business day with a design direction, flower palette, and a transparent quote.</p>
+                <div class="hto-step">
+                    <div class="hto-num">02</div>
+                    <h4 data-en="Share a palette and a budget" data-cn="留下色系与预算">Share a palette and a budget</h4>
+                    <p data-en="Tell us the colors you love or wish to avoid, and the range you are working within. We will respond the same business day with a direction shaped by what is in season." data-cn="告诉我们你喜欢的色调，或想避开的颜色，以及大致预算。我们会在当个工作日内回复，提出与季节花材相称的设计方向。">Tell us the colors you love or wish to avoid, and the range you are working within. We will respond the same business day with a direction shaped by what is in season.</p>
                 </div>
-                <div class="process-step">
-                    <div class="process-num">03</div>
-                    <h4 data-en="Create" data-cn="制作">Create</h4>
-                    <p data-en="Once confirmed, your arrangement is built by hand on the day of delivery — never earlier." data-cn="确认后，你的作品将在送达当日手工完成——绝不提前制作。">Once confirmed, your arrangement is built by hand on the day of delivery — never earlier.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-num">04</div>
-                    <h4 data-en="Deliver" data-cn="送达">Deliver</h4>
-                    <p data-en="Hand-delivered across Irvine and surrounding Orange County, on the date and window you've chosen." data-cn="由我们亲手送达以尔湾为中心的橙县地区，按你选择的日期与时间段。">Hand-delivered across Irvine and surrounding Orange County, on the date and window you've chosen.</p>
+                <div class="hto-step">
+                    <div class="hto-num">03</div>
+                    <h4 data-en="Made fresh, on the day" data-cn="送达当日，新鲜手制">Made fresh, on the day</h4>
+                    <p data-en="Once the design is approved, flowers are sourced fresh and arranged by hand on the day of delivery — never earlier. Hand-delivered across Orange County, on the window you have chosen." data-cn="设计确认后，花材统一新鲜采购，并在送达当日手工完成——绝不提前制作。橙县全境亲手送达，按你选定的时间段。">Once the design is approved, flowers are sourced fresh and arranged by hand on the day of delivery — never earlier. Hand-delivered across Orange County, on the window you have chosen.</p>
                 </div>
             </div>
             <div class="section-cta">
-                <a href="inquire/" class="cta-link" data-en="Start an Inquiry →" data-cn="开始咨询 →">Start an Inquiry →</a>
+                <a href="inquire/" class="hto-cta" data-en="Start an Inquiry" data-cn="开始咨询">Start an Inquiry</a>
             </div>
         </div>
     </section>

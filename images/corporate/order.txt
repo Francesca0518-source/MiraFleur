@@ -1,0 +1,20 @@
+# Mira花礼 · 手动排序文件
+# 列出来的文件名按这里的顺序展示在前面。
+# 没列出的图,自动按文件大小降序追加在后面。
+#
+# 每行一个文件名(不含路径)。空行 / # 开头的行被忽略。
+# 改完告诉 Claude Code "重新排序 events/corporate/gifts",我会把网页 grid 同步成这个顺序。
+#
+# 看文件名最快的方法:浏览器打开 maisonmirafleur.com/corporate/?dev=1
+# 鼠标悬在图上 → 浮出 filename · Cmd+点击复制到剪贴板。
+
+# === Top picks(以下顺序生效)===
+94d8137182d12fcfd485cac4810d8dde.JPG
+b742ffe94122db5aa7941dc4de8e4d6f.JPG
+1697-Photoroom.JPG
+0279541e89084de13d476e54a6369538.JPG
+1eb3f34fc5fbcea465f5ae1d421895f1.JPG
+1701-Photoroom.JPG
+1702-Photoroom.JPG
+
+# === 剩余的图自动按文件大小降序追加 ===
