@@ -7,21 +7,30 @@
 
 :root {
     /* ============================================================
-       Mira 花礼 色彩系统 v1.0  (see brand/colors.md)
-       锚点:La Grande Boucherie Belle Époque
-       墨蓝 / 金箔 / 月白
+       Mira 花礼 色彩系统 v2.0 — Hydrangea Atelier
+       2026-04-25 由 Francesca 定:烟蓝 + 球菊墨蓝 + 蜜桃 + 月白 四色主旋律
+       8 色 token,4 主旋律(大面积),4 点缀(≤5% 面积)。
+       Flora 层(烟玫/霜柿/青梅 等)保留不动。
        ============================================================ */
 
-    /* Foundation */
-    --color-molan:      #1A2B3D;   /* 墨蓝 — Belle Époque 锚点 · 本轮仅定义,未主动使用 */
-    --color-molan-deep: #0F1B28;   /* footer / 深色区块 */
-    --color-molan-soft: #2D4057;   /* 次级文字 */
-    --color-jinbo:      #B8924A;   /* 金箔 — 主琥珀金 */
-    --color-jinbo-warm: #C9A25C;   /* hover / 高光 */
-    --color-jinbo-deep: #8F6F35;   /* 边框 / 强调 */
-    --color-yuebai:     #F5F1E8;   /* 月白 — 主米白,Mira 的"白",拒绝 #fff */
-    --color-yuebai-warm:#EDE6D3;   /* 卡片背景 */
-    --color-yuebai-cool:#FAF7F0;   /* 最浅,大块留白 */
+    /* Foundation · 4 主旋律(大面积) */
+    --color-molan:      #3B4A78;   /* 球菊 / 墨蓝 — 标题、CTA、Line C 主调 */
+    --color-molan-deep: #2A3558;   /* 球菊深 — footer / 深色块底 */
+    --color-molan-soft: #5A6890;   /* 球菊淡 — 次级文字 */
+    --color-yanlan:     #A8B8D0;   /* 烟蓝 / 雾绣球 — 大面积氛围、hero 暖洗背景 */
+    --color-yanlan-soft:#C9D2E0;   /* 烟蓝淡 — 极浅雾色,卡片底/分隔区 */
+    --color-mitao:      #F2C9A4;   /* 蜜桃 / 非洲菊 — 节日/礼盒线 hover、Line B 暖点缀 */
+    --color-mitao-deep: #E5AE82;   /* 蜜桃深 — hover / 强调态 */
+    --color-yuebai:     #F5F1E8;   /* 月白 / 绣球白 — 全站底色 */
+    --color-yuebai-warm:#EDE6D3;   /* 月白暖 — 卡片背景 */
+    --color-yuebai-cool:#FAF7F0;   /* 月白冷 — 大面积留白 */
+
+    /* Foundation · 4 点缀(≤5% 面积) */
+    --color-jinbo:      #B58E54;   /* 黄铜 / 金属香槟 — 描边、按钮 outline */
+    --color-jinbo-warm: #C99560;   /* 万代兰 / 琥珀芥末 — 金线、icon、分割 */
+    --color-jinbo-deep: #8F6F35;   /* 黄铜深 — 边框强调(沿用) */
+    --color-tielian:    #9BB088;   /* 铁线蕨 / 中和绿雾 — 叶材点缀(绝不当主色) */
+    --color-keke:       #8B5A3C;   /* 深可可 — 暗角、分隔(极少量) */
 
     /* Flora (每色对应真实花材质感 — 本轮仅定义) */
     --color-yanmei:     #A8727A;   /* 烟玫 */
@@ -3015,10 +3024,28 @@ body.dev-mode [data-zone] {
 
 .line-page { background: var(--color-yuebai); }
 
+/* Hero "暖洗背景" — soft 烟蓝 atmospheric wash over 月白.
+   Big surface (主旋律), but gentle enough to remain 70% 月白. */
 .line-hero {
     padding: 22vh 32px 12vh;
     text-align: center;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(168, 184, 208, 0.22), transparent 70%),
+        var(--color-yuebai);
 }
+/* Line C (Corporate) hero leans deeper — 球菊墨蓝 hint at top */
+.line-page-corporate .line-hero {
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(59, 74, 120, 0.10), transparent 65%),
+        var(--color-yuebai);
+}
+/* Line B (Gifts) hero leans warmer — 蜜桃 hint */
+.line-page-gifts .line-hero {
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(242, 201, 164, 0.20), transparent 70%),
+        var(--color-yuebai);
+}
+.line-hero-eyebrow-spacer { display: none; }
 .line-hero-eyebrow {
     font-family: var(--font-sans);
     font-size: 0.78rem;
@@ -3224,6 +3251,11 @@ body.dev-mode [data-zone] {
     transform: scale(1.025);
     filter: brightness(1.03);
 }
+/* Line B (Gifts) hover gets 蜜桃 frame — Line C stays neutral, Line D 月白暖 */
+.line-page-gifts .line-card { transition: box-shadow 0.3s ease; }
+.line-page-gifts .line-card:hover { box-shadow: 0 0 0 2px var(--color-mitao); }
+.line-page-corporate .line-card { transition: box-shadow 0.3s ease; }
+.line-page-corporate .line-card:hover { box-shadow: 0 0 0 2px var(--color-jinbo-warm); }
 .line-grid-count {
     text-align: center;
     margin-top: 48px;
@@ -3333,6 +3365,13 @@ body.dev-mode [data-zone] {
 }
 
 /* Weekly-specific */
+/* Line A (Weekly) Coming-Soon — strongest 烟蓝 atmosphere since this is
+   the 'mood' line; 大面积氛围 per spec is most appropriate here. */
+.line-page-weekly .line-hero {
+    background:
+        radial-gradient(ellipse 90% 70% at 50% 25%, rgba(168, 184, 208, 0.38), transparent 70%),
+        var(--color-yuebai);
+}
 .weekly-pitch { padding: 8vh 32px; max-width: 720px; margin: 0 auto; }
 .weekly-pitch-body {
     font-family: var(--font-serif);
