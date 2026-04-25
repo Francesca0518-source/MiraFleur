@@ -3690,18 +3690,32 @@ body.dev-mode [data-zone] {
 }
 
 @media (max-width: 900px) {
-    .hero-pano { padding-top: 88px; }
+    .hero-pano { padding-top: 88px; min-height: auto; }
+    /* Stronger near-opaque cream wash for the top so text + buttons land on cream */
     .hero-pano-mask {
         background: linear-gradient(
             180deg,
-            rgba(245, 241, 232, 0.96) 0%,
-            rgba(245, 241, 232, 0.85) 30%,
-            rgba(245, 241, 232, 0.55) 60%,
+            rgba(245, 241, 232, 0.97) 0%,
+            rgba(245, 241, 232, 0.94) 50%,
+            rgba(245, 241, 232, 0.78) 72%,
+            rgba(245, 241, 232, 0.30) 88%,
             rgba(245, 241, 232, 0.0) 100%
         );
     }
-    .hero-pano-text { padding: 12vh 24px 10vh; }
+    .hero-pano-text { padding: 8vh 24px 14vh; }
     .hero-pano .hero-desc { max-width: none; }
+    .hero-pano-text > h1,
+    .hero-pano-text > p,
+    .hero-pano-text > div { max-width: 100%; }
+    .hero-pano .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .hero-pano .hero-btn-v2 {
+        text-align: center;
+        padding: 14px 28px;
+    }
 }
 
 /* Backwards-compat: keep .hero-split selectors so any cached references still parse */
