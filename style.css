@@ -4331,3 +4331,55 @@ html[lang='zh-CN'] .line-filter-bar .filter-chip[data-filter="all"] {
     font-weight: 500;
     font-size: clamp(1rem, 1.2vw, 1.2rem);
 }
+
+/* ===== Events page · 2-column subcategory grouping (replaces tall numbered list) ===== */
+.subcats-2col {
+    max-width: 920px;
+    margin: 32px auto 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+.subcats-col-head {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-jinbo-deep);
+    margin: 0 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-jinbo);
+    font-weight: 400;
+}
+html[lang='zh-CN'] .subcats-col-head {
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.18em;
+    font-size: 0.86rem;
+}
+.subcats-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.subcats-items li {
+    padding: 12px 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.08rem, 1.3vw, 1.25rem);
+    color: var(--color-molan);
+    border-bottom: 1px solid rgba(15, 27, 40, 0.06);
+    line-height: 1.5;
+}
+.subcats-items li:last-child { border-bottom: none; }
+html[lang='zh-CN'] .subcats-items li {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    font-weight: 400;
+}
+
+@media (max-width: 720px) {
+    .subcats-2col { grid-template-columns: 1fr; gap: 40px; max-width: 480px; }
+}
