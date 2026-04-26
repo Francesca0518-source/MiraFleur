@@ -1,5 +1,8 @@
 // ===== Language Toggle =====
-let currentLang = localStorage.getItem('mirafleur-lang') || 'en';
+const urlLang = new URLSearchParams(location.search).get('lang');
+let currentLang = (urlLang === 'cn' || urlLang === 'en')
+    ? urlLang
+    : (localStorage.getItem('mirafleur-lang') || 'en');
 
 function setLang(lang) {
     currentLang = lang;
