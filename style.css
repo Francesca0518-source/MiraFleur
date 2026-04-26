@@ -3740,6 +3740,14 @@ body.dev-mode [data-zone] {
     letter-spacing: 0.04em;
     margin-left: 0.08em;
 }
+.hero-pano .brand-mark .bm-zh {
+    font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+    font-weight: 500;
+    font-size: 0.78em;
+    letter-spacing: 0.08em;
+    margin-left: 0.18em;
+    vertical-align: 0.04em;
+}
 .hero-pano .brand-sub {
     font-family: 'Jost', sans-serif;
     font-size: clamp(0.78rem, 0.92vw, 0.96rem);
