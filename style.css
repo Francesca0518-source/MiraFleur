@@ -3649,10 +3649,10 @@ body.dev-mode [data-zone] {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center right;
+    object-position: center top;  /* anchor top so high branches stay visible, bottom crops if needed */
     z-index: 0;
 }
-/* Soft cream gradient on left so brand text reads cleanly over the wall area */
+/* Soft left-side wash (max 30%) — keeps the dusk-tone composition + branches visible */
 .hero-pano-mask {
     position: absolute;
     inset: 0;
@@ -3660,11 +3660,10 @@ body.dev-mode [data-zone] {
     pointer-events: none;
     background: linear-gradient(
         90deg,
-        rgba(245, 241, 232, 0.97) 0%,
-        rgba(245, 241, 232, 0.95) 32%,
-        rgba(245, 241, 232, 0.75) 48%,
-        rgba(245, 241, 232, 0.30) 65%,
-        rgba(245, 241, 232, 0) 82%
+        rgba(245, 241, 232, 0.85) 0%,
+        rgba(245, 241, 232, 0.66) 28%,
+        rgba(245, 241, 232, 0.32) 50%,
+        rgba(245, 241, 232, 0.0) 72%
     );
 }
 .hero-pano-text {
@@ -3682,11 +3681,14 @@ body.dev-mode [data-zone] {
 .hero-pano-text > div { max-width: 540px; }
 .hero-pano .hero-desc { max-width: 460px; }
 .hero-pano .hero-ctas {
-    display: flex;
+    display: inline-flex;          /* shrink container to buttons + gap */
+    flex-direction: row;
     gap: 14px;
     flex-wrap: wrap;
-    align-items: stretch;
-    max-width: 540px;
+    align-items: center;
+    width: max-content;            /* override the 540px max-width inheritance */
+    max-width: 100%;
+    /* margin-left is set by JS (alignHeroCtasToDesc) to center under .hero-desc */
 }
 
 @media (max-width: 900px) {
@@ -3695,11 +3697,10 @@ body.dev-mode [data-zone] {
     .hero-pano-mask {
         background: linear-gradient(
             180deg,
-            rgba(245, 241, 232, 0.97) 0%,
-            rgba(245, 241, 232, 0.94) 50%,
-            rgba(245, 241, 232, 0.78) 72%,
-            rgba(245, 241, 232, 0.30) 88%,
-            rgba(245, 241, 232, 0.0) 100%
+            rgba(245, 241, 232, 0.85) 0%,
+            rgba(245, 241, 232, 0.66) 38%,
+            rgba(245, 241, 232, 0.32) 62%,
+            rgba(245, 241, 232, 0.0) 82%
         );
     }
     .hero-pano-text { padding: 8vh 24px 14vh; }

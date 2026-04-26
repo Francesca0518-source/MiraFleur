@@ -26,6 +26,7 @@ function setLang(lang) {
     document.querySelectorAll('.lang-cn').forEach(el => {
         el.classList.toggle('active', lang === 'cn');
     });
+
 }
 
 function toggleLang() {
