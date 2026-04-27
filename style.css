@@ -3937,85 +3937,99 @@ body.dev-mode [data-zone] {
 .product-card-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 28px;
     max-width: 1240px;
     margin: 0 auto;
 }
 .product-card {
-    background: rgba(255, 255, 255, 0.34);
-    border: 1px solid rgba(181, 142, 84, 0.18);
-    padding: 36px 28px 32px;
-    min-height: 380px;
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(181, 142, 84, 0.16);
+    padding: 44px 32px 36px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+                border-color 0.4s ease,
+                background 0.4s ease,
+                box-shadow 0.4s ease;
     position: relative;
 }
 .product-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(181, 142, 84, 0.42);
-    background: rgba(168, 184, 208, 0.12);
+    transform: translateY(-6px);
+    border-color: rgba(181, 142, 84, 0.4);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 18px 44px rgba(15, 27, 40, 0.07);
 }
 .product-card-num {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    font-weight: 300;
     color: var(--color-jinbo);
-    letter-spacing: 0.1em;
-    margin-bottom: 18px;
+    letter-spacing: 0.12em;
+    margin-bottom: 28px;
+    line-height: 1;
 }
 .product-card h3 {
     font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 300;
     color: var(--color-molan);
-    margin: 0 0 14px;
-    line-height: 1.2;
+    margin: 0 0 18px;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
 }
 html[lang='zh-CN'] .product-card h3 {
     font-family: 'Noto Serif SC', serif;
     font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.06em;
 }
 .product-card p {
     font-size: 0.92rem;
-    line-height: 1.7;
+    line-height: 1.8;
     color: var(--color-molan-soft);
-    margin: 0 0 18px;
+    margin: 0 0 22px;
 }
 .product-card .product-card-desc {
     flex: 1;
-    margin: 0 0 18px;
+    margin: 0 0 22px;
 }
 .product-card .product-card-meta {
-    font-size: 0.8rem;
-    line-height: 1.65;
+    font-size: 0.78rem;
+    line-height: 1.8;
     color: var(--color-jinbo-deep);
-    letter-spacing: 0.02em;
-    margin: 0 0 22px;
+    letter-spacing: 0.04em;
+    margin: 0 0 26px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(181, 142, 84, 0.22);
     font-family: 'Jost', 'Noto Sans SC', sans-serif;
 }
 .product-card-link {
     font-family: 'Jost', sans-serif;
     font-size: 0.78rem;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-molan);
     border-bottom: 1px solid var(--color-jinbo);
-    padding-bottom: 4px;
+    padding-bottom: 5px;
     align-self: flex-start;
-    transition: border-bottom-width 0.2s, border-bottom-color 0.2s;
+    transition: border-bottom-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 .product-card:hover .product-card-link {
     border-bottom-color: var(--color-mitao);
+    color: var(--color-molan-deep, var(--color-molan));
+    transform: translateX(2px);
 }
 @media (max-width: 1024px) {
-    .product-card-row { grid-template-columns: repeat(2, 1fr); }
+    .product-card-row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 @media (max-width: 560px) {
-    .product-card-row { grid-template-columns: 1fr; gap: 16px; }
-    .product-card { min-height: auto; padding: 28px 24px; }
+    .product-card-row { grid-template-columns: 1fr; gap: 18px; }
+    .product-card { min-height: auto; padding: 36px 28px 32px; }
+    .product-card-num { margin-bottom: 22px; }
 }
 
 /* ===== About v2 · atelier image + text ===== */
@@ -4263,10 +4277,12 @@ html[lang='zh-CN'] .product-card .product-card-meta {
     font-family: 'Jost', 'Noto Sans SC', sans-serif;
     font-style: normal;
     font-size: 0.78rem;
-    line-height: 1.7;
+    line-height: 1.8;
     letter-spacing: 0.04em;
     color: var(--color-jinbo-deep);
-    margin: 0 0 22px;
+    margin: 0 0 26px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(181, 142, 84, 0.22);
 }
 
 /* How-to-Order step paragraphs */
