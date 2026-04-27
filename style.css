@@ -1218,6 +1218,28 @@ img {
     margin-top: 1rem !important;
 }
 
+.footer-wechat {
+    margin-top: 1.4rem;
+}
+
+.footer-wechat-img {
+    width: 112px;
+    height: 112px;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid rgba(253, 251, 247, 0.12);
+    background: #fff;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.footer-wechat-label {
+    font-size: 0.75rem !important;
+    color: rgba(253, 251, 247, 0.55) !important;
+    margin-top: 0.55rem !important;
+    letter-spacing: 0.06em;
+}
+
 .footer-keywords {
     text-align: center;
     font-size: 0.72rem;
@@ -3871,7 +3893,7 @@ body.dev-mode [data-zone] {
     background: rgba(255, 255, 255, 0.34);
     border: 1px solid rgba(181, 142, 84, 0.18);
     padding: 36px 28px 32px;
-    min-height: 280px;
+    min-height: 380px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -3908,8 +3930,19 @@ html[lang='zh-CN'] .product-card h3 {
     font-size: 0.92rem;
     line-height: 1.7;
     color: var(--color-molan-soft);
-    margin: 0 0 24px;
+    margin: 0 0 18px;
+}
+.product-card .product-card-desc {
     flex: 1;
+    margin: 0 0 18px;
+}
+.product-card .product-card-meta {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: var(--color-jinbo-deep);
+    letter-spacing: 0.02em;
+    margin: 0 0 22px;
+    font-family: 'Jost', 'Noto Sans SC', sans-serif;
 }
 .product-card-link {
     font-family: 'Jost', sans-serif;
@@ -4170,6 +4203,18 @@ html[lang='zh-CN'] .product-card p {
     line-height: 1.9;
     letter-spacing: 0.04em;
     font-size: 0.95rem;
+}
+
+/* Product card price/meta line — distinct from italic description */
+.product-card .product-card-meta,
+html[lang='zh-CN'] .product-card .product-card-meta {
+    font-family: 'Jost', 'Noto Sans SC', sans-serif;
+    font-style: normal;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    color: var(--color-jinbo-deep);
+    margin: 0 0 22px;
 }
 
 /* How-to-Order step paragraphs */
