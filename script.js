@@ -13,8 +13,8 @@ function setLang(lang) {
     document.querySelectorAll('[data-en][data-cn]').forEach(el => {
         const text = el.getAttribute('data-' + lang);
         if (text) {
-            // Preserve innerHTML for elements with <br> tags
-            if (text.includes('<br>') || text.includes('&')) {
+            // Use innerHTML when the value contains HTML markup (br, links, entities)
+            if (/<[a-z][^>]*>|&[a-z#]/i.test(text)) {
                 el.innerHTML = text;
             } else {
                 el.textContent = text;
