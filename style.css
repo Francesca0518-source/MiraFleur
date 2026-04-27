@@ -4352,6 +4352,19 @@ html[lang='zh-CN'] .line-assessment-deliverable h4 {
     gap: 14px;
     flex-wrap: wrap;
 }
+.hero-pano .hero-ctas-stacked {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+.hero-pano .hero-ctas-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+.hero-btn-v2-corporate {
+    align-self: flex-start;
+}
 .hero-btn-v2 {
     display: inline-block;
     padding: 16px 34px;
@@ -4395,6 +4408,8 @@ html[lang='zh-CN'] .line-assessment-deliverable h4 {
     .hero-pano .hero-title { margin-left: auto; margin-right: auto; }
     .hero-pano .hero-desc  { margin-left: auto; margin-right: auto; }
     .hero-pano .hero-ctas { justify-content: center; }
+    .hero-pano .hero-ctas-stacked { align-items: center; }
+    .hero-pano .hero-ctas-row { justify-content: center; }
     .hero-split-image {
         min-height: 380px;
         order: 2;
