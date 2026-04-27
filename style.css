@@ -4395,17 +4395,11 @@ html[lang='zh-CN'] .line-assessment-deliverable h4 {
     background: rgba(242, 201, 164, 0.16);
 }
 .hero-btn-v2.hero-btn-v2-corporate {
-    background: var(--color-mitao);
-    color: var(--color-molan-deep);
-    border: 1px solid var(--color-mitao-deep);
-    box-shadow: 0 8px 22px rgba(229, 174, 130, 0.32);
+    box-shadow: 0 8px 22px rgba(42, 53, 88, 0.28);
     font-weight: 500;
 }
 .hero-btn-v2.hero-btn-v2-corporate:hover {
-    background: var(--color-mitao-deep);
-    border-color: var(--color-mitao-deep);
-    color: var(--color-molan-deep);
-    box-shadow: 0 10px 26px rgba(229, 174, 130, 0.42);
+    box-shadow: 0 10px 26px rgba(42, 53, 88, 0.38);
     transform: translateY(-1px);
 }
 
