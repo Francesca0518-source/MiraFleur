@@ -3839,31 +3839,96 @@ html[lang='zh-CN'] .line-segment-list .segment-title {
     align-items: center;
     text-align: center;
     border-left: none;
+    gap: 0.6rem;
+}
+.line-segment-list .segment-feature--top {
+    border-bottom: 1px solid rgba(181, 142, 84, 0.22);
+    padding: 0.4rem 0 2rem;
+    margin-bottom: 1.4rem;
+}
+.line-segment-list .segment-feature--bottom {
     border-top: 1px solid rgba(181, 142, 84, 0.22);
     padding: 1.8rem 0 0.6rem;
     margin-top: 1rem;
-    gap: 0.6rem;
 }
 .line-segment-list .segment-feature .segment-title {
-    font-size: 1.32rem;
+    font-size: 1.4rem;
     color: var(--color-jinbo-deep);
 }
 .line-segment-list .segment-feature .segment-detail {
     font-style: italic;
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.85;
 }
+html[lang='zh-CN'] .line-segment-list .segment-feature .segment-detail {
+    font-style: normal;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 400;
+    line-height: 2;
+    letter-spacing: 0.04em;
+}
+
+.line-segment-list .segment-area {
+    font-family: 'Jost', 'Noto Sans SC', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-jinbo-deep);
+    line-height: 1.5;
+    margin-bottom: 0.15rem;
+}
+html[lang='zh-CN'] .line-segment-list .segment-area {
+    text-transform: none;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+}
+
 @media (max-width: 720px) {
     .line-segment-list {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
+        gap: 1.4rem;
     }
     .line-segment-list .segment-feature {
         text-align: left;
         align-items: flex-start;
+    }
+    .line-segment-list .segment-feature--top {
+        border-bottom: 1px solid rgba(181, 142, 84, 0.22);
+        padding: 0.4rem 0 1.4rem 1.6rem;
+        border-left: 1px solid rgba(181, 142, 84, 0.32);
+        margin-bottom: 0.6rem;
+    }
+    .line-segment-list .segment-feature--bottom {
         border-top: 1px solid rgba(181, 142, 84, 0.22);
         padding: 1.4rem 0 0.4rem 1.6rem;
         border-left: 1px solid rgba(181, 142, 84, 0.32);
         margin-top: 0.4rem;
     }
+    .line-segment-list .segment-feature .segment-detail {
+        margin: 0;
+    }
+}
+
+.line-prose-lede {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+    line-height: 1.75;
+    color: var(--color-molan);
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto 3.6rem !important;
+    letter-spacing: 0.01em;
+}
+html[lang='zh-CN'] .line-prose-lede {
+    font-family: 'Noto Serif SC', serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    line-height: 2;
 }
 
 /* $99 assessment block — reuses .line-killer base but with paid-tier emphasis */
