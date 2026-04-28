@@ -2893,7 +2893,7 @@ html[lang='zh-CN'] .residential-service .rs-tagline {
 
 /* ===== /spaces/ — Split-view landing (企业 + 私宅) ===== */
 .spaces-hero {
-    padding: clamp(8rem, 13vh, 11rem) 32px clamp(4.5rem, 8vh, 6.5rem);
+    padding: 6rem 32px 3rem;
     background: var(--color-yuebai-cool);
     text-align: center;
 }
@@ -2914,19 +2914,19 @@ html[lang='zh-CN'] .spaces-hero-eyebrow {
     font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(2.6rem, 5vw, 4.2rem);
-    line-height: 1.12;
+    font-size: clamp(1.9rem, 2.8vw, 2.7rem);
+    line-height: 1.18;
     color: var(--color-molan-deep);
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.4rem;
     letter-spacing: -0.005em;
-    max-width: 18ch;
+    max-width: 22ch;
 }
 html[lang='zh-CN'] .spaces-hero-title {
     font-family: 'Noto Serif SC', 'Songti SC', serif;
     font-style: normal;
     font-weight: 500;
-    letter-spacing: 0.08em;
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    letter-spacing: 0.06em;
+    font-size: clamp(1.7rem, 2.2vw, 2.2rem);
     line-height: 1.4;
 }
 .spaces-hero-rule {
