@@ -3949,7 +3949,14 @@ body.dev-mode [data-zone] {
     .editorial-grid { column-gap: 32px; row-gap: 64px; }
 }
 @media (max-width: 767px) {
-    .spaces-hero { min-height: 70vh; padding: 12vh 24px; }
+    .spaces-hero { min-height: 0; padding: 5rem 24px 2.5rem; }
+    .spaces-hero-eyebrow { margin-bottom: 1.2rem; font-size: 0.72rem; }
+    html[lang='zh-CN'] .spaces-hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.18em; }
+    .spaces-hero-title { font-size: clamp(1.7rem, 6vw, 2.1rem); line-height: 1.18; margin-bottom: 1.2rem; }
+    html[lang='zh-CN'] .spaces-hero-title { font-size: clamp(1.5rem, 5.5vw, 1.9rem); line-height: 1.4; letter-spacing: 0.04em; margin-bottom: 1.2rem; }
+    .spaces-hero-rule { margin-bottom: 1.2rem; width: 48px; }
+    .spaces-hero-sub { font-size: 0.92rem; line-height: 1.7; }
+    html[lang='zh-CN'] .spaces-hero-sub { font-size: 0.92rem; line-height: 1.85; letter-spacing: 0.03em; }
     .feature-band { padding: 64px 0; }
     .feature-trio {
         grid-template-columns: 1fr;
