@@ -2893,174 +2893,233 @@ html[lang='zh-CN'] .residential-service .rs-tagline {
 
 /* ===== /spaces/ — Split-view landing (企业 + 私宅) ===== */
 .spaces-hero {
-    padding: 6rem 0 3.5rem;
-    background: linear-gradient(180deg, var(--color-yuebai-cool) 0%, var(--color-yuebai) 100%);
+    padding: clamp(8rem, 13vh, 11rem) 32px clamp(4.5rem, 8vh, 6.5rem);
+    background: var(--color-yuebai-cool);
     text-align: center;
 }
 .spaces-hero-eyebrow {
     font-family: 'Jost', 'Noto Sans SC', sans-serif;
     font-size: 0.78rem;
-    letter-spacing: 0.32em;
+    letter-spacing: 0.36em;
     text-transform: uppercase;
     color: var(--color-jinbo-deep);
-    margin-bottom: 1.4rem;
+    margin-bottom: 2rem;
 }
 html[lang='zh-CN'] .spaces-hero-eyebrow {
     text-transform: none;
-    letter-spacing: 0.18em;
-    font-size: 0.86rem;
+    letter-spacing: 0.22em;
+    font-size: 0.88rem;
 }
 .spaces-hero-title {
     font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
     font-style: italic;
-    font-weight: 500;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    line-height: 1.18;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: 1.12;
     color: var(--color-molan-deep);
-    margin: 0 0 1.4rem;
-    letter-spacing: 0.01em;
+    margin: 0 auto 2rem;
+    letter-spacing: -0.005em;
+    max-width: 18ch;
 }
 html[lang='zh-CN'] .spaces-hero-title {
     font-family: 'Noto Serif SC', 'Songti SC', serif;
     font-style: normal;
-    letter-spacing: 0.06em;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.4;
+}
+.spaces-hero-rule {
+    display: block;
+    width: 64px;
+    height: 1px;
+    margin: 0 auto 2rem;
+    background: var(--color-jinbo);
+    opacity: 0.7;
 }
 .spaces-hero-sub {
     max-width: 640px;
     margin: 0 auto;
-    font-size: 1.02rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.4vw, 1.22rem);
     line-height: 1.85;
     color: var(--color-molan-soft);
 }
+html[lang='zh-CN'] .spaces-hero-sub {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    font-size: clamp(1rem, 1.2vw, 1.12rem);
+    letter-spacing: 0.04em;
+    line-height: 2.0;
+}
 
 .spaces-split {
-    padding: 4rem 0 6rem;
+    padding: clamp(4rem, 7vh, 6rem) 0 clamp(7rem, 12vh, 10rem);
     background: var(--color-yuebai);
 }
 .spaces-split-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: clamp(2.4rem, 4vw, 4rem);
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 32px;
 }
 .spaces-pillar {
     display: flex;
     flex-direction: column;
-    background: #fff;
-    border: 1px solid rgba(168, 184, 208, 0.35);
+    background: var(--color-yuebai-cool);
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.25s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    overflow: hidden;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    position: relative;
+}
+.spaces-pillar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: clamp(1.6rem, 3vw, 2.4rem);
+    right: clamp(1.6rem, 3vw, 2.4rem);
+    height: 1px;
+    background: var(--color-jinbo);
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
 }
 .spaces-pillar:hover {
-    border-color: var(--color-jinbo-deep);
-    box-shadow: 0 28px 60px -28px rgba(58, 74, 120, 0.28);
-    transform: translateY(-2px);
+    background: #FFFDF8;
+    transform: translateY(-3px);
+}
+.spaces-pillar:hover::before {
+    opacity: 1;
 }
 .spaces-pillar-head {
-    padding: clamp(1.8rem, 3vw, 2.6rem) clamp(1.6rem, 3vw, 2.4rem) 1.4rem;
+    padding: clamp(2.2rem, 3.5vw, 3rem) clamp(1.6rem, 3vw, 2.4rem) clamp(1.6rem, 2.5vw, 2rem);
 }
 .spaces-pillar-eyebrow {
     font-family: 'Jost', 'Noto Sans SC', sans-serif;
-    font-size: 0.74rem;
-    letter-spacing: 0.28em;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
     color: var(--color-jinbo-deep);
-    margin-bottom: 0.9rem;
+    margin-bottom: 1.2rem;
 }
 html[lang='zh-CN'] .spaces-pillar-eyebrow {
     text-transform: none;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
     font-size: 0.84rem;
 }
 .spaces-pillar-title {
     font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
     font-style: italic;
-    font-weight: 500;
-    font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+    font-weight: 400;
+    font-size: clamp(1.85rem, 2.8vw, 2.4rem);
     color: var(--color-molan-deep);
-    margin: 0 0 0.7rem;
-    letter-spacing: 0.01em;
-    line-height: 1.2;
+    margin: 0 0 1rem;
+    letter-spacing: -0.005em;
+    line-height: 1.18;
 }
 html[lang='zh-CN'] .spaces-pillar-title {
     font-family: 'Noto Serif SC', 'Songti SC', serif;
     font-style: normal;
     font-weight: 500;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
 }
 .spaces-pillar-tagline {
-    font-size: 0.98rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.02rem;
     line-height: 1.75;
     color: var(--color-molan-soft);
-    margin: 0 0 0.8rem;
+    margin: 0 0 1.4rem;
+    max-width: 38ch;
+}
+html[lang='zh-CN'] .spaces-pillar-tagline {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    line-height: 1.95;
+    max-width: none;
 }
 .spaces-pillar-meta {
     font-family: 'Jost', 'Noto Sans SC', sans-serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.16em;
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-jinbo-deep);
     margin: 0;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(181, 142, 84, 0.25);
 }
 html[lang='zh-CN'] .spaces-pillar-meta {
     text-transform: none;
     letter-spacing: 0.1em;
-    font-size: 0.86rem;
+    font-size: 0.88rem;
 }
-.spaces-pillar-grid {
+
+/* Editorial mosaic — 3×3 grid, first image spans 2×2 as a feature */
+.spaces-pillar-mosaic {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2px;
-    padding: 0 2px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin: 0 clamp(1.6rem, 3vw, 2.4rem);
 }
-.spaces-pillar-grid figure {
+.spaces-pillar-mosaic figure {
     margin: 0;
-    aspect-ratio: 1;
     overflow: hidden;
-    background: var(--color-yuebai-cool);
+    background: var(--color-yuebai-warm);
+    aspect-ratio: 1;
 }
-.spaces-pillar-grid img {
+.spaces-pillar-mosaic figure:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+.spaces-pillar-mosaic img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
+    transition: transform 0.7s ease;
 }
-.spaces-pillar:hover .spaces-pillar-grid img {
-    transform: scale(1.04);
+.spaces-pillar:hover .spaces-pillar-mosaic figure:first-child img {
+    transform: scale(1.035);
 }
+
 .spaces-pillar-foot {
-    padding: 1.6rem clamp(1.6rem, 3vw, 2.4rem) clamp(1.6rem, 3vw, 2.4rem);
+    padding: clamp(1.6rem, 2.5vw, 2.2rem) clamp(1.6rem, 3vw, 2.4rem) clamp(1.8rem, 3vw, 2.6rem);
     margin-top: auto;
-    border-top: 1px solid rgba(181, 142, 84, 0.22);
     text-align: right;
 }
 .spaces-pillar-cta {
     font-family: 'Jost', 'Noto Sans SC', sans-serif;
-    font-size: 0.84rem;
-    letter-spacing: 0.18em;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--color-molan);
-    border-bottom: 1px solid var(--color-jinbo);
     padding-bottom: 4px;
-    transition: color 0.25s ease, border-color 0.25s ease;
+    border-bottom: 1px solid var(--color-jinbo);
+    transition: color 0.3s ease, border-color 0.3s ease, letter-spacing 0.3s ease;
 }
 .spaces-pillar:hover .spaces-pillar-cta {
     color: var(--color-molan-deep);
     border-bottom-color: var(--color-jinbo-deep);
+    letter-spacing: 0.26em;
 }
 html[lang='zh-CN'] .spaces-pillar-cta {
     text-transform: none;
     letter-spacing: 0.14em;
-    font-size: 0.92rem;
+    font-size: 0.94rem;
+}
+html[lang='zh-CN'] .spaces-pillar:hover .spaces-pillar-cta {
+    letter-spacing: 0.18em;
 }
 
 @media (max-width: 900px) {
-    .spaces-split-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+    .spaces-split-grid { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 24px; }
     .spaces-pillar-foot { text-align: center; }
+    .spaces-hero-rule { width: 48px; }
 }
 
 .form-optional.open {
@@ -6191,4 +6250,144 @@ html[lang='zh-CN'] .subcats-items li {
 
 @media (max-width: 720px) {
     .subcats-2col { grid-template-columns: 1fr; gap: 40px; max-width: 480px; }
+}
+
+/* ===== About v2 · editorial rhythm for the brand passage ===== */
+
+/* Opening lede — a touch larger, sets the voice */
+.about-v2-text .about-lede {
+    font-size: clamp(1.08rem, 1.25vw, 1.22rem);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+html[lang='zh-CN'] .about-v2-text .about-lede {
+    font-size: clamp(1.05rem, 1.2vw, 1.18rem);
+    line-height: 2.0;
+    letter-spacing: 0.06em;
+}
+
+/* Three moment stanzas — the triptych. Smaller, with breath between them. */
+.about-moments {
+    margin: 56px auto 64px;
+    max-width: 540px;
+}
+.about-v2-text .about-moments .about-moment {
+    margin: 0 auto 36px;
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--color-molan);
+    opacity: 0.92;
+}
+.about-v2-text .about-moments .about-moment:last-child {
+    margin-bottom: 0;
+}
+html[lang='zh-CN'] .about-v2-text .about-moments .about-moment {
+    font-size: 1rem;
+    line-height: 2.15;
+    letter-spacing: 0.08em;
+}
+
+/* Bridge sentence + pivot — visual fulcrum of the section */
+.about-v2-text .about-bridge {
+    margin-bottom: 18px;
+}
+
+/* Long single-sentence lines — keep the whole sentence on one line on desktop
+   so the closing punctuation never orphans onto a second row. On narrow
+   viewports text-wrap: pretty avoids one-character widows. */
+.about-v2-text .about-line-keep {
+    max-width: 720px;
+    text-wrap: pretty;
+}
+.about-v2-text .about-pivot {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 1.7vw, 1.6rem);
+    line-height: 1.4;
+    color: var(--color-molan);
+    margin: 0 auto 56px;
+    letter-spacing: 0.005em;
+    max-width: 540px;
+}
+html[lang='zh-CN'] .about-v2-text .about-pivot {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    letter-spacing: 0.12em;
+    line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+    .about-moments { margin: 32px auto 40px; }
+    .about-v2-text .about-moments .about-moment { margin-bottom: 24px; }
+    .about-v2-text .about-pivot { margin-bottom: 32px; }
+
+    /* Tighten the About passage on narrow viewports — the desktop letter-spacing
+       and 2.0 line-height stretch text painfully on a ~250px column. */
+    .about-v2 { padding: 9vh 24px; }
+
+    .about-v2-text .about-title {
+        font-size: clamp(1.7rem, 7vw, 2rem);
+        line-height: 1.32;
+        letter-spacing: 0.02em;
+        margin-bottom: 28px;
+    }
+    html[lang='zh-CN'] .about-v2-text .about-title {
+        font-size: clamp(1.7rem, 7vw, 2rem);
+        line-height: 1.45;
+        letter-spacing: 0.04em;
+        margin-bottom: 28px;
+    }
+
+    .about-v2-text .about-lede {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+    html[lang='zh-CN'] .about-v2-text .about-lede {
+        font-size: 0.98rem;
+        line-height: 1.85;
+        letter-spacing: 0.03em;
+    }
+
+    .about-v2-text .about-moments .about-moment {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    html[lang='zh-CN'] .about-v2-text .about-moments .about-moment {
+        font-size: 0.94rem;
+        line-height: 1.85;
+        letter-spacing: 0.04em;
+    }
+
+    .about-v2-text .about-pivot {
+        font-size: 1.15rem;
+        line-height: 1.4;
+    }
+    html[lang='zh-CN'] .about-v2-text .about-pivot {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+    }
+
+    .about-v2-text p {
+        font-size: 0.98rem;
+        line-height: 1.78;
+    }
+    html[lang='zh-CN'] .about-v2-text p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        letter-spacing: 0.03em;
+    }
+
+    .about-v2-text .about-bridge,
+    .about-v2-text .about-line-keep {
+        text-wrap: pretty;
+    }
+
+    .about-v2-text .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.22em;
+        margin-bottom: 12px;
+    }
 }
