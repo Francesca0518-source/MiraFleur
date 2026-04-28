@@ -6274,6 +6274,21 @@ html[lang='zh-CN'] .about-v2-text {
     overflow-wrap: break-word;
 }
 
+/* iOS Safari safety net — ensure no descendant can push the About section
+   wider than the viewport, even if word-break: keep-all leaves a single
+   too-long CJK chunk. min-width: 0 lets flex/grid children shrink past
+   their content size on Safari. */
+.about-v2,
+.about-v2 .container,
+.about-v2-grid,
+.about-v2-text,
+.about-v2-text > * {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.about-v2 { overflow-x: clip; }
+
 /* Opening lede — a touch larger, sets the voice */
 .about-v2-text .about-lede {
     font-size: clamp(1.08rem, 1.25vw, 1.22rem);
