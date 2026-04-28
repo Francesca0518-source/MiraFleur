@@ -6259,10 +6259,11 @@ html[lang='zh-CN'] .subcats-items li {
 .nbz { white-space: nowrap; }
 
 /* Mobile-only forced line break — hidden on desktop where sentences fit on one
-   line, but creates an explicit break on narrow viewports for clean phrasing. */
-br.m-only { display: none; }
+   line, but creates an explicit break on narrow viewports for clean phrasing.
+   Uses !important to defend against cascade pickup from inherited p/inline rules. */
+br.m-only { display: none !important; }
 @media (max-width: 720px) {
-    br.m-only { display: inline; }
+    br.m-only { display: initial !important; }
 }
 
 /* Chinese phrase integrity — only break at punctuation (，。、；：！？「」（）),
@@ -6271,7 +6272,6 @@ br.m-only { display: none; }
 html[lang='zh-CN'] .about-v2-text {
     word-break: keep-all;
     overflow-wrap: break-word;
-    line-break: strict;
 }
 
 /* Opening lede — a touch larger, sets the voice */
