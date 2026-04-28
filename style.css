@@ -6258,12 +6258,19 @@ html[lang='zh-CN'] .subcats-items li {
    closing character never orphans onto its own line on narrow viewports. */
 .nbz { white-space: nowrap; }
 
-/* Mobile-only forced line break — hidden on desktop where sentences fit on one
-   line, but creates an explicit break on narrow viewports for clean phrasing.
-   Uses !important to defend against cascade pickup from inherited p/inline rules. */
-br.m-only { display: none !important; }
+/* Mobile-only forced line break — block-span pattern (more reliable than
+   toggling <br> via display, which mis-renders on iOS Safari). On desktop the
+   span has no layout effect; on mobile it becomes a 0-height block element,
+   forcing surrounding inline content to a new line. */
+.m-br { display: none; }
 @media (max-width: 720px) {
-    br.m-only { display: initial !important; }
+    .m-br {
+        display: block;
+        width: 100%;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+    }
 }
 
 /* Chinese phrase integrity — only break at punctuation (，。、；：！？「」（）),
