@@ -6258,6 +6258,15 @@ html[lang='zh-CN'] .subcats-items li {
    closing character never orphans onto its own line on narrow viewports. */
 .nbz { white-space: nowrap; }
 
+/* Chinese phrase integrity — only break at punctuation (，。、；：！？「」（）),
+   never inside a CJK phrase. So "空间", "工作室", "Newport Coast" stay whole.
+   overflow-wrap: break-word as fallback if a single chunk truly can't fit. */
+html[lang='zh-CN'] .about-v2-text {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-break: strict;
+}
+
 /* Opening lede — a touch larger, sets the voice */
 .about-v2-text .about-lede {
     font-size: clamp(1.08rem, 1.25vw, 1.22rem);
