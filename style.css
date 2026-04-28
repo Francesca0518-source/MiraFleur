@@ -5324,14 +5324,16 @@ html[lang='zh-CN'] .line-assessment .killer-body-aside {
 
 @media (max-width: 900px) {
     .hero-pano { padding-top: 88px; min-height: auto; }
-    /* Stronger near-opaque cream wash for the top so text + buttons land on cream */
+    /* Solid cream wash from top through the text band so every line reads
+       cleanly on a busy floral image; only the very bottom fades to image. */
     .hero-pano-mask {
         background: linear-gradient(
             180deg,
-            rgba(245, 241, 232, 0.85) 0%,
-            rgba(245, 241, 232, 0.66) 38%,
-            rgba(245, 241, 232, 0.32) 62%,
-            rgba(245, 241, 232, 0.0) 82%
+            rgba(245, 241, 232, 0.95) 0%,
+            rgba(245, 241, 232, 0.92) 55%,
+            rgba(245, 241, 232, 0.78) 75%,
+            rgba(245, 241, 232, 0.35) 92%,
+            rgba(245, 241, 232, 0.0) 100%
         );
     }
     .hero-pano-text { padding: 8vh 24px 14vh; }
@@ -5348,6 +5350,14 @@ html[lang='zh-CN'] .line-assessment .killer-body-aside {
         text-align: center;
         padding: 14px 28px;
     }
+
+    /* Bump text contrast so the supporting copy stops washing out */
+    .hero-pano .hero-emotional { color: var(--color-molan); }
+    .hero-pano .hero-headline { color: var(--color-molan-deep); }
+    .hero-pano .hero-direction { color: var(--color-molan); opacity: 1; }
+    .hero-pano .hero-origin { color: var(--color-molan); opacity: 1; }
+    .hero-pano .hero-aside,
+    .hero-pano .hero-aside a { color: var(--color-molan); }
 }
 
 /* Backwards-compat: keep .hero-split selectors so any cached references still parse */
