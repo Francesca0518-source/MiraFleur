@@ -5713,6 +5713,19 @@ html[lang='zh-CN'] .product-card h3 {
     gap: 80px;
     align-items: center;
 }
+/* Image-removed variant — single centred text column */
+.about-v2-grid--text-only {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    text-align: center;
+}
+.about-v2-grid--text-only .about-v2-text p {
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-v2-grid--text-only .about-v2-cta {
+    display: inline-block;
+}
 .about-v2-image {
     aspect-ratio: 3 / 4;
     overflow: hidden;
