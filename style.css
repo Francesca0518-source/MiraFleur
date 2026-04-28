@@ -6258,6 +6258,13 @@ html[lang='zh-CN'] .subcats-items li {
    closing character never orphans onto its own line on narrow viewports. */
 .nbz { white-space: nowrap; }
 
+/* Mobile-only forced line break — hidden on desktop where sentences fit on one
+   line, but creates an explicit break on narrow viewports for clean phrasing. */
+br.m-only { display: none; }
+@media (max-width: 720px) {
+    br.m-only { display: inline; }
+}
+
 /* Chinese phrase integrity — only break at punctuation (，。、；：！？「」（）),
    never inside a CJK phrase. So "空间", "工作室", "Newport Coast" stay whole.
    overflow-wrap: break-word as fallback if a single chunk truly can't fit. */
