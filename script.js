@@ -22,6 +22,12 @@ function setLang(lang) {
         }
     });
 
+    // Update translatable placeholders on inputs / textareas
+    document.querySelectorAll('[data-en-placeholder][data-cn-placeholder]').forEach(el => {
+        const text = el.getAttribute('data-' + lang + '-placeholder');
+        if (text !== null) el.setAttribute('placeholder', text);
+    });
+
     // Update toggle button active state
     document.querySelectorAll('.lang-en').forEach(el => {
         el.classList.toggle('active', lang === 'en');
@@ -57,6 +63,142 @@ navLinks.querySelectorAll('a').forEach(link => {
         toggle.classList.remove('active');
     });
 });
+
+// ===== Marquee auto-populate =====
+// Any <div class="marquee-band" data-auto></div> on a sub-page will be filled
+// with the same botanical marquee used on the homepage. The image base path
+// defaults to "/images/botanical/" so it works on every page regardless of depth.
+(function setupMarqueeAutoPopulate() {
+    const FLOWERS = [
+        'rose','peony','camellia','iris','tulip','lily','narcissus','poppy','pansy','ranunculus',
+        'anemone','neroli','hibiscus','carnation','amaryllis','morning-glory','daisy','chrysanthemum','marigold','dahlia','periwinkle'
+    ];
+    const NAMES = {
+        'rose':'Rose','peony':'Peony','camellia':'Camellia','iris':'Iris','tulip':'Tulip','lily':'Lily',
+        'narcissus':'Narcissus','poppy':'Poppy','pansy':'Pansy','ranunculus':'Ranunculus','anemone':'Anemone',
+        'neroli':'Neroli','hibiscus':'Hibiscus','carnation':'Carnation','amaryllis':'Amaryllis',
+        'morning-glory':'Morning Glory','daisy':'Daisy','chrysanthemum':'Chrysanthemum','marigold':'Marigold',
+        'dahlia':'Dahlia','periwinkle':'Periwinkle'
+    };
+    const bands = document.querySelectorAll('.marquee-band[data-auto]');
+    if (!bands.length) return;
+    const buildItem = (key) =>
+        `<span class="marquee-item"><img class="marquee-img" src="/images/botanical/${key}.png" alt="" loading="lazy"><span class="marquee-name">${NAMES[key]}</span></span><span class="dot">·</span>`;
+    const items = FLOWERS.map(buildItem).join('');
+    bands.forEach(band => {
+        band.setAttribute('aria-hidden', 'true');
+        band.innerHTML = `<div class="marquee-track">${items}${items}</div>`;
+    });
+})();
+
+// ===== Hero Showcase carousel (homepage) =====
+// 9 corporate works · 3 visible at a time · arrow nav, drag-to-scroll, dot indicators
+(function setupHeroShowcase() {
+    const scroll = document.getElementById('heroShowcaseScroll');
+    if (!scroll) return;
+    const prev = document.querySelector('.hero-showcase-arrow-prev');
+    const next = document.querySelector('.hero-showcase-arrow-next');
+    const dots = [...document.querySelectorAll('.hero-showcase-dot')];
+    const cards = [...scroll.querySelectorAll('.hero-showcase-card')];
+
+    function pageStep() {
+        // Scroll by ~ one viewport-page worth (3 cards on desktop, 2 on tablet, 1 on mobile)
+        return scroll.clientWidth * 0.92;
+    }
+
+    function updateState() {
+        const max = scroll.scrollWidth - scroll.clientWidth;
+        const x = scroll.scrollLeft;
+        if (prev) prev.disabled = x <= 4;
+        if (next) next.disabled = x >= max - 4;
+        if (dots.length) {
+            // Map current scroll to one of N dots
+            const ratio = max > 0 ? x / max : 0;
+            const idx = Math.round(ratio * (dots.length - 1));
+            dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+        }
+    }
+
+    if (prev) prev.addEventListener('click', () => scroll.scrollBy({ left: -pageStep(), behavior: 'smooth' }));
+    if (next) next.addEventListener('click', () => scroll.scrollBy({ left:  pageStep(), behavior: 'smooth' }));
+
+    scroll.addEventListener('scroll', () => {
+        if (scroll._raf) return;
+        scroll._raf = requestAnimationFrame(() => { updateState(); scroll._raf = null; });
+    }, { passive: true });
+
+    // Drag-to-scroll on desktop (mouse). Touch already works natively.
+    let isDown = false, startX = 0, startScroll = 0, dragged = false;
+    scroll.addEventListener('mousedown', (e) => {
+        isDown = true; dragged = false;
+        startX = e.pageX; startScroll = scroll.scrollLeft;
+        scroll.classList.add('is-grabbing');
+    });
+    window.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        const dx = e.pageX - startX;
+        if (Math.abs(dx) > 4) dragged = true;
+        scroll.scrollLeft = startScroll - dx;
+    });
+    window.addEventListener('mouseup', () => {
+        if (!isDown) return;
+        isDown = false;
+        scroll.classList.remove('is-grabbing');
+        // Snap to nearest card after a drag
+        if (dragged) {
+            const cardW = cards[0].getBoundingClientRect().width + 16;
+            const targetX = Math.round(scroll.scrollLeft / cardW) * cardW;
+            scroll.scrollTo({ left: targetX, behavior: 'smooth' });
+        }
+    });
+    // Prevent click-through after drag
+    scroll.addEventListener('click', (e) => {
+        if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; }
+    }, true);
+
+    window.addEventListener('resize', updateState);
+    updateState();
+})();
+
+// ===== Floating CTA visibility (corporate / residential pages) =====
+// Show after scrolling past the hero, hide once the bottom CTA band is in view
+// so the floating panel doesn't double up with the in-page CTA.
+(function setupFloatingCta() {
+    const fcta = document.querySelector('.floating-cta');
+    if (!fcta) return;
+    const hero = document.querySelector('.line-hero');
+    const ctaBand = document.querySelector('.line-cta-band');
+
+    let isCtaBandVisible = false;
+    if (ctaBand && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            isCtaBandVisible = entries[0].isIntersecting;
+            update();
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+        io.observe(ctaBand);
+    }
+
+    function heroBottom() {
+        if (!hero) return 320;
+        const r = hero.getBoundingClientRect();
+        return r.bottom + window.scrollY;
+    }
+
+    function update() {
+        const past = window.scrollY > Math.max(280, heroBottom() - 120);
+        const shouldShow = past && !isCtaBandVisible;
+        fcta.classList.toggle('is-visible', shouldShow);
+    }
+
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => { update(); ticking = false; });
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+})();
 
 // ===== Scroll Fade-in Animation =====
 const observerOptions = {

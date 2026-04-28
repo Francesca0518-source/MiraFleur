@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260426-1">
+    <link rel="stylesheet" href="style.css?v=20260427e">
 </head>
 <body>
 
@@ -30,9 +30,15 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">MIRA FLEUR</a>
             <div class="nav-links">
-                <a href="corporate/" data-en="Corporate" data-cn="企业服务">Corporate</a>
-                <a href="weekly/" data-en="Limited" data-cn="限定">Limited</a>
-                <a href="gifts/" data-en="Gifts" data-cn="单次花礼">Gifts</a>
+                <a href="corporate/" data-en="Corporate" data-cn="企业空间">Corporate</a>
+                <a href="residential/" data-en="Residential" data-cn="私宅空间">Residential</a>
+                <span class="nav-dropdown">
+                    <a href="gifts/" data-en="Gifts" data-cn="花礼">Gifts</a>
+                    <span class="nav-dropdown-menu">
+                        <a href="weekly/" data-en="Limited Edition" data-cn="限定花礼">Limited Edition</a>
+                        <a href="gifts/" data-en="Custom Gifts" data-cn="定制花礼">Custom Gifts</a>
+                    </span>
+                </span>
                 <a href="events/" data-en="Events" data-cn="活动定制">Events</a>
                 <a href="about/" data-en="About" data-cn="关于">About</a>
                 <a href="inquire/" data-en="Inquire" data-cn="咨询">Inquire</a>
@@ -58,16 +64,68 @@
         </picture>
         <div class="hero-pano-mask" aria-hidden="true"></div>
         <div class="hero-pano-text">
-            <h1 class="brand-mark" data-en="MIRA FLEUR" data-cn="MIRA 花礼" lang="en"><span class="bm-en">MIRA</span> <span class="bm-cn">FLEUR</span></h1>
-            <p class="brand-sub" data-en="NEWPORT COAST" data-cn="MAISON MIRA FLEUR">MAISON MIRA FLEUR</p>
-            <p class="brand-tagline" data-en="Flowers, as you would have chosen them yourself." data-cn="以花寄意 · 让心被看见">Flowers, as you would have chosen them yourself.</p>
-            <p class="hero-desc" data-en="Composed flowers, made for the spaces that matter.<br>Based in Newport Coast, serving Orange County and Greater Los Angeles." data-cn="恰到好处的花，为重要空间而存在。<br>源自 Newport Coast，服务橙县全境。">Composed flowers, made for the spaces that matter.<br>Based in Newport Coast, serving Orange County and Greater Los Angeles.</p>
-            <div class="hero-ctas hero-ctas-stacked">
-                <a href="corporate/" class="hero-btn-v2 hero-btn-v2-primary hero-btn-v2-corporate" data-en="Florals for Corporate Spaces →" data-cn="了解企业空间花艺 →">Florals for Corporate Spaces →</a>
-                <div class="hero-ctas-row">
-                    <a href="gifts/" class="hero-btn-v2 hero-btn-v2-secondary" data-en="Browse Floral Gifts" data-cn="浏览单次花礼">Browse Floral Gifts</a>
-                    <a href="events/" class="hero-btn-v2 hero-btn-v2-secondary" data-en="Florals for Your Event →" data-cn="咨询活动定制 →">Florals for Your Event →</a>
+            <p class="hero-emotional" data-en="Where flowers carry feeling, and the heart is seen." data-cn="以花寄意 · 让心被看见">Where flowers carry feeling, and the heart is seen.</p>
+            <h1 class="hero-headline" data-en="Considered flowers,<br>for the spaces that matter." data-cn="恰到好处的花<br>为重要空间而存在">Considered flowers,<br>for the spaces that matter.</h1>
+            <p class="hero-direction" data-en="For corporate, hospitality, restaurant, and private residential spaces —<br>composed and held to a steady, considered standard." data-cn="为企业、酒店、餐厅与私宅空间<br>提供稳定而得体的花艺呈现">For corporate, hospitality, restaurant, and private residential spaces —<br>composed and held to a steady, considered standard.</p>
+            <p class="hero-origin" data-en="From Newport Coast, serving Orange County" data-cn="源自 Newport Coast,服务橙县全境">From Newport Coast, serving Orange County</p>
+            <div class="hero-ctas-pair">
+                <a href="spaces/inquire/" class="hero-btn-pair hero-btn-pair-primary" data-en="Book a Space Floral Preview" data-cn="预约空间花艺预览">Book a Space Floral Preview</a>
+                <a href="spaces/" class="hero-btn-pair hero-btn-pair-secondary" data-en="Browse Space Floral Works" data-cn="浏览空间花艺作品">Browse Space Floral Works</a>
+            </div>
+            <p class="hero-aside"><a href="gifts/" data-en="or browse custom gifts" data-cn="或浏览定制花礼">or browse custom gifts</a></p>
+        </div>
+    </section>
+
+    <!-- Corporate Works Showcase — horizontal swipe carousel (3 visible / 9 total) -->
+    <section class="hero-showcase" aria-label="Corporate space florals">
+        <div class="container">
+            <div class="hero-showcase-head">
+                <p class="hero-showcase-eyebrow" data-en="MIRA FLEUR · CORPORATE SPACES" data-cn="MIRA FLEUR · 企业空间">MIRA FLEUR · CORPORATE SPACES</p>
+            </div>
+        </div>
+
+        <div class="hero-showcase-frame">
+            <button class="hero-showcase-arrow hero-showcase-arrow-prev" type="button" aria-label="Previous works">←</button>
+            <div class="hero-showcase-scroll" id="heroShowcaseScroll" role="region" aria-label="Corporate works carousel" tabindex="0">
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/94d8137182d12fcfd485cac4810d8dde.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/b742ffe94122db5aa7941dc4de8e4d6f.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/1697-Photoroom.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/0279541e89084de13d476e54a6369538.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/1eb3f34fc5fbcea465f5ae1d421895f1.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/1701-Photoroom.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/1702-Photoroom.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/ed8d19b82bfaae5a354c28975cabb2e4.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+                <figure class="hero-showcase-card">
+                    <img src="images/corporate/_source/13f9c0d46cf50157f58f004e54e62933.JPG" alt="Mira Fleur corporate floral installation" loading="lazy">
+                </figure>
+            </div>
+            <button class="hero-showcase-arrow hero-showcase-arrow-next" type="button" aria-label="Next works">→</button>
+        </div>
+
+        <div class="container">
+            <div class="hero-showcase-foot">
+                <div class="hero-showcase-dots" id="heroShowcaseDots" aria-hidden="true">
+                    <span class="hero-showcase-dot is-active"></span>
+                    <span class="hero-showcase-dot"></span>
+                    <span class="hero-showcase-dot"></span>
                 </div>
+                <a href="corporate/" class="hero-showcase-link" data-en="See full corporate works archive →" data-cn="查看完整企业空间作品 →">See full corporate works archive →</a>
             </div>
         </div>
     </section>
@@ -150,37 +208,44 @@
         </div>
     </section>
 
-    <!-- Product Entry · 4 cards -->
+    <!-- Product Entry · 5 cards -->
     <section class="product-entry" id="product-entry">
         <div class="container">
             <div class="section-label" data-en="WHAT WE OFFER" data-cn="我们提供什么">WHAT WE OFFER</div>
-            <h2 class="section-title" data-en="Four ways to send flowers." data-cn="四种委托花艺的方式。">Four ways to send flowers.</h2>
+            <h2 class="section-title" data-en="Five ways to send flowers." data-cn="五种委托花艺的方式。">Five ways to send flowers.</h2>
             <div class="product-card-row">
                 <a href="gifts/" class="product-card">
                     <span class="product-card-num">01</span>
-                    <h3 data-en="Single Bouquet" data-cn="单次花礼">Single Bouquet</h3>
-                    <p class="product-card-desc" data-en="For the times when something needs to be said with flowers — a birthday, a thank-you, an anniversary, an act of love that doesn't need explaining. We make it land." data-cn="送花的人，有他想说的话。<br>为生日、致谢、纪念，以及一份不必多言的爱意——<br>让那束花，替你说出排面。">For the times when something needs to be said with flowers — a birthday, a thank-you, an anniversary, an act of love that doesn't need explaining. We make it land.</p>
+                    <h3 data-en="Custom Gifts" data-cn="定制花礼">Custom Gifts</h3>
+                    <p class="product-card-desc" data-en="For the times when something needs to be said with flowers — a birthday, a thank-you, an anniversary, an act of love that doesn't need explaining. We make it land." data-cn="送花的人,有他想说的话。<br>为生日、致谢、纪念,以及一份不必多言的爱意——<br>让那束花,替你说出排面。">For the times when something needs to be said with flowers — a birthday, a thank-you, an anniversary, an act of love that doesn't need explaining. We make it land.</p>
                     <p class="product-card-meta" data-en="From $150 · Same-day delivery · Made the day of" data-cn="$150 起 · 同城配送 · 当日制作">From $150 · Same-day delivery · Made the day of</p>
                     <span class="product-card-link" data-en="View the Portfolio →" data-cn="查看作品集 →">View the Portfolio →</span>
                 </a>
                 <a href="weekly/" class="product-card">
                     <span class="product-card-num">02</span>
                     <h3 data-en="The Limited Edition" data-cn="限定花礼">The Limited Edition</h3>
-                    <p class="product-card-desc" data-en="A new design every week. A different theme for every holiday.<br>$49 to bring home on the way;<br>$99 with a small vessel — gifting or your own table, both work;<br>$159 fills a room — entryway, dining table, living room, all of it." data-cn="每周都有新设计。每个节日，都有限定主题。<br>$49 顺手带一束回家；<br>$99 含小花器，送朋友、自家餐桌都刚好；<br>$159 撑得起整个空间，玄关、餐桌、客厅都立得住。">A new design every week. A different theme for every holiday.<br>$49 to bring home on the way;<br>$99 with a small vessel — gifting or your own table, both work;<br>$159 fills a room — entryway, dining table, living room, all of it.</p>
-                    <p class="product-card-meta" data-en="Released that week only. Never repeated.<br>Order by Monday · Pickup Friday" data-cn="发售当周才与你见面，过期不再复刻。<br>周一截单 · 周五自取">Released that week only. Never repeated.<br>Order by Monday · Pickup Friday</p>
+                    <p class="product-card-desc" data-en="A new design every week. A different theme for every holiday.<br>$49 to bring home on the way;<br>$99 with a small vessel — gifting or your own table, both work;<br>$159 fills a room — entryway, dining table, living room, all of it." data-cn="每周都有新设计。每个节日,都有限定主题。<br>$49 顺手带一束回家；<br>$99 含小花器,送朋友、自家餐桌都刚好；<br>$159 撑得起整个空间,玄关、餐桌、客厅都立得住。">A new design every week. A different theme for every holiday.<br>$49 to bring home on the way;<br>$99 with a small vessel — gifting or your own table, both work;<br>$159 fills a room — entryway, dining table, living room, all of it.</p>
+                    <p class="product-card-meta" data-en="Released that week only. Never repeated.<br>Order by Monday · Pickup Friday" data-cn="发售当周才与你见面,过期不再复刻。<br>周一截单 · 周五自取">Released that week only. Never repeated.<br>Order by Monday · Pickup Friday</p>
                     <span class="product-card-link" data-en="See This Week's Edition →" data-cn="本期限定 →">See This Week's Edition →</span>
                 </a>
                 <a href="corporate/" class="product-card">
                     <span class="product-card-num">03</span>
-                    <h3 data-en="Corporate Florals" data-cn="企业花艺">Corporate Florals</h3>
-                    <p class="product-card-desc" data-en="Flowers as part of how a space lives. Hotels, medical aesthetics, law offices, postpartum centers, galleries, tech offices — and the principal's office that wants its own." data-cn="让花成为这个空间的常态。<br>酒店、医美、律所、月子中心、画廊、科技办公室，<br>以及总裁办公室的私人订花。">Flowers as part of how a space lives. Hotels, medical aesthetics, law offices, postpartum centers, galleries, tech offices — and the principal's office that wants its own.</p>
-                    <p class="product-card-meta" data-en="From $500/month · 3-month minimum · Cancel anytime<br>Only 2–3 space assessments accepted per quarter" data-cn="$500/月起 · 三个月起订 · 可随时取消<br>每季度仅 2–3 个空间评估席位">From $500/month · 3-month minimum · Cancel anytime<br>Only 2–3 space assessments accepted per quarter</p>
+                    <h3 data-en="Corporate Space Florals" data-cn="企业空间花艺">Corporate Space Florals</h3>
+                    <p class="product-card-desc" data-en="Flowers as part of how a space lives. Hotels, medical aesthetics, law offices, postpartum centers, galleries, tech offices — and the principal's office that wants its own." data-cn="让花成为这个空间的常态。<br>酒店、医美、律所、月子中心、画廊、科技办公室,<br>以及总裁办公室的私人订花。">Flowers as part of how a space lives. Hotels, medical aesthetics, law offices, postpartum centers, galleries, tech offices — and the principal's office that wants its own.</p>
+                    <p class="product-card-meta" data-en="From $129/week · 3-month minimum · Cancel anytime<br>Only 2–3 space assessments accepted per quarter" data-cn="$129/周起 · 三个月起订 · 可随时取消<br>每季度仅 2–3 个空间评估席位">From $129/week · 3-month minimum · Cancel anytime<br>Only 2–3 space assessments accepted per quarter</p>
                     <span class="product-card-link" data-en="Request a Space Assessment →" data-cn="预约空间评估 →">Request a Space Assessment →</span>
                 </a>
-                <a href="events/" class="product-card">
+                <a href="residential/" class="product-card">
                     <span class="product-card-num">04</span>
+                    <h3 data-en="Residential Florals" data-cn="私宅空间花艺">Residential Florals</h3>
+                    <p class="product-card-desc" data-en="For the foyer, the dining table, the principal study, the bedroom — composed for a single moment, or kept alive every week." data-cn="为玄关、餐桌、主人书房、主卧而做——<br>为某一个时刻而生,<br>或在每一周里延续。">For the foyer, the dining table, the principal study, the bedroom — composed for a single moment, or kept alive every week.</p>
+                    <p class="product-card-meta" data-en="One-time from $180 · Subscription from $159/week<br>3-month minimum · Cancel anytime" data-cn="单次 $180 起 · 订阅 $159/周起<br>三个月起订 · 可随时取消">One-time from $180 · Subscription from $159/week<br>3-month minimum · Cancel anytime</p>
+                    <span class="product-card-link" data-en="See Residential Florals →" data-cn="查看私宅花艺 →">See Residential Florals →</span>
+                </a>
+                <a href="events/" class="product-card">
+                    <span class="product-card-num">05</span>
                     <h3 data-en="Event Florals" data-cn="活动定制">Event Florals</h3>
-                    <p class="product-card-desc" data-en="For a dinner that matters, a proposal worth remembering, a celebration carefully prepared — floral design from the head table to the entrance, from lighting to atmosphere." data-cn="一场重要的晚宴、一个值得记住的求婚、一次精心准备的庆祝——<br>从主桌到入口，从光线到气氛，量身设计整场花艺。">For a dinner that matters, a proposal worth remembering, a celebration carefully prepared — floral design from the head table to the entrance, from lighting to atmosphere.</p>
+                    <p class="product-card-desc" data-en="For a dinner that matters, a proposal worth remembering, a celebration carefully prepared — floral design from the head table to the entrance, from lighting to atmosphere." data-cn="一场重要的晚宴、一个值得记住的求婚、一次精心准备的庆祝——<br>从主桌到入口,从光线到气氛,量身设计整场花艺。">For a dinner that matters, a proposal worth remembering, a celebration carefully prepared — floral design from the head table to the entrance, from lighting to atmosphere.</p>
                     <p class="product-card-meta" data-en="From $500 · Book 2–4 weeks ahead · Quoted by event" data-cn="$500 起 · 提前 2–4 周预约 · 按场合协商">From $500 · Book 2–4 weeks ahead · Quoted by event</p>
                     <span class="product-card-link" data-en="Tell Us About Your Event →" data-cn="聊聊你的活动 →">Tell Us About Your Event →</span>
                 </a>
@@ -264,16 +329,16 @@
             <h2 class="section-title" data-en="In Their Words" data-cn="客户心声">In Their Words</h2>
             <div class="testimonial-grid">
                 <blockquote class="testimonial-card">
-                    <p data-en="&ldquo;The arrangement for my mother's birthday was unlike anything I've ever ordered. It felt composed, not assembled. She cried when she saw it.&rdquo;" data-cn="&ldquo;为我母亲生日准备的花艺，与我以往订过的任何一束都不同。它像是被构图，而不是被拼凑。她看到时哭了。&rdquo;">&ldquo;The arrangement for my mother's birthday was unlike anything I've ever ordered. It felt composed, not assembled. She cried when she saw it.&rdquo;</p>
-                    <cite>— S. L., Irvine</cite>
+                    <p data-en="&ldquo;I'm based in NYC and needed flowers sent to my girlfriend in Irvine for our anniversary. She's picky — like, sends-back-restaurant-dishes picky. I sent Mira a couple of references and a vibe, they came back same day with a plan. She texted me a photo before she even thanked me. She told me she was really moved. That's how I knew it landed.&rdquo;" data-cn="&ldquo;我人在纽约,要给在尔湾的女朋友订周年纪念的花。她挑剔——挑剔到餐厅不合心意会退菜的程度。我发了几张参考图和大概的感觉,他们当天就回了方案。她看到的瞬间先发了照片给我才说谢谢,跟我说她真的好感动。我就知道这次稳了。&rdquo;">&ldquo;I'm based in NYC and needed flowers sent to my girlfriend in Irvine for our anniversary. She's picky — like, sends-back-restaurant-dishes picky. I sent Mira a couple of references and a vibe, they came back same day with a plan. She texted me a photo before she even thanked me. She told me she was really moved. That's how I knew it landed.&rdquo;</p>
+                    <cite data-en="— D. W., New York / Irvine" data-cn="— D. W. · New York / Irvine">— D. W., New York / Irvine</cite>
                 </blockquote>
                 <blockquote class="testimonial-card">
-                    <p data-en="&ldquo;We commissioned Mira Fleur for a small proposal dinner at home. Every detail — the palette, the scale, the quiet delivery — was exactly right. Nothing I had to explain twice.&rdquo;" data-cn="&ldquo;我们为家中一场小型求婚晚宴委托了 Mira Fleur。每一个细节——配色、尺度、安静的送达——都恰到好处。没有一件事需要我解释两遍。&rdquo;">&ldquo;We commissioned Mira Fleur for a small proposal dinner at home. Every detail — the palette, the scale, the quiet delivery — was exactly right. Nothing I had to explain twice.&rdquo;</p>
-                    <cite>— M. T., Newport Coast</cite>
+                    <p data-en="&ldquo;We had Mira do flowers for a proposal dinner at our place — six guests, super low-key. I sent two reference photos and a budget, that was basically it. The way it came together I didn't have to fuss over anything that night, which was the whole point.&rdquo;" data-cn="&ldquo;在家办了个求婚小晚宴,六个人,很低调。我发了两张参考图和预算,就基本搞定了。当晚我什么都不用操心——这才是我请他们的真正原因。&rdquo;">&ldquo;We had Mira do flowers for a proposal dinner at our place — six guests, super low-key. I sent two reference photos and a budget, that was basically it. The way it came together I didn't have to fuss over anything that night, which was the whole point.&rdquo;</p>
+                    <cite data-en="— M. T., Newport Coast" data-cn="— M. T. · Newport Coast">— M. T., Newport Coast</cite>
                 </blockquote>
                 <blockquote class="testimonial-card">
-                    <p data-en="&ldquo;They handled memorial flowers for my grandmother with more care than I expected from a florist. Elegant, respectful, and on time.&rdquo;" data-cn="&ldquo;他们为我祖母准备的追思花艺，比我对一家花艺工作室的预期还要用心。优雅、庄重、准时。&rdquo;">&ldquo;They handled memorial flowers for my grandmother with more care than I expected from a florist. Elegant, respectful, and on time.&rdquo;</p>
-                    <cite>— J. C., Corona del Mar</cite>
+                    <p data-en="&ldquo;Memorial flowers for my grandma's service. I wasn't in a place to make decisions and they really took it from there — checked in once, sent a photo, didn't ask me a hundred questions. Showed up on time. That meant a lot that week.&rdquo;" data-cn="&ldquo;外婆追思会的花。那段时间我根本没心情做决定,他们就接过去了——只确认过一次,发了一张照片给我,没问我一堆问题。准时送到。那一周这件事对我意味着很多。&rdquo;">&ldquo;Memorial flowers for my grandma's service. I wasn't in a place to make decisions and they really took it from there — checked in once, sent a photo, didn't ask me a hundred questions. Showed up on time. That meant a lot that week.&rdquo;</p>
+                    <cite data-en="— J. C., Corona del Mar" data-cn="— J. C. · Corona del Mar">— J. C., Corona del Mar</cite>
                 </blockquote>
             </div>
         </div>
@@ -343,8 +408,9 @@
                     <h5 data-en="Explore" data-cn="探索">Explore</h5>
                     <ul>
                         <li><a href="weekly/" data-en="The Limited Edition" data-cn="限定花礼">The Limited Edition</a></li>
-                        <li><a href="gifts/" data-en="Signature Gifts" data-cn="单次花礼">Signature Gifts</a></li>
-                        <li><a href="corporate/" data-en="Corporate Florals" data-cn="企业服务">Corporate Florals</a></li>
+                        <li><a href="gifts/" data-en="Signature Gifts" data-cn="定制花礼">Signature Gifts</a></li>
+                        <li><a href="corporate/" data-en="Corporate Space Florals" data-cn="企业空间花艺">Corporate Space Florals</a></li>
+                        <li><a href="residential/" data-en="Residential Florals" data-cn="私宅空间花艺">Residential Florals</a></li>
                         <li><a href="events/" data-en="Event Florals" data-cn="活动定制">Event Florals</a></li>
                         <li><a href="about/" data-en="About" data-cn="关于">About</a></li>
                         <li><a href="process/" data-en="Process" data-cn="流程">Process</a></li>
@@ -408,6 +474,6 @@
     }
     </script>
 
-    <script src="script.js?v=20260426-2"></script>
+    <script src="script.js?v=20260427e"></script>
 </body>
 </html>
