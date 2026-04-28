@@ -6254,6 +6254,10 @@ html[lang='zh-CN'] .subcats-items li {
 
 /* ===== About v2 · editorial rhythm for the brand passage ===== */
 
+/* No-break Chinese tail — wraps last 2-3 chars + punctuation as one unit so the
+   closing character never orphans onto its own line on narrow viewports. */
+.nbz { white-space: nowrap; }
+
 /* Opening lede — a touch larger, sets the voice */
 .about-v2-text .about-lede {
     font-size: clamp(1.08rem, 1.25vw, 1.22rem);
