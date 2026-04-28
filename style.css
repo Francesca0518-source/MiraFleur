@@ -3473,6 +3473,22 @@ body.page-sympathy .page-hero h1 {
     height: 110px;
 }
 
+/* Mobile — cut the full-height marquee to ~50% so it doesn't dominate the
+   homepage scroll. Divider variant is already small, leave it alone. */
+@media (max-width: 720px) {
+    .marquee-band:not(.marquee-divider) {
+        padding: 1.3rem 0;
+    }
+    .marquee-band:not(.marquee-divider) .marquee-track {
+        font-size: 1rem;
+        gap: 1.6rem;
+    }
+    .marquee-band:not(.marquee-divider) .marquee-img {
+        width: 78px;
+        height: 78px;
+    }
+}
+
 /* ===== About — soft parallax-style image scale on scroll ===== */
 .about-image-frame {
     overflow: hidden;
