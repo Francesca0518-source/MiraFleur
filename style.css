@@ -6291,6 +6291,14 @@ html[lang='zh-CN'] .subcats-items li {
    closing character never orphans onto its own line on narrow viewports. */
 .nbz { white-space: nowrap; }
 
+/* English interface: hide Chinese-audience-only content (WeChat block on
+   homepage + Xiaohongshu link in every footer). Returns when lang switches
+   back to zh-CN. */
+html[lang='en'] .contact-wechat-section,
+html[lang='en'] .footer-social a[href*="xhslink"] {
+    display: none;
+}
+
 /* Mobile-only forced line break — block-span pattern (more reliable than
    toggling <br> via display, which mis-renders on iOS Safari). On desktop the
    span has no layout effect; on mobile it becomes a 0-height block element,
