@@ -6299,6 +6299,12 @@ html[lang='en'] .footer-social a[href*="xhslink"] {
     display: none;
 }
 
+/* Instagram account @maisonmirafleur hasn't launched yet — hide the link in
+   every footer until it has content. To restore: delete this rule. */
+.footer-social a[href*="instagram.com"] {
+    display: none;
+}
+
 /* Mobile-only forced line break — block-span pattern (more reliable than
    toggling <br> via display, which mis-renders on iOS Safari). On desktop the
    span has no layout effect; on mobile it becomes a 0-height block element,
