@@ -1,8 +1,28 @@
 // ===== Language Toggle =====
+// Resolution order:
+//   1. ?lang=cn|en URL param           — explicit override (e.g. shared link)
+//   2. localStorage 'mirafleur-lang'   — returning visitor's saved choice
+//   3. Browser language (navigator)    — first-time visitor, infer from device
+//        any preferred language starting with 'zh' → 'cn'; else → 'en'
+//   4. Default 'en'
 const urlLang = new URLSearchParams(location.search).get('lang');
-let currentLang = (urlLang === 'cn' || urlLang === 'en')
-    ? urlLang
-    : (localStorage.getItem('mirafleur-lang') || 'en');
+function detectBrowserLang() {
+    const langs = (navigator.languages && navigator.languages.length)
+        ? navigator.languages
+        : [navigator.language || ''];
+    for (const l of langs) {
+        if (typeof l === 'string' && l.toLowerCase().startsWith('zh')) return 'cn';
+    }
+    return 'en';
+}
+let currentLang;
+if (urlLang === 'cn' || urlLang === 'en') {
+    currentLang = urlLang;
+} else if (localStorage.getItem('mirafleur-lang')) {
+    currentLang = localStorage.getItem('mirafleur-lang');
+} else {
+    currentLang = detectBrowserLang();
+}
 
 function setLang(lang) {
     currentLang = lang;
