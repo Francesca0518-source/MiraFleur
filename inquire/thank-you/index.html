@@ -9,9 +9,26 @@
       gtag('js', new Date());
       gtag('config', 'AW-18124215925');
     </script>
-    <!-- Event snippet for 咨询表单提交 conversion page -->
+    <!-- Event snippet for 咨询表单提交 conversion page (with Enhanced Conversions) -->
     <script>
-      gtag('event', 'conversion', {'send_to': 'AW-18124215925/pYyHCLrs-KQcEPWspsJD'});
+      (function () {
+        try {
+          var stored = sessionStorage.getItem('mfec');
+          if (stored) {
+            var data = JSON.parse(stored);
+            var userData = {};
+            if (data.email) userData.email = data.email;
+            if (data.phone) {
+              var digits = String(data.phone).replace(/\D/g, '');
+              if (digits.length === 10) userData.phone_number = '+1' + digits;
+              else if (digits.length === 11 && digits.charAt(0) === '1') userData.phone_number = '+' + digits;
+            }
+            if (Object.keys(userData).length) gtag('set', 'user_data', userData);
+            sessionStorage.removeItem('mfec');
+          }
+        } catch (e) {}
+        gtag('event', 'conversion', {'send_to': 'AW-18124215925/pYyHCLrs-KQcEPWspsJD'});
+      })();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

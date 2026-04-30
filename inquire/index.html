@@ -280,5 +280,21 @@
     </footer>
 
     <script src="../script.js?v=20260428a"></script>
+    <script>
+      (function () {
+        var form = document.querySelector('.inquire-form');
+        if (!form) return;
+        form.addEventListener('submit', function () {
+          try {
+            var emailEl = document.getElementById('email');
+            var phoneEl = document.getElementById('phone');
+            var data = {};
+            if (emailEl && emailEl.value) data.email = emailEl.value.trim().toLowerCase();
+            if (phoneEl && phoneEl.value) data.phone = phoneEl.value.trim();
+            if (Object.keys(data).length) sessionStorage.setItem('mfec', JSON.stringify(data));
+          } catch (e) {}
+        });
+      })();
+    </script>
 </body>
 </html>
