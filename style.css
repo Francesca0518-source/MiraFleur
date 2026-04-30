@@ -3190,6 +3190,34 @@ html[lang='zh-CN'] .spaces-pillar:hover .spaces-pillar-cta {
 .thank-you-inner {
     max-width: 560px;
     margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@keyframes thankYouRise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.thank-you-inner > * {
+    opacity: 0;
+    animation: thankYouRise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+.thank-you-mark      { animation-delay: 0.05s; }
+.thank-you h1        { animation-delay: 0.20s; }
+.thank-you-lead      { animation-delay: 0.35s; }
+.thank-you-contact   { animation-delay: 0.50s; }
+.thank-you-rule      { animation-delay: 0.70s; }
+.thank-you-signature { animation-delay: 0.85s; }
+.thank-you-cta       { animation-delay: 1.00s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .thank-you-inner > * { opacity: 1; animation: none; }
+}
+
+.thank-you-mark {
+    color: var(--color-jinbo);
+    margin-bottom: 2.5rem;
+    line-height: 0;
 }
 
 .thank-you h1 {
@@ -3198,7 +3226,7 @@ html[lang='zh-CN'] .spaces-pillar:hover .spaces-pillar-cta {
     font-weight: 300;
     font-style: italic;
     color: var(--color-ink-900);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     letter-spacing: 0.02em;
 }
 
@@ -3209,11 +3237,56 @@ html[lang='zh-CN'] .spaces-pillar:hover .spaces-pillar-cta {
     margin-bottom: 1.2rem;
 }
 
+.thank-you-lead {
+    margin-bottom: 2.5rem;
+}
+
+.thank-you-contact {
+    margin-bottom: 2.8rem;
+}
+
+.thank-you-contact p {
+    margin-bottom: 0.6rem;
+}
+
+.thank-you-contact p:last-child {
+    margin-bottom: 0;
+}
+
 .thank-you .phone-link {
     font-family: var(--font-serif);
+    font-size: 1.25rem;
     color: var(--color-ink-900);
     border-bottom: 1px solid var(--color-jinbo);
+    padding-bottom: 2px;
     font-style: italic;
+    letter-spacing: 0.04em;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.thank-you .phone-link:hover {
+    color: var(--color-jinbo-deep);
+    border-bottom-color: var(--color-jinbo-deep);
+}
+
+.thank-you-rule {
+    width: 32px;
+    height: 1px;
+    background: var(--color-ink-100);
+    margin: 0 auto 2rem;
+}
+
+.thank-you-signature {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-jinbo-deep);
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 3rem !important;
+}
+
+.thank-you-cta {
+    margin-bottom: 0 !important;
 }
 
 /* ===== Occasion Landing Pages ===== */
