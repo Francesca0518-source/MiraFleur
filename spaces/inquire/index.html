@@ -227,16 +227,12 @@
                         <label for="budget" data-en="Estimated budget" data-cn="预算范围">Estimated budget</label>
                         <select id="budget" name="budget">
                             <option value="" data-en="—" data-cn="—">—</option>
-                            <option value="Under $500" data-en="Under $500 (event / one-time)" data-cn="$500 以下 (活动 / 单次)">Under $500 (event / one-time)</option>
-                            <option value="$500–$1,500" data-en="$500–$1,500" data-cn="$500–$1,500">$500–$1,500</option>
-                            <option value="$1,500–$3,000" data-en="$1,500–$3,000" data-cn="$1,500–$3,000">$1,500–$3,000</option>
-                            <option value="$3,000–$6,000" data-en="$3,000–$6,000" data-cn="$3,000–$6,000">$3,000–$6,000</option>
-                            <option value="$6,000+" data-en="$6,000+ / month for ongoing" data-cn="$6,000+ / 长期月度">$6,000+ / month for ongoing</option>
-                            <option value="Corporate Subscription · $129–$500/wk" data-en="Corporate subscription · $129–$500 / week" data-cn="企业订阅 · $129–$500 / 周">Corporate subscription · $129–$500 / week</option>
-                            <option value="Corporate Subscription · $500+/wk" data-en="Corporate subscription · $500+ / week" data-cn="企业订阅 · $500+ / 周">Corporate subscription · $500+ / week</option>
-                            <option value="Residential Subscription · $159–$400/wk" data-en="Residential subscription · $159–$400 / week" data-cn="私宅订阅 · $159–$400 / 周">Residential subscription · $159–$400 / week</option>
-                            <option value="Residential Subscription · $400+/wk" data-en="Residential subscription · $400+ / week" data-cn="私宅订阅 · $400+ / 周">Residential subscription · $400+ / week</option>
-                            <option value="Open / would like guidance" data-en="Open / would like your guidance" data-cn="尚未确定 / 想听你建议">Open / would like your guidance</option>
+                            <option value="Corporate subscription · from $129/wk (3-mo min)" data-en="Corporate subscription · from $129 / week (3-month minimum)" data-cn="企业空间订阅 · $129/周起（三个月起订）">Corporate subscription · from $129 / week (3-month minimum)</option>
+                            <option value="Residential subscription · from $159/wk (3-mo min)" data-en="Residential subscription · from $159 / week (3-month minimum)" data-cn="私宅空间订阅 · $159/周起（三个月起订）">Residential subscription · from $159 / week (3-month minimum)</option>
+                            <option value="Single install · $500–$1,500" data-en="Single install · $500–$1,500" data-cn="单次整体空间布置 · $500–$1,500">Single install · $500–$1,500</option>
+                            <option value="Single install · $1,500–$5,000" data-en="Single install · $1,500–$5,000" data-cn="单次整体空间布置 · $1,500–$5,000">Single install · $1,500–$5,000</option>
+                            <option value="Single install · $5,000+" data-en="Single install · $5,000+" data-cn="单次整体空间布置 · $5,000+">Single install · $5,000+</option>
+                            <option value="Open / would like guidance" data-en="Open / would like your guidance" data-cn="想先聊再定">Open / would like your guidance</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -358,5 +354,40 @@
     </footer>
 
     <script src="../../script.js?v=20260428a"></script>
+    <script>
+      (function () {
+        var form = document.querySelector('.inquire-form');
+        if (!form) return;
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          try {
+            var emailEl = document.getElementById('email');
+            var phoneEl = document.getElementById('phone');
+            var data = {};
+            if (emailEl && emailEl.value) data.email = emailEl.value.trim().toLowerCase();
+            if (phoneEl && phoneEl.value) data.phone = phoneEl.value.trim();
+            if (Object.keys(data).length) sessionStorage.setItem('mfec', JSON.stringify(data));
+          } catch (err) {}
+          var btn = form.querySelector('button[type=submit]');
+          var btnHTML = btn ? btn.innerHTML : '';
+          if (btn) { btn.disabled = true; btn.textContent = '提交中… / Sending…'; }
+          try {
+            var resp = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (resp.ok) {
+              window.location.href = '/inquire/thank-you/';
+            } else {
+              throw new Error('formspree');
+            }
+          } catch (err) {
+            alert('提交失败,请稍后再试或邮件联系 hello@mirafleur.com\nSubmission failed — please try again or email hello@mirafleur.com');
+            if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

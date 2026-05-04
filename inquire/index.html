@@ -285,7 +285,8 @@
       (function () {
         var form = document.querySelector('.inquire-form');
         if (!form) return;
-        form.addEventListener('submit', function () {
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
           try {
             var emailEl = document.getElementById('email');
             var phoneEl = document.getElementById('phone');
@@ -293,7 +294,25 @@
             if (emailEl && emailEl.value) data.email = emailEl.value.trim().toLowerCase();
             if (phoneEl && phoneEl.value) data.phone = phoneEl.value.trim();
             if (Object.keys(data).length) sessionStorage.setItem('mfec', JSON.stringify(data));
-          } catch (e) {}
+          } catch (err) {}
+          var btn = form.querySelector('button[type=submit]');
+          var btnHTML = btn ? btn.innerHTML : '';
+          if (btn) { btn.disabled = true; btn.textContent = '提交中… / Sending…'; }
+          try {
+            var resp = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (resp.ok) {
+              window.location.href = '/inquire/thank-you/';
+            } else {
+              throw new Error('formspree');
+            }
+          } catch (err) {
+            alert('提交失败,请稍后再试或邮件联系 hello@mirafleur.com\nSubmission failed — please try again or email hello@mirafleur.com');
+            if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
+          }
         });
       })();
     </script>
