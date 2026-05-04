@@ -4701,7 +4701,6 @@ html[lang='zh-CN'] .floating-cta-secondary {
     color: var(--color-yuebai-cool);
     border-color: var(--color-molan);
 }
-.weekly-tier-mid h3, .weekly-tier-mid p { color: var(--color-yuebai-cool); }
 .weekly-tier-price {
     font-family: var(--font-serif);
     font-size: 2.4rem;
@@ -4719,6 +4718,8 @@ html[lang='zh-CN'] .floating-cta-secondary {
     font-weight: 500;
 }
 .weekly-tier p { color: var(--color-molan-soft); font-size: 0.92rem; line-height: 1.7; }
+.weekly-tier-mid h3,
+.weekly-tier-mid p { color: var(--color-yuebai-cool); }
 
 /* ===== Generic prose / process / callout sections for line pages ===== */
 .line-prose { padding: 8vh 32px; }
