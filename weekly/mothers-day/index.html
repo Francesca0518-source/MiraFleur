@@ -13,10 +13,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>柔光集 · 母亲节限定 · Mira Fleur</title>
-    <meta name="description" content="柔光集 · 母亲节限定四款 · $49 起。本周新鲜花材，当日手作。5/7 截单，5/10 取货。Mother's Day Limited Edition — four handcrafted arrangements from $49. Irvine pickup.">
-    <meta name="keywords" content="母亲节花礼 irvine, mother's day flowers orange county, 康乃馨花礼, 绣球花篮, mira fleur mothers day, 母亲节限定">
+    <meta name="description" content="柔光集 · 母亲节限定四款 · $49 起。本周新鲜花材，当日手作。Irvine 大堂自取 或 Irvine + Newport Coast 同城配送。Hand-arranged Mother's Day bouquets. Pickup in Irvine or same-day delivery in Irvine & Newport Coast. From $49.">
+    <meta name="keywords" content="母亲节花礼 irvine, 尔湾母亲节花, mothers day flowers irvine, mothers day delivery newport coast, mira fleur, 母亲节限定, hand-arranged bouquet OC">
     <meta property="og:title" content="柔光集 · 母亲节限定 · Mira Fleur">
-    <meta property="og:description" content="本周新鲜花材，当日手作。四款限定，$49 起。5/7 截单，5/10 周日取货。">
+    <meta property="og:description" content="四款限定，$49 起。Irvine 自取或同城配送至 Irvine + Newport Coast。5/7 截单，5/10 周日。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://maisonmirafleur.com/weekly/mothers-day/">
     <link rel="canonical" href="https://maisonmirafleur.com/weekly/mothers-day/">
@@ -590,6 +590,31 @@
             gap: 1.5rem;
             text-align: center;
         }
+        .md-logistics-grid.md-logistics-grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 720px;
+            margin: 0 auto;
+            gap: 2.5rem;
+        }
+        .md-logistics-cutoff {
+            text-align: center;
+            margin-top: 2.4rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid rgba(74, 50, 50, 0.1);
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.92rem;
+            color: var(--md-text);
+            letter-spacing: 0.04em;
+        }
+        html[lang='zh-CN'] .md-logistics-cutoff {
+            font-family: 'Noto Serif SC', serif;
+            font-style: normal;
+            letter-spacing: 0.08em;
+        }
         .md-logistics-item {
             padding: 1rem 0.5rem;
             position: relative;
@@ -945,32 +970,28 @@
 
     <!-- Logistics -->
     <section class="md-logistics">
-        <h2 class="md-logistics-title" data-en="Pickup details" data-cn="取货信息">Pickup details</h2>
+        <h2 class="md-logistics-title" data-en="Pickup &amp; Delivery" data-cn="取货 / 配送">Pickup &amp; Delivery</h2>
         <div class="container">
-            <div class="md-logistics-grid">
+            <div class="md-logistics-grid md-logistics-grid-2">
                 <div class="md-logistics-item">
                     <span class="md-logistics-icon" aria-hidden="true"></span>
-                    <p class="md-logistics-label" data-en="Pickup" data-cn="取货">Pickup</p>
-                    <p class="md-logistics-value" data-en="Irvine Roosevelt<br>Office building lobby" data-cn="Irvine Roosevelt<br>办公楼大堂">Irvine Roosevelt<br>Office building lobby</p>
+                    <p class="md-logistics-label" data-en="Pickup" data-cn="自取">Pickup</p>
+                    <p class="md-logistics-value" data-en="Irvine Roosevelt · office lobby<br>Sun 5/10 · 10:00 – 11:00 AM" data-cn="Irvine Roosevelt 办公楼大堂<br>5/10 周日 上午 10:00 – 11:00">Irvine Roosevelt · office lobby<br>Sun 5/10 · 10:00 – 11:00 AM</p>
                 </div>
                 <div class="md-logistics-item">
                     <span class="md-logistics-icon" aria-hidden="true"></span>
-                    <p class="md-logistics-label" data-en="Order cutoff" data-cn="截单">Order cutoff</p>
-                    <p class="md-logistics-value" data-en="Thu 5/7, 9 PM" data-cn="5/7 周四晚 9 点前">Thu 5/7, 9 PM</p>
-                </div>
-                <div class="md-logistics-item">
-                    <span class="md-logistics-icon" aria-hidden="true"></span>
-                    <p class="md-logistics-label" data-en="Pickup time" data-cn="取货时间">Pickup time</p>
-                    <p class="md-logistics-value" data-en="Sun 5/10<br>10:00 – 11:00 AM" data-cn="5/10 周日<br>上午 10:00 – 11:00">Sun 5/10<br>10:00 – 11:00 AM</p>
+                    <p class="md-logistics-label" data-en="Local delivery" data-cn="同城配送">Local delivery</p>
+                    <p class="md-logistics-value" data-en="Irvine &amp; Newport Coast<br>From $15 · Sun 5/10, time on request" data-cn="尔湾 + Newport Coast<br>$15 起按距离 · 5/10 周日时段可指定">Irvine &amp; Newport Coast<br>From $15 · Sun 5/10, time on request</p>
                 </div>
             </div>
+            <p class="md-logistics-cutoff" data-en="Order cutoff: Thu 5/7, 9 PM" data-cn="截单时间：5/7 周四晚 9 点前">Order cutoff: Thu 5/7, 9 PM</p>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="md-cta">
         <div class="container">
-            <p class="md-cta-line" data-en="Lobby pickup by default · Local delivery by arrangement" data-cn="默认大堂自取 · 同城配送另议">默认大堂自取 · 同城配送另议</p>
+            <p class="md-cta-line" data-en="Pickup in Irvine, or delivery to Irvine &amp; Newport Coast" data-cn="尔湾大堂自取 · 或配送至尔湾、Newport Coast">尔湾大堂自取 · 或配送至尔湾、Newport Coast</p>
             <a href="../../inquire/?utm_source=google&utm_medium=cpc&utm_campaign=mothers_day_2026&utm_content=cta" class="md-cta-btn" onclick="return gtag_report_conversion(this.href);" data-en="Order now" data-cn="私信预订">Order now</a>
             <p class="md-cta-note" data-en="DM to reserve · We'll confirm within hours" data-cn="私信预订 · 数小时内确认">DM to reserve · We'll confirm within hours</p>
         </div>
