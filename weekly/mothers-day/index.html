@@ -971,7 +971,7 @@
     <section class="md-cta">
         <div class="container">
             <p class="md-cta-line" data-en="Lobby pickup by default · Local delivery by arrangement" data-cn="默认大堂自取 · 同城配送另议">默认大堂自取 · 同城配送另议</p>
-            <a href="../../inquire/" class="md-cta-btn" data-en="Order now" data-cn="私信预订">Order now</a>
+            <a href="../../inquire/?utm_source=google&utm_medium=cpc&utm_campaign=mothers_day_2026&utm_content=cta" class="md-cta-btn" onclick="return gtag_report_conversion(this.href);" data-en="Order now" data-cn="私信预订">Order now</a>
             <p class="md-cta-note" data-en="DM to reserve · We'll confirm within hours" data-cn="私信预订 · 数小时内确认">DM to reserve · We'll confirm within hours</p>
         </div>
     </section>
@@ -1026,5 +1026,29 @@
     </footer>
 
     <script src="../../script.js?v=20260428a"></script>
+
+    <!-- Google Ads conversion tracking — Mother's Day Inquiry 2026 -->
+    <script>
+      // Official Google pattern: fire conversion, then navigate via event_callback
+      // (ensures the conversion ping reaches Google before page navigates away)
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) !== 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18124215925/znbKCP6Ri6kcEPWspsJD',
+          'value': 80.0,
+          'currency': 'USD',
+          'event_callback': callback
+        });
+        // Safety fallback: if gtag fails to fire callback within 1s, navigate anyway
+        setTimeout(function () {
+          if (typeof(url) !== 'undefined') { window.location = url; }
+        }, 1000);
+        return false; // prevent default; callback will navigate
+      }
+    </script>
 </body>
 </html>
