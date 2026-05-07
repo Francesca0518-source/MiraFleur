@@ -224,6 +224,18 @@ html[lang='zh-CN'] .nav-links .nav-dropdown-menu a {
     letter-spacing: 0.08em;
     font-size: 0.9rem;
 }
+.nav-links .nav-dropdown-menu a.nav-dropdown-sub {
+    padding-left: 2.4rem;
+    font-size: 0.74rem;
+    color: var(--color-ink-500);
+    text-transform: none;
+    letter-spacing: 0.08em;
+    font-style: italic;
+}
+html[lang='zh-CN'] .nav-links .nav-dropdown-menu a.nav-dropdown-sub {
+    font-style: normal;
+    font-size: 0.82rem;
+}
 
 @media (max-width: 640px) {
     .nav-links .nav-dropdown {
